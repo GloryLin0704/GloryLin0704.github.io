@@ -250,6 +250,148 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/12/third/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/12/third/" itemprop="url">
+                  Thrid Day
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:24:04+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><ul>
+<li>页面发送请求，经过中间件，到服务器；服务器再将响应传回页面</li>
+<li>中间件相当于黑箱操作，在箱子里经过一系列的函数操作，到达目的地，也可以在进行某个中间件操作的时候判断是否符合条件，可以调至下一个中间件或直接到终点</li>
+</ul>
+<h1 id="利用中间件构建一个简易Express"><a href="#利用中间件构建一个简易Express" class="headerlink" title="利用中间件构建一个简易Express"></a>利用中间件构建一个简易Express</h1><h1 id="路由的匹配"><a href="#路由的匹配" class="headerlink" title="路由的匹配"></a>路由的匹配</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isMatch = <span class="function">(<span class="params">reqUrl, targetPath</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> targets = targetPath.split(<span class="string">'/'</span>).filter(<span class="function"><span class="params">e</span> =&gt;</span> e != <span class="string">''</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> url.parse(reqUrl).pathname.split(<span class="string">'/'</span>).filter(<span class="function"><span class="params">e</span> =&gt;</span> e != <span class="string">''</span>).every(<span class="function">(<span class="params">subUrl, idx</span>) =&gt;</span> &#123;</div><div class="line">		<span class="keyword">if</span> (idx &gt;= targets.length)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> subUrl === targets[idx]</div><div class="line">		&#125;</div><div class="line">	&#125;); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>利用箭头函数传入参数，用split和filter把空格和‘/’去掉，然后请求路由和目标路由匹配</li>
+</ul>
+<h1 id="封装500"><a href="#封装500" class="headerlink" title="封装500"></a>封装500</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">res500</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">500</span>, &#123;</div><div class="line">		<span class="string">"Content-Type"</span>: <span class="string">"text/html"</span></div><div class="line">	&#125;)</div><div class="line">	res.end(<span class="string">`500! &lt;h1&gt;Timeout&lt;/h1&gt;`</span>); </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		res500(res); </div><div class="line">	&#125;, <span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>设置500和超时，超过3S没响应就报错</li>
+</ul>
+<h1 id="精髓"><a href="#精髓" class="headerlink" title="精髓"></a>精髓</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> targetPath = wares[<span class="number">0</span>].path;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (!wares[<span class="number">1</span>])&#123;</div><div class="line">		<span class="comment">// 后继不存在 </span></div><div class="line">		<span class="comment">// wares[0](req, res, res404); </span></div><div class="line">		<span class="keyword">if</span> (targetPath)&#123;</div><div class="line">			<span class="keyword">if</span> (isMatch(req.url, targetPath)) wares[<span class="number">0</span>](req, res, res404); </div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			wares[<span class="number">0</span>](req, res, res404);</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="comment">// 后继确实存在 </span></div><div class="line">		<span class="comment">// 如果是路由模块 </span></div><div class="line">		<span class="keyword">if</span> (targetPath)&#123;</div><div class="line"></div><div class="line">			<span class="keyword">if</span> (isMatch(req.url, targetPath))&#123;</div><div class="line">				<span class="comment">// 路径匹配成功 执行之 </span></div><div class="line">				wares[<span class="number">0</span>](req, res, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					clearTimeout(timer); </div><div class="line">					<span class="comment">// wares[1](); </span></div><div class="line">					goThrough(req, res, wares.slice(<span class="number">1</span>)); </div><div class="line">				&#125;); </div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="comment">// 匹配失败 跳过 </span></div><div class="line">				goThrough(req, res, wares.slice(<span class="number">1</span>)); </div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123; </div><div class="line">			<span class="comment">// 不是路由模块 原路执行 </span></div><div class="line">			wares[<span class="number">0</span>](req, res, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				clearTimeout(timer); </div><div class="line">				<span class="comment">// wares[1](); </span></div><div class="line">				goThrough(req, res, wares.slice(<span class="number">1</span>)); </div><div class="line">			&#125;); </div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>首先将中间件路由作为数组传进targetPath，ware是设置好的中间件，类似一个数组</li>
+<li>因为使用了一次ware后都会slice除去第0个中间件，所以需要判断下一个中间件还存不存在</li>
+<li>将页面传来的url和中间件路由匹配（通过判断targetPath是否存在来判断是不是路由模块）</li>
+</ul>
+<h1 id="实现调用"><a href="#实现调用" class="headerlink" title="实现调用"></a>实现调用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHTTPServer</span>(<span class="params">http</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> app = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">		</div><div class="line">        <span class="keyword">var</span> i = <span class="number">0</span>;  </div><div class="line">		</div><div class="line">		goThrough(req, res, midWares); </div><div class="line">	&#125;); </div><div class="line"></div><div class="line">	app.use = <span class="function"><span class="keyword">function</span>(<span class="params">midWare</span>)</span>&#123;</div><div class="line">		midWares.push(midWare); </div><div class="line">	&#125;</div><div class="line"></div><div class="line">	app.route = <span class="function"><span class="keyword">function</span>(<span class="params">path, midWare</span>)</span>&#123;</div><div class="line">		midWare.path = path; </div><div class="line">		midWares.push(midWare); </div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> app; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>创建一个服务器</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/12/Second/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -947,7 +1089,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
