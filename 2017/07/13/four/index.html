@@ -1,0 +1,678 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Mongo的命令 集合：表格 文档：行 字段：列  12345678910111213db              显示当前在哪个数据库里show  dbs       显示所有数据库show tables     显示当前数据库里的表use + dbname    进入数据库db.dropDatabase 删除当前数据库db.dbname.insert（&amp;#123; 内容 &amp;#125;）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Four Day">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/13/four/index.html">
+<meta property="og:site_name" content="GloryLin">
+<meta property="og:description" content="Mongo的命令 集合：表格 文档：行 字段：列  12345678910111213db              显示当前在哪个数据库里show  dbs       显示所有数据库show tables     显示当前数据库里的表use + dbname    进入数据库db.dropDatabase 删除当前数据库db.dbname.insert（&amp;#123; 内容 &amp;#125;）">
+<meta property="og:updated_time" content="2017-07-13T16:34:19.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Four Day">
+<meta name="twitter:description" content="Mongo的命令 集合：表格 文档：行 字段：列  12345678910111213db              显示当前在哪个数据库里show  dbs       显示所有数据库show tables     显示当前数据库里的表use + dbname    进入数据库db.dropDatabase 删除当前数据库db.dbname.insert（&amp;#123; 内容 &amp;#125;）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/13/four/"/>
+
+
+
+
+
+  <title> Four Day | GloryLin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GloryLin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/13/four/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Four Day
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T09:42:19+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Mongo的命令"><a href="#Mongo的命令" class="headerlink" title="Mongo的命令"></a>Mongo的命令</h1><ul>
+<li>集合：表格</li>
+<li>文档：行</li>
+<li>字段：列</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">db              显示当前在哪个数据库里</div><div class="line">show  dbs       显示所有数据库</div><div class="line">show tables     显示当前数据库里的表</div><div class="line">use + dbname    进入数据库</div><div class="line">db.dropDatabase 删除当前数据库</div><div class="line">db.dbname.insert（&#123; 内容 &#125;）   在数据库里创建一个dbname表，并存入数据</div><div class="line">db.dbname.drop()    删除dbname的表</div><div class="line">db.dbname.find()    查看dbname表里的所有文档的信息</div><div class="line">db.dbname.update(&#123;原本的信息&#125;，&#123;$set:&#123;更新的信息&#125;&#125;)   更新dbname表里的信息，选填三个信息，1：如果匹配不上信息，是否创建一个新的，默认为false；2：若匹配上了多个信息，是否更改所有，默认是false；3：抛出异常的级别</div><div class="line">db.dbname.update(&#123;属性:&#123;$ gt:判断条件&#125;&#125;，&#123;$set:&#123;更新的信息&#125;&#125;，false，true)    更新dbname表里的该属性所有信息</div><div class="line">db.dbname.remove(&#123;匹配的属性&#125;)   选填，不填删除所有配对的信息，填1删除找到的第一条信息</div><div class="line">db.dbname.remove(&#123;属性:&#123;$ gt:判断条件&#125;&#125;   删除所有该属性</div><div class="line">db.DB.find(&#123;匹配属性，匹配的属性&#125;)      查询当前匹配条件信息</div></pre></td></tr></table></figure>
+<ul>
+<li>可以用use + dbname 新创建一个数据库，但不会马上显示出来；</li>
+<li>MongoDB会自己创建数据库和集合，不用手动创建</li>
+</ul>
+<h1 id="MongoDB数据库的增删查改"><a href="#MongoDB数据库的增删查改" class="headerlink" title="MongoDB数据库的增删查改"></a>MongoDB数据库的增删查改</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">collection.insert(data, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.find(whereStr).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.update(whereStr,updateStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.remove(whereStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+<h2 id="增添"><a href="#增添" class="headerlink" title="增添"></a>增添</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).MongoClient;</div><div class="line"><span class="keyword">var</span> DB_CONN_STR =<span class="string">'mongodb://localhost:27017/xxxx'</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>为连接数据库加载模块,xxx为数据库的名字</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> insertData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>)</span>&#123;</div><div class="line">    <span class="comment">//连接到表 site</span></div><div class="line">    <span class="keyword">var</span> collection = db.collection(<span class="string">'site'</span>);</div><div class="line">    <span class="comment">//插入数据</span></div><div class="line">    <span class="keyword">var</span> data = [ 可以是数值；可以是一列数组，数组用&#123; &#125; 的形式存在数据];</div><div class="line"></div><div class="line">    collection.insert(data, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123; </div><div class="line">        <span class="keyword">if</span>(err)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;     </div><div class="line">        callback(result);</div><div class="line">    &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>collection.insert 是套路，把数据丢进去，设置一个回调函数，里面的代码在增删改查中基本一样，变的是丢进去的数据</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">MongoClient.connect(DB_CONN_STR, <span class="function"><span class="keyword">function</span>(<span class="params">err, db</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"连接成功！"</span>);</div><div class="line">    insertData(db, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(result);</div><div class="line">        db.close();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>对数据库操作，打印结果并关闭数据库</li>
+</ul>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> selectData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">  <span class="comment">//连接到xxx表  </span></div><div class="line">  <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">  <span class="comment">//查询数据</span></div><div class="line">  <span class="keyword">var</span> whereStr = &#123;<span class="string">"name"</span>:<span class="string">'xxxx'</span>&#125;;</div><div class="line">  collection.find(whereStr).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;     </div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">MongoClient.connect(DB_CONN_STR, <span class="function"><span class="keyword">function</span>(<span class="params">err, db</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"连接成功！"</span>);</div><div class="line">  selectData(db, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(result);</div><div class="line">    db.close();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> updateData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">    <span class="comment">//连接到表  </span></div><div class="line">    <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">    <span class="comment">//更新数据</span></div><div class="line">    <span class="keyword">var</span> whereStr = &#123; 匹配属性 &#125;;</div><div class="line">    <span class="keyword">var</span> updateStr = &#123;<span class="attr">$set</span>: &#123; 更新属性 &#125;&#125;;</div><div class="line">    collection.update(whereStr,updateStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(err)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;     </div><div class="line">        callback(result);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> delData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">  <span class="comment">//连接到表  </span></div><div class="line">  <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">  <span class="comment">//删除数据</span></div><div class="line">  <span class="keyword">var</span> whereStr = &#123; 匹配属性 &#125;;</div><div class="line">  collection.remove(whereStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;     </div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/12/third/" rel="next" title="Thrid Day">
+                <i class="fa fa-chevron-left"></i> Thrid Day
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="RY Lin" />
+          <p class="site-author-name" itemprop="name">RY Lin</p>
+           
+              <p class="site-description motion-element" itemprop="description">Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mongo的命令"><span class="nav-number">1.</span> <span class="nav-text">Mongo的命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongoDB数据库的增删查改"><span class="nav-number">2.</span> <span class="nav-text">MongoDB数据库的增删查改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增添"><span class="nav-number">2.1.</span> <span class="nav-text">增添</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">2.2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">2.3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">2.4.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RY Lin</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

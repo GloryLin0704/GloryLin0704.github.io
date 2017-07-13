@@ -250,6 +250,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/13/four/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/13/four/" itemprop="url">
+                  Four Day
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T09:42:19+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Mongo的命令"><a href="#Mongo的命令" class="headerlink" title="Mongo的命令"></a>Mongo的命令</h1><ul>
+<li>集合：表格</li>
+<li>文档：行</li>
+<li>字段：列</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">db              显示当前在哪个数据库里</div><div class="line">show  dbs       显示所有数据库</div><div class="line">show tables     显示当前数据库里的表</div><div class="line">use + dbname    进入数据库</div><div class="line">db.dropDatabase 删除当前数据库</div><div class="line">db.dbname.insert（&#123; 内容 &#125;）   在数据库里创建一个dbname表，并存入数据</div><div class="line">db.dbname.drop()    删除dbname的表</div><div class="line">db.dbname.find()    查看dbname表里的所有文档的信息</div><div class="line">db.dbname.update(&#123;原本的信息&#125;，&#123;$set:&#123;更新的信息&#125;&#125;)   更新dbname表里的信息，选填三个信息，1：如果匹配不上信息，是否创建一个新的，默认为false；2：若匹配上了多个信息，是否更改所有，默认是false；3：抛出异常的级别</div><div class="line">db.dbname.update(&#123;属性:&#123;$ gt:判断条件&#125;&#125;，&#123;$set:&#123;更新的信息&#125;&#125;，false，true)    更新dbname表里的该属性所有信息</div><div class="line">db.dbname.remove(&#123;匹配的属性&#125;)   选填，不填删除所有配对的信息，填1删除找到的第一条信息</div><div class="line">db.dbname.remove(&#123;属性:&#123;$ gt:判断条件&#125;&#125;   删除所有该属性</div><div class="line">db.DB.find(&#123;匹配属性，匹配的属性&#125;)      查询当前匹配条件信息</div></pre></td></tr></table></figure>
+<ul>
+<li>可以用use + dbname 新创建一个数据库，但不会马上显示出来；</li>
+<li>MongoDB会自己创建数据库和集合，不用手动创建</li>
+</ul>
+<h1 id="MongoDB数据库的增删查改"><a href="#MongoDB数据库的增删查改" class="headerlink" title="MongoDB数据库的增删查改"></a>MongoDB数据库的增删查改</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">collection.insert(data, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.find(whereStr).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.update(whereStr,updateStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div><div class="line">collection.remove(whereStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+<h2 id="增添"><a href="#增添" class="headerlink" title="增添"></a>增添</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).MongoClient;</div><div class="line"><span class="keyword">var</span> DB_CONN_STR =<span class="string">'mongodb://localhost:27017/xxxx'</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>为连接数据库加载模块,xxx为数据库的名字</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> insertData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>)</span>&#123;</div><div class="line">    <span class="comment">//连接到表 site</span></div><div class="line">    <span class="keyword">var</span> collection = db.collection(<span class="string">'site'</span>);</div><div class="line">    <span class="comment">//插入数据</span></div><div class="line">    <span class="keyword">var</span> data = [ 可以是数值；可以是一列数组，数组用&#123; &#125; 的形式存在数据];</div><div class="line"></div><div class="line">    collection.insert(data, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123; </div><div class="line">        <span class="keyword">if</span>(err)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;     </div><div class="line">        callback(result);</div><div class="line">    &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>collection.insert 是套路，把数据丢进去，设置一个回调函数，里面的代码在增删改查中基本一样，变的是丢进去的数据</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">MongoClient.connect(DB_CONN_STR, <span class="function"><span class="keyword">function</span>(<span class="params">err, db</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"连接成功！"</span>);</div><div class="line">    insertData(db, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(result);</div><div class="line">        db.close();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>对数据库操作，打印结果并关闭数据库</li>
+</ul>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> selectData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">  <span class="comment">//连接到xxx表  </span></div><div class="line">  <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">  <span class="comment">//查询数据</span></div><div class="line">  <span class="keyword">var</span> whereStr = &#123;<span class="string">"name"</span>:<span class="string">'xxxx'</span>&#125;;</div><div class="line">  collection.find(whereStr).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;     </div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">MongoClient.connect(DB_CONN_STR, <span class="function"><span class="keyword">function</span>(<span class="params">err, db</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"连接成功！"</span>);</div><div class="line">  selectData(db, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(result);</div><div class="line">    db.close();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> updateData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">    <span class="comment">//连接到表  </span></div><div class="line">    <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">    <span class="comment">//更新数据</span></div><div class="line">    <span class="keyword">var</span> whereStr = &#123; 匹配属性 &#125;;</div><div class="line">    <span class="keyword">var</span> updateStr = &#123;<span class="attr">$set</span>: &#123; 更新属性 &#125;&#125;;</div><div class="line">    collection.update(whereStr,updateStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(err)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;     </div><div class="line">        callback(result);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> delData = <span class="function"><span class="keyword">function</span>(<span class="params">db, callback</span>) </span>&#123;  </div><div class="line">  <span class="comment">//连接到表  </span></div><div class="line">  <span class="keyword">var</span> collection = db.collection(<span class="string">'xxx'</span>);</div><div class="line">  <span class="comment">//删除数据</span></div><div class="line">  <span class="keyword">var</span> whereStr = &#123; 匹配属性 &#125;;</div><div class="line">  collection.remove(whereStr, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Error:'</span>+ err);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;     </div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/12/third/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1089,7 +1235,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
