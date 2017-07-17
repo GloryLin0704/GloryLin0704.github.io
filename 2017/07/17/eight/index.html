@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://GloryLin0704.github.io/2017/07/17/eight/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="1. 成为唯一标识符12345678function S4() &amp;#123;      return (((1+Math.random())*0x10000)|0).toString(16).substring(1);  &amp;#125;  function guid() &amp;#123;      return (S4()+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()">
-<meta property="og:updated_time" content="2017-07-17T13:58:05.247Z">
+<meta property="og:updated_time" content="2017-07-17T14:02:22.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eight Day">
 <meta name="twitter:description" content="1. 成为唯一标识符12345678function S4() &amp;#123;      return (((1+Math.random())*0x10000)|0).toString(16).substring(1);  &amp;#125;  function guid() &amp;#123;      return (S4()+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()+&quot;-&quot;+S4()">
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T14:25:35+08:00">
                 2017-07-17
@@ -325,7 +325,7 @@
 <ul>
 <li>调用这段代码即可生成一组特殊的标识符作为ID</li>
 </ul>
-<!-- move -->
+<a id="more"></a>
 <h2 id="2-读取文件"><a href="#2-读取文件" class="headerlink" title="2. 读取文件"></a>2. 读取文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</div><div class="line">    util = <span class="built_in">require</span>(<span class="string">'util'</span>),</div><div class="line">    path = <span class="string">'F:/NW'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">explorer</span>(<span class="params">path</span>)</span>&#123;</div><div class="line">    fs.readdir(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>)</span>&#123;</div><div class="line">	<span class="comment">//err 为错误 , files 文件名列表包含文件夹与文件</span></div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'error:\n'</span> + err);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	files.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>)</span>&#123;</div><div class="line"></div><div class="line">		fs.stat(path + <span class="string">'/'</span> + file, <span class="function"><span class="keyword">function</span>(<span class="params">err, stat</span>)</span>&#123;</div><div class="line">			<span class="keyword">if</span>(err)&#123;<span class="built_in">console</span>.log(err); <span class="keyword">return</span>;&#125;</div><div class="line">			<span class="keyword">if</span>(stat.isDirectory())&#123;					</div><div class="line">				<span class="comment">// 如果是文件夹遍历</span></div><div class="line">				explorer(path + <span class="string">'/'</span> + file);</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">// 读出所有的文件</span></div><div class="line">				<span class="built_in">console</span>.log(<span class="string">'文件名:'</span> + path + <span class="string">'/'</span> + file);</div><div class="line">			&#125;				</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">explorer(path);</div></pre></td></tr></table></figure>
 <h2 id="3-词法作用域"><a href="#3-词法作用域" class="headerlink" title="3. 词法作用域"></a>3. 词法作用域</h2><ul>
 <li>即代码在编写过程中体现出来的范围</li>
@@ -450,10 +450,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -474,7 +474,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -544,7 +544,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
