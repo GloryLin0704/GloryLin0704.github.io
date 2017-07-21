@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="异步的原理：  在每次执行函数的时候，给该函数传入一个callback（回调函数），在这个函数执行完了之后会执行，但不知道具体的执行时间，这是不可测的。 异步是将回调函数加到队列里，按函数执行顺序加入，等编译器觉得时候合适了就调用，所以回调的执行是有顺序的，当前函数没执行完的时候是不会执行回调函数的 同步的缺点是当前函数不执行完是不会执行下一个函数，如果设置了一个死循环，那这个网页就会卡死，接下来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/10/hello-world/index.html">
+<meta property="og:title" content="eleven">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/21/eleven/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-07-10T11:08:57.173Z">
+<meta property="og:description" content="异步的原理：  在每次执行函数的时候，给该函数传入一个callback（回调函数），在这个函数执行完了之后会执行，但不知道具体的执行时间，这是不可测的。 异步是将回调函数加到队列里，按函数执行顺序加入，等编译器觉得时候合适了就调用，所以回调的执行是有顺序的，当前函数没执行完的时候是不会执行回调函数的 同步的缺点是当前函数不执行完是不会执行下一个函数，如果设置了一个死循环，那这个网页就会卡死，接下来">
+<meta property="og:updated_time" content="2017-07-21T11:02:32.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="eleven">
+<meta name="twitter:description" content="异步的原理：  在每次执行函数的时候，给该函数传入一个callback（回调函数），在这个函数执行完了之后会执行，但不知道具体的执行时间，这是不可测的。 异步是将回调函数加到队列里，按函数执行顺序加入，等编译器觉得时候合适了就调用，所以回调的执行是有顺序的，当前函数没执行完的时候是不会执行回调函数的 同步的缺点是当前函数不执行完是不会执行下一个函数，如果设置了一个死循环，那这个网页就会卡死，接下来">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/10/hello-world/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/21/eleven/"/>
 
 
 
 
 
-  <title> Hello World | GloryLin </title>
+  <title> eleven | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -249,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/21/eleven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -270,7 +270,7 @@
             
             
               
-                Hello World
+                eleven
               
             
           </h1>
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T19:08:57+08:00">
-                2017-07-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T09:15:22+08:00">
+                2017-07-21
               </time>
             
 
@@ -321,15 +321,28 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="异步的原理："><a href="#异步的原理：" class="headerlink" title="异步的原理："></a>异步的原理：</h1><blockquote>
+<ul>
+<li>在每次执行函数的时候，给该函数传入一个callback（回调函数），在这个函数执行完了之后会执行，但不知道具体的执行时间，这是不可测的。<ul>
+<li>异步是将回调函数加到队列里，按函数执行顺序加入，等编译器觉得时候合适了就调用，所以回调的执行是有顺序的，当前函数没执行完的时候是不会执行回调函数的</li>
+<li>同步的缺点是当前函数不执行完是不会执行下一个函数，如果设置了一个死循环，那这个网页就会卡死，接下来的所有操作都没有用</li>
+<li>不可以调用回调函数里返回的值，因为找不到这个值在哪，什么时候会形成</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><blockquote>
+<ul>
+<li>JSON是JS原生的，所以使用十分方便</li>
+<li>后台将数据访问接受后，通过res.json( {code:xxx, data:xxx, msg:xxx} )返回到前端页面，让前端处理</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">name</span>:<span class="string">"123"</span>,<span class="attr">age</span>:<span class="number">12</span>&#125;);</div><div class="line">=&gt; <span class="string">'&#123;"name":"123","age":12&#125;'</span></div><div class="line"><span class="comment">//将对象解析为字符串</span></div><div class="line"><span class="built_in">JSON</span>.parse(a);</div><div class="line">=&gt; <span class="built_in">Object</span> &#123;<span class="attr">name</span>: <span class="string">"123"</span>, <span class="attr">age</span>: <span class="number">12</span>&#125;</div><div class="line"><span class="comment">//将字符串转化为对象，把字符串在JSON.parse中调用必须严格按照转化程字符串的格式输入：JSON.parse('&#123;"name":"123","age":12&#125;')</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>对后台而言，JSON中使用的是将数据返回给前端:res.json( { } )，将前端发来的数据解析：JSON.parse( )、JSON.stringify( )</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -366,15 +379,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/18/nine/" rel="next" title="Nine Day">
+                <i class="fa fa-chevron-left"></i> Nine Day
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/10/blog/" rel="prev" title="blog">
-                blog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -485,7 +498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异步的原理："><span class="nav-number">1.</span> <span class="nav-text">异步的原理：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">2.</span> <span class="nav-text">JSON</span></a></li></ol></div>
             
 
           </div>
