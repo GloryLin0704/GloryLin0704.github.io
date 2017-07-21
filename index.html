@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -250,6 +250,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/21/twelve/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/21/twelve/" itemprop="url">
+                  Twelve Day
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:08:49+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><blockquote>
+<ul>
+<li>将代码的路由都加上api，统一api,该api下都是处理数据的路由</li>
+<li>由GET发送的请求都会将该form的内容作为参数加到url中</li>
+<li>在数据库找到的结果都会以对象的形式返回到一个数组里，所以，对数据进行指定的搜索，想要输出就传入result[0].xxx</li>
+<li>由于在查询数据库的时候如果没有这个属性的名字，返回的是undefined，无法输入，所以这时候需要过滤掉，Object.keys(result).length === 0，统计result对象的个数，如果是0就是undefined</li>
+</ul>
+<hr>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:3000/api/list"</span> <span class="attr">method</span>=<span class="string">"GET"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"page"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"page"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在page框中输入的页数会作为参数添加到<a href="http://localhost:3000/api/list中，如：http://localhost:3000/api/list？page=1" target="_blank" rel="external">http://localhost:3000/api/list中，如：http://localhost:3000/api/list？page=1</a></p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/21/twelve/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/21/eleven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -273,7 +408,7 @@
               
                 
                 <a class="post-title-link" href="/2017/07/21/eleven/" itemprop="url">
-                  eleven
+                  Eleven Day
                 </a>
               
             
@@ -287,7 +422,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T09:15:22+08:00">
                 2017-07-21
@@ -429,7 +564,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-18T23:15:55+08:00">
                 2017-07-18
@@ -474,7 +609,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/18/nine/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -556,7 +691,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T22:11:22+08:00">
                 2017-07-17
@@ -599,7 +734,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/17/sunmmary/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -681,7 +816,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T14:25:35+08:00">
                 2017-07-17
@@ -727,7 +862,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/17/eight/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -809,7 +944,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T09:42:19+08:00">
                 2017-07-13
@@ -861,7 +996,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/13/four/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -943,7 +1078,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:24:04+08:00">
                 2017-07-12
@@ -993,7 +1128,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/12/third/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1075,7 +1210,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:02:58+08:00">
                 2017-07-12
@@ -1127,7 +1262,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/12/Second/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1209,7 +1344,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T09:11:32+08:00">
                 2017-07-11
@@ -1329,7 +1464,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T20:09:45+08:00">
                 2017-07-10
@@ -1371,127 +1506,6 @@
           
             <p>数据的遍历</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">private static void listBook2() throws Exception &#123;</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        System.out.println(&quot;图书编号：&quot; + id + &quot; 图书名称：&quot; + bookName + &quot; 图书价格：&quot;</div><div class="line">                + price + &quot; 图书作者：&quot; + author + &quot; 图书类别id：&quot; + bookTypeId);</div><div class="line">        System.out</div><div class="line">                .println(&quot;=============================================================&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;//第一种方法</div><div class="line"></div><div class="line">private static List&lt;Book&gt; listBook3()throws Exception&#123;//List是一个泛型，返回一个对象</div><div class="line">    List&lt;Book&gt; bookList=new ArrayList&lt;Book&gt;(); //相当于建立了一个数组</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        Book book=new Book(id, bookName, price, author, bookTypeId);//创建一组数据</div><div class="line">        bookList.add(book);//相当于往数组里传值</div><div class="line">    &#125;</div><div class="line">    return bookList;</div><div class="line">&#125;//第二种方法</div><div class="line"></div><div class="line">public static void main(String[] args) throws Exception &#123;</div><div class="line">    listBook2();//第一种方法的调用</div><div class="line">    List&lt;Book&gt; bookList=listBook3();</div><div class="line">    for (Book book : bookList) &#123;</div><div class="line">        System.out.println(book);//此处需要在Book类中重写toString方法，因为传入输出的是对象</div><div class="line">    &#125;//第二种方法的调用</div><div class="line">&#125;</div><div class="line"></div><div class="line">public String toString() &#123;</div><div class="line">    return &quot;[&quot;+this.id+&quot;,&quot;+this.bookName+&quot;,&quot;+this.price+&quot;,&quot;+this.author+&quot;,&quot;+this.bookTypeId+&quot;]&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/10/blog/" itemprop="url">
-                  blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T19:43:02+08:00">
-                2017-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一个技术博客。</p>
 
           
         
@@ -1575,8 +1589,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1630,7 +1644,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
