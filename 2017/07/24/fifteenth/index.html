@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://GloryLin0704.github.io/2017/07/24/fifteenth/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="Token传统的认证系统 1.用户在登录域输入 用户名 和 密码 ，然后点击 登录 ； 2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 session，然后在响应头信息中返回这个 session 的信息，目的是把这个 session ID 存储到浏览器中； 3.在访问应用中受限制的后端服务器时提供这个 session 信息； 4.如果 sess">
-<meta property="og:updated_time" content="2017-07-24T13:59:26.002Z">
+<meta property="og:updated_time" content="2017-07-24T14:04:21.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fifteenth">
 <meta name="twitter:description" content="Token传统的认证系统 1.用户在登录域输入 用户名 和 密码 ，然后点击 登录 ； 2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 session，然后在响应头信息中返回这个 session 的信息，目的是把这个 session ID 存储到浏览器中； 3.在访问应用中受限制的后端服务器时提供这个 session 信息； 4.如果 sess">
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -283,7 +283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T21:32:12+08:00">
                 2017-07-24
@@ -331,6 +331,7 @@
 <p>在移动应用上 session 和 cookie 行不通。你无法与移动终端共享服务器创建的 session 和 cookie。</p>
 <p>在这个应用中，渲染好的 HTML 被返回。但在移动端，你需要包含一些类似 JSON 或者 XML 的东西包含在响应中。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="基于-token-的认证"><a href="#基于-token-的认证" class="headerlink" title="基于 token 的认证"></a>基于 token 的认证</h2><blockquote>
 <p>1.用户在登录表单中输入 用户名 和 密码 ，然后点击 登录 ；</p>
 <p>2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 token，然后在响应头信息中返回这个的信息，目的是把这个 token 存储到浏览器的本地存储中；</p>
@@ -339,7 +340,10 @@
 </blockquote>
 <hr>
 <h2 id="JWT-jsonwebtoken"><a href="#JWT-jsonwebtoken" class="headerlink" title="JWT(jsonwebtoken)"></a>JWT(jsonwebtoken)</h2><blockquote>
-<p>JWT：不记名的token，由三部分组成：header、payload、signature<br>header：是 token 的一部分，用来存放 token 的类型和编码方式，通常是使用 base-64 编码。<br>payload：包含了信息。你可以存放任一种信息，比如用户信息，产品信息等。它们都是使用 base-64 编码方式进行存储。<br>signature：包括了 header，payload 和密钥的混合体。密钥必须安全地保存储在服务端。</p>
+<p>JWT：不记名的token，由三部分组成：header、payload、signature</p>
+<p>header：是 token 的一部分，用来存放 token 的类型和编码方式，通常是使用 base-64 编码。</p>
+<p>payload：包含了信息。你可以存放任一种信息，比如用户信息，产品信息等。它们都是使用 base-64 编码方式进行存储。</p>
+<p>signature：包括了 header，payload 和密钥的混合体。密钥必须安全地保存储在服务端。</p>
 </blockquote>
 <hr>
 <blockquote>
@@ -347,7 +351,8 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jwt = <span class="built_in">require</span>(<span class="string">'jsonwebtoken'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> token = jwt.sign( &#123;<span class="attr">data</span> : data&#125;, serect, &#123;<span class="attr">expiresIn</span> : <span class="number">60</span>&#125; );</div><div class="line"></div><div class="line"><span class="keyword">var</span> token_ = jwt.verify(token, <span class="string">'serect'</span>);</div></pre></td></tr></table></figure>
 <blockquote>
-<p>jwt.sign中将对象数据通过serect密钥配合算法加密，expiresIn是保存的时间，单位是毫秒，结果是一串很长的字符串<br>jwt.verify将token中很长的字符串再次通过密钥’serect’解密，返回的结果是一个对象，里面有之前加密的对象属性，还有创建token的时间和保存时间</p>
+<p>jwt.sign中将对象数据通过serect密钥配合算法加密，expiresIn是保存的时间，单位是毫秒，结果是一串很长的字符串</p>
+<p>jwt.verify将token中很长的字符串再次通过密钥’serect’解密，返回的结果是一个对象，里面有之前加密的对象属性，还有创建token的时间和保存时间</p>
 </blockquote>
 
       
@@ -442,10 +447,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table Des Matières
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Ensemble
+            Übersicht
           </li>
         </ul>
       
@@ -466,7 +471,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -536,11 +541,11 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>

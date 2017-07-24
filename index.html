@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -287,7 +287,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T21:32:12+08:00">
                 2017-07-24
@@ -326,8 +326,7 @@
 
       
         
-          
-            <h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><h2 id="传统的认证系统"><a href="#传统的认证系统" class="headerlink" title="传统的认证系统"></a>传统的认证系统</h2><blockquote>
+          <h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><h2 id="传统的认证系统"><a href="#传统的认证系统" class="headerlink" title="传统的认证系统"></a>传统的认证系统</h2><blockquote>
 <p>1.用户在登录域输入 用户名 和 密码 ，然后点击 登录 ；</p>
 <p>2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 session，然后在响应头信息中返回这个 session 的信息，目的是把这个 session ID 存储到浏览器中；</p>
 <p>3.在访问应用中受限制的后端服务器时提供这个 session 信息；</p>
@@ -337,26 +336,13 @@
 <p>在移动应用上 session 和 cookie 行不通。你无法与移动终端共享服务器创建的 session 和 cookie。</p>
 <p>在这个应用中，渲染好的 HTML 被返回。但在移动端，你需要包含一些类似 JSON 或者 XML 的东西包含在响应中。</p>
 </blockquote>
-<h2 id="基于-token-的认证"><a href="#基于-token-的认证" class="headerlink" title="基于 token 的认证"></a>基于 token 的认证</h2><blockquote>
-<p>1.用户在登录表单中输入 用户名 和 密码 ，然后点击 登录 ；</p>
-<p>2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 token，然后在响应头信息中返回这个的信息，目的是把这个 token 存储到浏览器的本地存储中；</p>
-<p>3.在每次发送访问应用中受限制的后端服务器的请求时提供 token 信息；</p>
-<p>4.如果从请求头信息中拿到的 token 有效，允许用户访问受限制的后端服务器，并且返回 JSON 或者 XML。</p>
-</blockquote>
-<hr>
-<h2 id="JWT-jsonwebtoken"><a href="#JWT-jsonwebtoken" class="headerlink" title="JWT(jsonwebtoken)"></a>JWT(jsonwebtoken)</h2><blockquote>
-<p>JWT：不记名的token，由三部分组成：header、payload、signature<br>header：是 token 的一部分，用来存放 token 的类型和编码方式，通常是使用 base-64 编码。<br>payload：包含了信息。你可以存放任一种信息，比如用户信息，产品信息等。它们都是使用 base-64 编码方式进行存储。<br>signature：包括了 header，payload 和密钥的混合体。密钥必须安全地保存储在服务端。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>在使用jwt的时候，首先先加载jwt，用jwt.sign加密token，用jwt.verify解密token</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jwt = <span class="built_in">require</span>(<span class="string">'jsonwebtoken'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> token = jwt.sign( &#123;<span class="attr">data</span> : data&#125;, serect, &#123;<span class="attr">expiresIn</span> : <span class="number">60</span>&#125; );</div><div class="line"></div><div class="line"><span class="keyword">var</span> token_ = jwt.verify(token, <span class="string">'serect'</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>jwt.sign中将对象数据通过serect密钥配合算法加密，expiresIn是保存的时间，单位是毫秒，结果是一串很长的字符串<br>jwt.verify将token中很长的字符串再次通过密钥’serect’解密，返回的结果是一个对象，里面有之前加密的对象属性，还有创建token的时间和保存时间</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/24/fifteenth/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -435,7 +421,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:08:49+08:00">
                 2017-07-21
@@ -488,7 +474,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/21/twelve/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -570,7 +556,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T09:15:22+08:00">
                 2017-07-21
@@ -712,7 +698,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-18T23:15:55+08:00">
                 2017-07-18
@@ -757,7 +743,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/18/nine/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -839,7 +825,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T22:11:22+08:00">
                 2017-07-17
@@ -878,11 +864,11 @@
 
       
         
-          <h1 id="Web常用"><a href="#Web常用" class="headerlink" title="Web常用"></a>Web常用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">req.body.xxx        <span class="comment">//获取页面body里的参数</span></div><div class="line">res.render(<span class="string">'xx'</span>)    <span class="comment">//将页面渲染到xx里</span></div><div class="line">req.query.xxx;      <span class="comment">//获取页面URL中带的参数</span></div><div class="line"></div><div class="line">res.render(<span class="string">'detail'</span>,&#123;</div><div class="line">        <span class="attr">blogs</span>: result[<span class="number">0</span>]</div><div class="line">      &#125;);           <span class="comment">//渲染页面并传入参数,通过在数据库中查询得到的result是数组，不用result[0]传入，将显示Object对象</span></div><div class="line"></div><div class="line"> &lt;%= blog.content %&gt;    <span class="comment">//在ejs中接收数据</span></div><div class="line"></div><div class="line">&lt;% blogs.forEach(<span class="function"><span class="params">blog</span> =&gt;</span> &#123; %&gt;</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/detail?blog_id=&lt;%= blog.id %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">blog.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </div><div class="line">    &lt;% &#125;) %&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>           <span class="comment">//这种情况是将result直接传入，由于blogs是数组，所以用遍历forEach</span></div><div class="line">                    <span class="comment">//其中a标签中设置了带blog的id跳转</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">insertData</span>:insertData,</div><div class="line">    <span class="attr">selectData</span>:selectData,</div><div class="line">    <span class="attr">selectDataContent</span>:selectDataContent</div><div class="line">    &#125;;              <span class="comment">//同一个JS中暴露多个函数，</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> selectData = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectData;</div><div class="line"><span class="keyword">var</span> selectDataContent = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectDataContent;       <span class="comment">//调用暴露的多个函数</span></div></pre></td></tr></table></figure>
+          <h1 id="Web常用"><a href="#Web常用" class="headerlink" title="Web常用"></a>Web常用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">req.body.xxx        <span class="comment">//获取页面body里的参数</span></div><div class="line">res.render(<span class="string">'xx'</span>)    <span class="comment">//将页面渲染到xx里</span></div><div class="line">req.query.xxx;      <span class="comment">//获取页面URL中带的参数</span></div><div class="line"></div><div class="line">res.render(<span class="string">'detail'</span>,&#123;</div><div class="line">        <span class="attr">blogs</span>: result[<span class="number">0</span>]</div><div class="line">      &#125;);           <span class="comment">//渲染页面并传入参数,通过在数据库中查询得到的result是数组，不用result[0]传入，将显示Object对象</span></div><div class="line"></div><div class="line"> &lt;%= blog.content %&gt;    <span class="comment">//在ejs中接收数据</span></div><div class="line"></div><div class="line">&lt;% blogs.forEach(<span class="function"><span class="params">blog</span> =&gt;</span> &#123; %&gt;</div><div class="line">      &lt;li&gt;</div><div class="line">        &lt;a href="/detail?blog_id=&lt;%= blog.id %&gt;"&gt;&lt;%= blog.title %&gt;&lt;/a&gt;  </div><div class="line">      &lt;/li&gt; </div><div class="line">    &lt;% &#125;) %&gt;</div><div class="line">    &lt;/ul&gt;           <span class="comment">//这种情况是将result直接传入，由于blogs是数组，所以用遍历forEach</span></div><div class="line">                    <span class="comment">//其中a标签中设置了带blog的id跳转</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">insertData</span>:insertData,</div><div class="line">    <span class="attr">selectData</span>:selectData,</div><div class="line">    <span class="attr">selectDataContent</span>:selectDataContent</div><div class="line">    &#125;;              <span class="comment">//同一个JS中暴露多个函数，</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> selectData = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectData;</div><div class="line"><span class="keyword">var</span> selectDataContent = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectDataContent;       <span class="comment">//调用暴露的多个函数</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/17/sunmmary/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -964,7 +950,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T14:25:35+08:00">
                 2017-07-17
@@ -1010,7 +996,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/17/eight/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1092,7 +1078,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T09:42:19+08:00">
                 2017-07-13
@@ -1144,7 +1130,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/13/four/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1226,7 +1212,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:24:04+08:00">
                 2017-07-12
@@ -1276,7 +1262,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/12/third/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1358,7 +1344,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:02:58+08:00">
                 2017-07-12
@@ -1410,7 +1396,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/12/Second/#more" rel="contents">
-              Lire la suite &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1492,7 +1478,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T09:11:32+08:00">
                 2017-07-11
@@ -1616,7 +1602,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1670,11 +1656,11 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
