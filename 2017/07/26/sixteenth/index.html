@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="数据的遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647private static void listBook2() throws Exception &amp;#123;    Connection con = dbUtil.getCon(); // 获取连接    Strin">
+<meta name="description" content="搭建服务器 安装node运行环境  wget + 下载地址            下载某个文件  tar xvf + 文件名        解压某个文件  Ln  -s  原文件地址和名字  目标文件地址和命名     创建一个快捷方式  mv    ./文件名字  新文件名    修改文件名字  yum install screen      安装screen  新下载的临时文件放在usr/lo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/10/Mysql/index.html">
+<meta property="og:title" content="Sixteenth Day">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/26/sixteenth/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="数据的遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647private static void listBook2() throws Exception &amp;#123;    Connection con = dbUtil.getCon(); // 获取连接    Strin">
-<meta property="og:updated_time" content="2017-07-10T12:16:26.616Z">
+<meta property="og:description" content="搭建服务器 安装node运行环境  wget + 下载地址            下载某个文件  tar xvf + 文件名        解压某个文件  Ln  -s  原文件地址和名字  目标文件地址和命名     创建一个快捷方式  mv    ./文件名字  新文件名    修改文件名字  yum install screen      安装screen  新下载的临时文件放在usr/lo">
+<meta property="og:updated_time" content="2017-07-26T02:16:35.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql">
-<meta name="twitter:description" content="数据的遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647private static void listBook2() throws Exception &amp;#123;    Connection con = dbUtil.getCon(); // 获取连接    Strin">
+<meta name="twitter:title" content="Sixteenth Day">
+<meta name="twitter:description" content="搭建服务器 安装node运行环境  wget + 下载地址            下载某个文件  tar xvf + 文件名        解压某个文件  Ln  -s  原文件地址和名字  目标文件地址和命名     创建一个快捷方式  mv    ./文件名字  新文件名    修改文件名字  yum install screen      安装screen  新下载的临时文件放在usr/lo">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/10/Mysql/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/26/sixteenth/"/>
 
 
 
 
 
-  <title> Mysql | GloryLin </title>
+  <title> Sixteenth Day | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -249,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/Mysql/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/26/sixteenth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -270,7 +270,7 @@
             
             
               
-                Mysql
+                Sixteenth Day
               
             
           </h1>
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T20:09:45+08:00">
-                2017-07-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-26T09:29:21+08:00">
+                2017-07-26
               </time>
             
 
@@ -321,8 +321,32 @@
       
 
       
-        <p>数据的遍历</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">private static void listBook2() throws Exception &#123;</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        System.out.println(&quot;图书编号：&quot; + id + &quot; 图书名称：&quot; + bookName + &quot; 图书价格：&quot;</div><div class="line">                + price + &quot; 图书作者：&quot; + author + &quot; 图书类别id：&quot; + bookTypeId);</div><div class="line">        System.out</div><div class="line">                .println(&quot;=============================================================&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;//第一种方法</div><div class="line"></div><div class="line">private static List&lt;Book&gt; listBook3()throws Exception&#123;//List是一个泛型，返回一个对象</div><div class="line">    List&lt;Book&gt; bookList=new ArrayList&lt;Book&gt;(); //相当于建立了一个数组</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        Book book=new Book(id, bookName, price, author, bookTypeId);//创建一组数据</div><div class="line">        bookList.add(book);//相当于往数组里传值</div><div class="line">    &#125;</div><div class="line">    return bookList;</div><div class="line">&#125;//第二种方法</div><div class="line"></div><div class="line">public static void main(String[] args) throws Exception &#123;</div><div class="line">    listBook2();//第一种方法的调用</div><div class="line">    List&lt;Book&gt; bookList=listBook3();</div><div class="line">    for (Book book : bookList) &#123;</div><div class="line">        System.out.println(book);//此处需要在Book类中重写toString方法，因为传入输出的是对象</div><div class="line">    &#125;//第二种方法的调用</div><div class="line">&#125;</div><div class="line"></div><div class="line">public String toString() &#123;</div><div class="line">    return &quot;[&quot;+this.id+&quot;,&quot;+this.bookName+&quot;,&quot;+this.price+&quot;,&quot;+this.author+&quot;,&quot;+this.bookTypeId+&quot;]&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h1><blockquote>
+<p>安装node运行环境</p>
+</blockquote>
+<pre><code>wget + 下载地址            下载某个文件
+
+tar xvf + 文件名        解压某个文件
+
+Ln  -s  原文件地址和名字  目标文件地址和命名     创建一个快捷方式
+
+mv    ./文件名字  新文件名    修改文件名字
+
+yum install screen      安装screen
+
+新下载的临时文件放在usr/local/src中，这里是处理临时文件
+
+将下载的压缩包解压后，将解压文件中移到usr/bin/的node放在usr/local/bin下，就可以在全局中运行
+
+找到npm的具体位置在解压文件的lib/node_modules中，创建软链接在usr/local/bin下，那npm也可以在全局中用
+</code></pre><h1 id="LNMP"><a href="#LNMP" class="headerlink" title="LNMP"></a>LNMP</h1><blockquote>
+<p>LNMP：Linux + Nginx + Mysql + PHP</p>
+</blockquote>
+<pre><code>如果是一键安装：先下载资源包，解压、运行安装文件./install.sh
+
+如果是手动安装：http://blog.csdn.net/zjiang1994/article/details/72884151?locationNum=4&amp;fps=1
+</code></pre><h1 id="用Node发送邮件"><a href="#用Node发送邮件" class="headerlink" title="用Node发送邮件"></a>用Node发送邮件</h1><p>设置：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> nodemailer = <span class="built_in">require</span>(<span class="string">'nodemailer'</span>);</div><div class="line"><span class="keyword">var</span> transporter = nodemailer.createTransport(&#123;</div><div class="line">    <span class="attr">service</span>: <span class="string">'qq'</span>,</div><div class="line">    <span class="attr">port</span>: <span class="number">465</span>,</div><div class="line">    <span class="attr">secureConnection</span>: <span class="literal">true</span>, <span class="comment">// 使用 SSL</span></div><div class="line">    auth: &#123;</div><div class="line">        <span class="attr">user</span>: <span class="string">'QQ邮箱'</span>,</div><div class="line">        <span class="attr">pass</span>: <span class="string">'stmp密钥'</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> sentEmail =  <span class="function"><span class="keyword">function</span>(<span class="params">email</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> mailOptions = &#123;</div><div class="line">        <span class="attr">from</span>: <span class="string">'发送邮箱'</span>, <span class="comment">// 发件地址</span></div><div class="line">        to: email, <span class="comment">// 收件列表</span></div><div class="line">        subject: <span class="string">'Hello sir'</span>, <span class="comment">// 标题</span></div><div class="line">        <span class="comment">//text和html两者只支持一种</span></div><div class="line">        text: <span class="string">'Hello world ?'</span>, <span class="comment">// 标题</span></div><div class="line">        html: <span class="string">'&lt;b&gt;Hello world ?&lt;/b&gt;'</span> <span class="comment">// html 内容</span></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    transporter.sendMail(mailOptions, <span class="function"><span class="keyword">function</span>(<span class="params">error, info</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(error)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">console</span>.log(error);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Message sent: '</span> + info);</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> email = <span class="built_in">require</span>(<span class="string">'./email.js'</span>);</div><div class="line"><span class="keyword">var</span> nodemailer = <span class="built_in">require</span>(<span class="string">'nodemailer'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> zxc = <span class="string">'目标邮箱'</span> ; </div><div class="line"></div><div class="line">email.sentEmail(zxc);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -359,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/10/blog/" rel="next" title="blog">
-                <i class="fa fa-chevron-left"></i> blog
+              <a href="/2017/07/24/fifteenth/" rel="next" title="fifteenth">
+                <i class="fa fa-chevron-left"></i> fifteenth
               </a>
             
           </div>
@@ -368,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/first/" rel="prev" title="First day">
-                First day <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -463,6 +492,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建服务器"><span class="nav-number">1.</span> <span class="nav-text">搭建服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LNMP"><span class="nav-number">2.</span> <span class="nav-text">LNMP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用Node发送邮件"><span class="nav-number">3.</span> <span class="nav-text">用Node发送邮件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
