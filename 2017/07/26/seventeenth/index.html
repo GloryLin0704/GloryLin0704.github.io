@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Git命令行1234567891011121314151617181920git clone              #克隆github的库到本地git add index.html     #为把文件添加做准备git status             #查看当前状态（红色应add,绿色即可push）git log                #查看修改日志git commit -m &quot;字">
+<meta name="description" content="反向代理可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口） 域名是唯一的，所以不存在多个域名指向同一个ip地址 在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加： 12345678location /daily-css&amp;#123;        proxy_pass">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First day">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/11/first/index.html">
+<meta property="og:title" content="17th Day">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/26/seventeenth/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="Git命令行1234567891011121314151617181920git clone              #克隆github的库到本地git add index.html     #为把文件添加做准备git status             #查看当前状态（红色应add,绿色即可push）git log                #查看修改日志git commit -m &quot;字">
-<meta property="og:updated_time" content="2017-07-12T11:11:42.603Z">
+<meta property="og:description" content="反向代理可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口） 域名是唯一的，所以不存在多个域名指向同一个ip地址 在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加： 12345678location /daily-css&amp;#123;        proxy_pass">
+<meta property="og:updated_time" content="2017-07-27T06:35:50.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First day">
-<meta name="twitter:description" content="Git命令行1234567891011121314151617181920git clone              #克隆github的库到本地git add index.html     #为把文件添加做准备git status             #查看当前状态（红色应add,绿色即可push）git log                #查看修改日志git commit -m &quot;字">
+<meta name="twitter:title" content="17th Day">
+<meta name="twitter:description" content="反向代理可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口） 域名是唯一的，所以不存在多个域名指向同一个ip地址 在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加： 12345678location /daily-css&amp;#123;        proxy_pass">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/11/first/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/26/seventeenth/"/>
 
 
 
 
 
-  <title> First day | GloryLin </title>
+  <title> 17th Day | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -249,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/11/first/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/26/seventeenth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -270,7 +270,7 @@
             
             
               
-                First day
+                17th Day
               
             
           </h1>
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T09:11:32+08:00">
-                2017-07-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-26T14:33:57+08:00">
+                2017-07-26
               </time>
             
 
@@ -321,7 +321,20 @@
       
 
       
-        <h1 id="Git命令行"><a href="#Git命令行" class="headerlink" title="Git命令行"></a>Git命令行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span>              <span class="comment">#克隆github的库到本地</span></div><div class="line">git add index.html     <span class="comment">#为把文件添加做准备</span></div><div class="line">git status             <span class="comment">#查看当前状态（红色应add,绿色即可push）</span></div><div class="line">git <span class="built_in">log</span>                <span class="comment">#查看修改日志</span></div><div class="line">git commit -m <span class="string">"字符串"</span>  <span class="comment"># 为文件push准备，字符串内容将在log的日志中显示</span></div><div class="line">git push origin master <span class="comment">#将文件上传到github</span></div><div class="line">git pull origin master <span class="comment">#将文件从github下载到本地，每次上传新的文件前都先pull再push</span></div><div class="line">cat index.html         <span class="comment">#查看文件内容</span></div><div class="line">vim index.html         <span class="comment">#新创建一个文件，按i后才能输入，按esc，按：wq保存并退出</span></div><div class="line"><span class="built_in">cd</span> f:/文件名           <span class="comment">#直接进入某个盘的某个文件夹</span></div><div class="line"><span class="built_in">cd</span> + 文件名             <span class="comment">#进入某个文件</span></div><div class="line">ls                     <span class="comment">#列举当前目录下的文件</span></div><div class="line"><span class="built_in">pwd</span>                    <span class="comment">#显示当前路径</span></div><div class="line">mkdir                  <span class="comment">#创建文件夹</span></div><div class="line">rm + 文件              <span class="comment">#删除某个文件</span></div><div class="line">rm + 文件夹 -r         <span class="comment">#删除某个文件夹</span></div><div class="line">hexo new 标题          <span class="comment">#创建一个md</span></div><div class="line">hexo generate         <span class="comment">#将该目录下增加的或修改的md加载</span></div><div class="line">hexo deploy           <span class="comment">#部署到网页</span></div><div class="line">hexo server           <span class="comment">#部署到本地</span></div></pre></td></tr></table></figure>
+        <h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><p>可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口）</p>
+<p>域名是唯一的，所以不存在多个域名指向同一个ip地址</p>
+<p>在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">location /daily-css&#123;</div><div class="line">        proxy_pass http://localhost:8888;</div><div class="line">        <span class="comment">#proxt_pass http://google.com;</span></div><div class="line">        proxy_http_version 1.1;</div><div class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</div><div class="line">        proxy_set_header Host <span class="variable">$host</span>;</div><div class="line">        proxy_cache_bypass <span class="variable">$http_upgrade</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码最有用的是proxy_pass xxxxxx(代理到的域名)</p>
+<p>设置成功后需要重启lnmp nginx restart</p>
+<p>当再次请求：原域名/daily-css，会跳到：代理域名/daily-css</p>
+<h1 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h1><blockquote>
+<p>服务器给定一个域名，相当于本地(localhost、127.0.0.1)，在/home/wwwroot 下可以看见与服务器ip绑定的域名，访问这些域名都会被DNS解析到绑定的ip去</p>
+</blockquote>
+<pre><code>在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面
+
+通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址
+</code></pre>
       
     </div>
 
@@ -357,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/10/Mysql/" rel="next" title="Mysql">
-                <i class="fa fa-chevron-left"></i> Mysql
+              <a href="/2017/07/26/sixteenth/" rel="next" title="16th Day">
+                <i class="fa fa-chevron-left"></i> 16th Day
               </a>
             
           </div>
@@ -366,10 +379,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/12/Second/" rel="prev" title="Second Day">
-                Second Day <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,7 +489,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git命令行"><span class="nav-number">1.</span> <span class="nav-text">Git命令行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反向代理"><span class="nav-number">1.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Centos7"><span class="nav-number">2.</span> <span class="nav-text">Centos7</span></a></li></ol></div>
             
 
           </div>
