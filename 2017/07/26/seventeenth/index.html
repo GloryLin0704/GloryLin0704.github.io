@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://GloryLin0704.github.io/2017/07/26/seventeenth/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="反向代理可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口） 域名是唯一的，所以不存在多个域名指向同一个ip地址 在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加： 12345678location /daily-css&amp;#123;        proxy_pass">
-<meta property="og:updated_time" content="2017-07-27T06:35:50.776Z">
+<meta property="og:updated_time" content="2017-07-27T06:39:59.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="17th Day">
 <meta name="twitter:description" content="反向代理可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口） 域名是唯一的，所以不存在多个域名指向同一个ip地址 在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加： 12345678location /daily-css&amp;#123;        proxy_pass">
@@ -330,11 +330,10 @@
 <p>当再次请求：原域名/daily-css，会跳到：代理域名/daily-css</p>
 <h1 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h1><blockquote>
 <p>服务器给定一个域名，相当于本地(localhost、127.0.0.1)，在/home/wwwroot 下可以看见与服务器ip绑定的域名，访问这些域名都会被DNS解析到绑定的ip去</p>
+<p> 在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面</p>
+<p>通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址</p>
 </blockquote>
-<pre><code>在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面
 
-通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址
-</code></pre>
       
     </div>
 
@@ -379,6 +378,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/28/18/" rel="prev" title="18th Day">
+                18th Day <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -450,7 +453,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

@@ -250,6 +250,135 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/28/18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/28/18/" itemprop="url">
+                  18th Day
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T09:35:22+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><blockquote>
+<p>它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串</p>
+<ul>
+<li>A记录：又称IP指向，用户可以在此设置子域名并指向到自己的目标主机地址上，从而实现通过域名找到服务器。<br>说明：·指向的目标主机地址类型只能使用IP地址</li>
+<li>C记录：通常称别名指向。可以为一个主机设置别名。比如设置test.mydomain.com，用来指向一个主机www.rddns.com那么以后就可以用test.mydomain.com来代替访问www.rddns.com了。<br>说明：CNAME的目标主机地址只能使用主机名，不能使用IP地址；·主机名前不能有任何其他前缀，如：<a href="http://等是不被允许的；·A记录优先于CNAME记录。即如果一个主机地址同时存在A记录和CNAME记录，则CNAME记录不生效。（C记录中的主机名可以由A记录得来，但请求的时候是用C记录绑定的域名请求，虽然与主机名请求的是同一个ip，但发送请求体不一样，缓解压力）" target="_blank" rel="external">http://等是不被允许的；·A记录优先于CNAME记录。即如果一个主机地址同时存在A记录和CNAME记录，则CNAME记录不生效。（C记录中的主机名可以由A记录得来，但请求的时候是用C记录绑定的域名请求，虽然与主机名请求的是同一个ip，但发送请求体不一样，缓解压力）</a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/28/18/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/26/seventeenth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,11 +465,10 @@
 <p>当再次请求：原域名/daily-css，会跳到：代理域名/daily-css</p>
 <h1 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h1><blockquote>
 <p>服务器给定一个域名，相当于本地(localhost、127.0.0.1)，在/home/wwwroot 下可以看见与服务器ip绑定的域名，访问这些域名都会被DNS解析到绑定的ip去</p>
+<p> 在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面</p>
+<p>通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址</p>
 </blockquote>
-<pre><code>在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面
 
-通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址
-</code></pre>
           
         
       
@@ -1140,7 +1268,7 @@ yum install screen      安装screen
 
       
         
-          <h1 id="Web常用"><a href="#Web常用" class="headerlink" title="Web常用"></a>Web常用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">req.body.xxx        <span class="comment">//获取页面body里的参数</span></div><div class="line">res.render(<span class="string">'xx'</span>)    <span class="comment">//将页面渲染到xx里</span></div><div class="line">req.query.xxx;      <span class="comment">//获取页面URL中带的参数</span></div><div class="line"></div><div class="line">res.render(<span class="string">'detail'</span>,&#123;</div><div class="line">        <span class="attr">blogs</span>: result[<span class="number">0</span>]</div><div class="line">      &#125;);           <span class="comment">//渲染页面并传入参数,通过在数据库中查询得到的result是数组，不用result[0]传入，将显示Object对象</span></div><div class="line"></div><div class="line"> &lt;%= blog.content %&gt;    <span class="comment">//在ejs中接收数据</span></div><div class="line"></div><div class="line">&lt;% blogs.forEach(<span class="function"><span class="params">blog</span> =&gt;</span> &#123; %&gt;</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/detail?blog_id=&lt;%= blog.id %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">blog.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </div><div class="line">    &lt;% &#125;) %&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>           <span class="comment">//这种情况是将result直接传入，由于blogs是数组，所以用遍历forEach</span></div><div class="line">                    <span class="comment">//其中a标签中设置了带blog的id跳转</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">insertData</span>:insertData,</div><div class="line">    <span class="attr">selectData</span>:selectData,</div><div class="line">    <span class="attr">selectDataContent</span>:selectDataContent</div><div class="line">    &#125;;              <span class="comment">//同一个JS中暴露多个函数，</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> selectData = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectData;</div><div class="line"><span class="keyword">var</span> selectDataContent = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectDataContent;       <span class="comment">//调用暴露的多个函数</span></div></pre></td></tr></table></figure>
+          <h1 id="Web常用"><a href="#Web常用" class="headerlink" title="Web常用"></a>Web常用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">req.body.xxx        <span class="comment">//获取页面body里的参数</span></div><div class="line">res.render(<span class="string">'xx'</span>)    <span class="comment">//将页面渲染到xx里</span></div><div class="line">req.query.xxx;      <span class="comment">//获取页面URL中带的参数</span></div><div class="line"></div><div class="line">res.render(<span class="string">'detail'</span>,&#123;</div><div class="line">        <span class="attr">blogs</span>: result[<span class="number">0</span>]</div><div class="line">      &#125;);           <span class="comment">//渲染页面并传入参数,通过在数据库中查询得到的result是数组，不用result[0]传入，将显示Object对象</span></div><div class="line"></div><div class="line"> &lt;%= blog.content %&gt;    <span class="comment">//在ejs中接收数据</span></div><div class="line"></div><div class="line">&lt;% blogs.forEach(<span class="function"><span class="params">blog</span> =&gt;</span> &#123; %&gt;</div><div class="line">      &lt;li&gt;</div><div class="line">        &lt;a href="/detail?blog_id=&lt;%= blog.id %&gt;"&gt;&lt;%= blog.title %&gt;&lt;/a&gt;  </div><div class="line">      &lt;/li&gt; </div><div class="line">    &lt;% &#125;) %&gt;</div><div class="line">    &lt;/ul&gt;           <span class="comment">//这种情况是将result直接传入，由于blogs是数组，所以用遍历forEach</span></div><div class="line">                    <span class="comment">//其中a标签中设置了带blog的id跳转</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">insertData</span>:insertData,</div><div class="line">    <span class="attr">selectData</span>:selectData,</div><div class="line">    <span class="attr">selectDataContent</span>:selectDataContent</div><div class="line">    &#125;;              <span class="comment">//同一个JS中暴露多个函数，</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> selectData = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectData;</div><div class="line"><span class="keyword">var</span> selectDataContent = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectDataContent;       <span class="comment">//调用暴露的多个函数</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/17/sunmmary/#more" rel="contents">
@@ -1442,138 +1570,6 @@ yum install screen      安装screen
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/12/third/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/12/third/" itemprop="url">
-                  Thrid Day
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-12T19:24:04+08:00">
-                2017-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><ul>
-<li>页面发送请求，经过中间件，到服务器；服务器再将响应传回页面</li>
-<li>中间件相当于黑箱操作，在箱子里经过一系列的函数操作，到达目的地，也可以在进行某个中间件操作的时候判断是否符合条件，可以调至下一个中间件或直接到终点</li>
-</ul>
-<h1 id="利用中间件构建一个简易Express"><a href="#利用中间件构建一个简易Express" class="headerlink" title="利用中间件构建一个简易Express"></a>利用中间件构建一个简易Express</h1><h1 id="路由的匹配"><a href="#路由的匹配" class="headerlink" title="路由的匹配"></a>路由的匹配</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isMatch = <span class="function">(<span class="params">reqUrl, targetPath</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> targets = targetPath.split(<span class="string">'/'</span>).filter(<span class="function"><span class="params">e</span> =&gt;</span> e != <span class="string">''</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> url.parse(reqUrl).pathname.split(<span class="string">'/'</span>).filter(<span class="function"><span class="params">e</span> =&gt;</span> e != <span class="string">''</span>).every(<span class="function">(<span class="params">subUrl, idx</span>) =&gt;</span> &#123;</div><div class="line">		<span class="keyword">if</span> (idx &gt;= targets.length)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> subUrl === targets[idx]</div><div class="line">		&#125;</div><div class="line">	&#125;); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>利用箭头函数传入参数，用split和filter把空格和‘/’去掉，然后请求路由和目标路由匹配</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/third/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1623,7 +1619,7 @@ yum install screen      安装screen
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
