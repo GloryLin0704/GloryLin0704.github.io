@@ -1,0 +1,676 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="mongoose是mongo衍生而来，比mongo更方便，我认为主要是体现在可以将表的信息封装起来  http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro  这是比较通俗易懂的教程，但被红莲鄙视了！所以此处写的是从红莲博客中关于mongoose代码领悟到一些皮毛  1npm install mongoose --save 在当前文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mongoose才是正确答案">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/09/19/mongoose/index.html">
+<meta property="og:site_name" content="GloryLin">
+<meta property="og:description" content="mongoose是mongo衍生而来，比mongo更方便，我认为主要是体现在可以将表的信息封装起来  http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro  这是比较通俗易懂的教程，但被红莲鄙视了！所以此处写的是从红莲博客中关于mongoose代码领悟到一些皮毛  1npm install mongoose --save 在当前文">
+<meta property="og:updated_time" content="2017-09-19T14:30:46.072Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mongoose才是正确答案">
+<meta name="twitter:description" content="mongoose是mongo衍生而来，比mongo更方便，我认为主要是体现在可以将表的信息封装起来  http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro  这是比较通俗易懂的教程，但被红莲鄙视了！所以此处写的是从红莲博客中关于mongoose代码领悟到一些皮毛  1npm install mongoose --save 在当前文">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/09/19/mongoose/"/>
+
+
+
+
+
+  <title> Mongoose才是正确答案 | GloryLin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GloryLin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/09/19/mongoose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mongoose才是正确答案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-19T21:25:36+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>mongoose是mongo衍生而来，比mongo更方便，我认为主要是体现在可以将表的信息封装起来</p>
+</blockquote>
+<p><a href="http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro" target="_blank" rel="external">http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro</a></p>
+<ul>
+<li>这是比较通俗易懂的教程，但被红莲鄙视了！所以此处写的是从红莲博客中关于mongoose代码领悟到一些皮毛</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongoose --save</div></pre></td></tr></table></figure>
+<p>在当前文件夹中安装依赖</p>
+<ul>
+<li>由于是用到了封装，所以需要创建一个文件夹，db，这个文件夹的作用是将和数据库有关的操作都封装好，在以后的程序中就可以直接调用了。</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>连接到mongo</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">db-config.js</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">mongoUri</span>:<span class="string">'mongodb://127.0.0.1/NW'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">connect.js</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</div><div class="line"><span class="keyword">var</span> &#123; mongoUri &#125; = <span class="built_in">require</span>(<span class="string">'./db-config'</span>);</div><div class="line"></div><div class="line">mongoose.connect(mongoUri);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = mongoose;</div></pre></td></tr></table></figure>
+<ul>
+<li>此处特别需要注意的是在connect.js中加载db-config.js内容的时候必须是要用{ } ，红莲说这是解构还是组构什么的，我理解为这是类似于对象概念。</li>
+</ul>
+<blockquote>
+<p>封装表，生成model，mongoose的精髓！</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">schemas.js</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'./connect'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> schemas = &#123;&#125;;</div><div class="line"></div><div class="line">schemas.user = mongoose.Schema(&#123;</div><div class="line">    <span class="attr">name</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">email</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">default</span>: <span class="string">'email no set'</span></div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">creat_at</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">        <span class="attr">default</span>: <span class="built_in">Date</span>.now</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">schemas.detail = mongoose.Schema(&#123;</div><div class="line">    <span class="attr">age</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">        <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">add</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">phone</span>: &#123;</div><div class="line">        <span class="attr">type</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">reuqired</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = schemas;</div></pre></td></tr></table></figure>
+<ul>
+<li>此处是调用了mongoose里的Schema生成了两张表的模型，里面是每张表的数据，required: true表示这个数据不可或缺，如果缺了在运行的时候就会报错；default表示如果该项不填会被默认使用default里的东西；</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">model.js</div><div class="line"><span class="keyword">var</span> schemas = <span class="built_in">require</span>(<span class="string">'./schemas'</span>);</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'./connect'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> schemasNames = <span class="built_in">Object</span>.keys(schemas);</div><div class="line"></div><div class="line"><span class="keyword">var</span> models = schemasNames.reduce(<span class="function">(<span class="params">acc, name</span>) =&gt;</span> &#123;</div><div class="line">    acc[name + <span class="string">'Model'</span>] = mongoose.model(</div><div class="line">        name,</div><div class="line">        schemas[name]</div><div class="line">    );</div><div class="line">    <span class="keyword">return</span> acc;</div><div class="line">&#125;, &#123;&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = models;</div></pre></td></tr></table></figure>
+<ul>
+<li>mongoose里的另一精华，schemas写的模型通过这里就生成了对应的表的Model，但红莲写法有点跳，目前还是一知半解，最后生成了”xxxModel”</li>
+</ul>
+<blockquote>
+<p>入口<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">index.js</div><div class="line"><span class="keyword">var</span> models = <span class="built_in">require</span>(<span class="string">'./models'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = models;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>因为封装在一个文件夹里，当其他地方调用的时候直接调用文件夹，编译器会默认调用到index.js</li>
+</ul>
+<blockquote>
+<p>调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">insert.js</div><div class="line"><span class="keyword">var</span> &#123;userModel&#125; = <span class="built_in">require</span>(<span class="string">'./db'</span>);</div><div class="line"><span class="keyword">var</span> &#123;detailModel&#125; = <span class="built_in">require</span>(<span class="string">'./db'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> data = <span class="keyword">new</span> userModel(&#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'Lin'</span>,</div><div class="line">    <span class="attr">email</span>: <span class="string">'1019022357@qq.com'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> detail = <span class="keyword">new</span> detailModel(&#123;</div><div class="line">    <span class="attr">age</span>: <span class="number">19</span>,</div><div class="line">    <span class="attr">add</span>: <span class="string">'广东水上乐园'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">data.save().then(<span class="function"><span class="params">suc</span> =&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'success'</span>);</div><div class="line">&#125;, err =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'fail'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">detail.save().then(<span class="function"><span class="params">suc</span> =&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'success'</span>);</div><div class="line">&#125;, err =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'fail'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>切记在引用的时候要带{ }，不带是真的会吃屎的！！then是ES6的写法，和回调等价，增删改查写法类似</li>
+</ul>
+<blockquote>
+<p>我觉得mongoose和mongo的最大区别是mongoose把数据库那一堆东西都封装了起来，调用的时候可以更快更方便！</p>
+</blockquote>
+<p>缺少实践，所以只领悟了些皮毛，以下是红莲博客</p>
+<p><a href="https://eczn.coding.me/blogs/15e6b589cb8/" target="_blank" rel="external">https://eczn.coding.me/blogs/15e6b589cb8/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/12/summary/" rel="next" title="Summer Summary">
+                <i class="fa fa-chevron-left"></i> Summer Summary
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="RY Lin" />
+          <p class="site-author-name" itemprop="name">RY Lin</p>
+           
+              <p class="site-description motion-element" itemprop="description">Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RY Lin</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
