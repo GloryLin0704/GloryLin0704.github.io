@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://glorylin0704.github.io/2017/09/28/img/redis4.png">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/09/28/img/redis5.png">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/09/28/img/redis6.png">
-<meta property="og:updated_time" content="2017-09-29T16:15:53.421Z">
+<meta property="og:updated_time" content="2017-09-29T16:18:41.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据存储">
 <meta name="twitter:description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储   * 此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修">
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -291,7 +291,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T20:20:21+08:00">
                 2017-09-28
@@ -339,7 +339,7 @@
 </blockquote>
 <h2 id="此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈"><a href="#此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈" class="headerlink" title="* 此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈"></a>* 此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈</h2><h3 id="内存存储"><a href="#内存存储" class="headerlink" title="内存存储"></a>内存存储</h3><blockquote>
 <p>内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了；</p>
-<h3 id="基于文件的存储"><a href="#基于文件的存储" class="headerlink" title="基于文件的存储"></a>基于文件的存储</h3><h2 id="用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"><a href="#用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；" class="headerlink" title="用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"></a>用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；</h2><p>&lt;– more –&gt;</p>
+<h3 id="基于文件的存储"><a href="#基于文件的存储" class="headerlink" title="基于文件的存储"></a>基于文件的存储</h3><h2 id="用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"><a href="#用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；" class="headerlink" title="用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"></a>用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；</h2><a id="more"></a>
 <h3 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h3><h2 id="关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"><a href="#关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；" class="headerlink" title="关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"></a>关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；</h2><h3 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h3><p>对于实时分析或消息传递，NoSQL数据库可能是更好的选择，而且NoSQL数据库通常不用预先设置schemas，对于那种要把数据存储在层次结构中，但层次结构却会发生变化的程序而言，是很有帮助的，其中代表为Mongo和Redis；</p>
 </blockquote>
 <h4 id="现在重点来说Redis"><a href="#现在重点来说Redis" class="headerlink" title="* 现在重点来说Redis"></a>* 现在重点来说Redis</h4><blockquote>
@@ -476,10 +476,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -500,7 +500,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">22</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -570,7 +570,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
