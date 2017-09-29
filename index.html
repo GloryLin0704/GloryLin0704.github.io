@@ -250,6 +250,300 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/09/28/数据存储/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/28/数据存储/" itemprop="url">
+                  数据存储
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T20:20:21+08:00">
+                2017-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="../img/123.jpg" alt="Alt text"></p>
+<h2 id="Node中的数据存储主要有"><a href="#Node中的数据存储主要有" class="headerlink" title="Node中的数据存储主要有"></a>Node中的数据存储主要有</h2><blockquote>
+<ul>
+<li>内存和文件系统数据存储</li>
+<li>传统的关系型数据库存储</li>
+<li>非关系型数据库存储</li>
+</ul>
+</blockquote>
+<h2 id="此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈"><a href="#此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈" class="headerlink" title="* 此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈"></a>* 此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈</h2><h3 id="内存存储"><a href="#内存存储" class="headerlink" title="内存存储"></a>内存存储</h3><blockquote>
+<p>内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了；</p>
+<h3 id="基于文件的存储"><a href="#基于文件的存储" class="headerlink" title="基于文件的存储"></a>基于文件的存储</h3><h2 id="用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"><a href="#用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；" class="headerlink" title="用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"></a>用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；</h2><p>&lt;– more –&gt;</p>
+<h3 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h3><h2 id="关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"><a href="#关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；" class="headerlink" title="关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"></a>关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；</h2><h3 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h3><p>对于实时分析或消息传递，NoSQL数据库可能是更好的选择，而且NoSQL数据库通常不用预先设置schemas，对于那种要把数据存储在层次结构中，但层次结构却会发生变化的程序而言，是很有帮助的，其中代表为Mongo和Redis；</p>
+</blockquote>
+<h4 id="现在重点来说Redis"><a href="#现在重点来说Redis" class="headerlink" title="* 现在重点来说Redis"></a>* 现在重点来说Redis</h4><blockquote>
+<p> Redis把数据存在RAM中，并在磁盘中记录数据的变化，虽然存储空间有限，但数据操作非常快，假如Redis服务器崩了，RAM中的内容丢失，可以用磁盘中的日志恢复数据；Redis支持常用的数据结构：哈希表、链表、键值对（作为简单的变量使用）</p>
+</blockquote>
+<ul>
+<li>安装（Windows）</li>
+</ul>
+<p><a href="https://github.com/MicrosoftArchive/redis/releases" target="_blank" rel="external">https://github.com/MicrosoftArchive/redis/releases</a></p>
+<p><img src="../img/redis1.png" alt="Alt text"></p>
+<blockquote>
+<p>解压 =&gt; 新建一个redis文件夹 =&gt; 将解压后的64bit文件内容全移至redis中 =&gt; 运行终端<br>=&gt; 将 redis-server.exe 拖至终端运行  (如下)</p>
+</blockquote>
+<p><img src="../img/redis2.png" alt="Alt text"></p>
+<h2 id="gt-如此，Redis就已经在本地上运行起来了"><a href="#gt-如此，Redis就已经在本地上运行起来了" class="headerlink" title="&gt; 如此，Redis就已经在本地上运行起来了"></a>&gt; 如此，Redis就已经在本地上运行起来了</h2><ul>
+<li>写入数据</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'127.0.0.1'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"> client.set(<span class="string">'color'</span>, <span class="string">'red'</span>, redis.print);</div><div class="line"> client.get(<span class="string">'color'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</div><div class="line">     <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">'Got'</span> + data);</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>运行以上代码，就在本地6379端口连接Redis，并创建一个简单的键值对</p>
+<p>新开了一个终端，将redis中的 redis-cli.exe 拖进终端运行，可查看当前Redis中的数据;切记保持上一个终端，不可关闭！</p>
+</blockquote>
+<p><img src="../img/redis3.png" alt="Alt text"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"> client.hmset(<span class="string">'camp'</span>, &#123;</div><div class="line">     <span class="string">'shelter'</span>: <span class="string">'2-person tent'</span>,</div><div class="line">     <span class="string">'cooking'</span>: <span class="string">'campstove'</span></div><div class="line"> &#125;, redis.print);</div><div class="line"></div><div class="line"> client.hget(<span class="string">'camp'</span>, <span class="string">'cooking'</span>, (err, value) =&gt; &#123;</div><div class="line">     <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">'Will be cooking with : '</span> + value);</div><div class="line"> &#125;);</div><div class="line"></div><div class="line"> client.hkeys(<span class="string">'camp'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, keys</span>)</span>&#123;</div><div class="line">     <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">     keys.forEach(<span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">         <span class="built_in">console</span>.log(<span class="string">' '</span> + key);</div><div class="line">     &#125;)</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>运行以上代码，创建一个哈希表，存入数据，hget 取的是对应键名的数据，hkeys 取的是当前Redis中该哈希表存在的键</p>
+</blockquote>
+<p><img src="../img/redis4.png" alt="Alt text"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">client.lpush(<span class="string">'weather'</span>, <span class="string">'Today is sunny.'</span>, redis.print);</div><div class="line">client.lpush(<span class="string">'weather'</span>, <span class="string">'Tomorrow will be sunny too.'</span>, redis.print);</div><div class="line">client.lrange(<span class="string">'weather'</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err ,items</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">    items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">' '</span> + item);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>运行以上代码，会创建一个列表，列表按顺序将数据插入，查询列表的时候需要带参数，第一个参数为从哪条数据开始取，第二个元素是取到第几条数据（0代表从第一条数据开始，-1代表取到最后一个元素）</p>
+</blockquote>
+<p><img src="../img/redis5.png" alt="Alt text"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'red'</span>, redis.print);</div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'blue'</span>, redis.print);</div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'red'</span>, redis.print);</div><div class="line">client.smembers(<span class="string">'color'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, members</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">    <span class="built_in">console</span>.log(members);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>运行以上代码，会创建一个集合，并将数据写入集合里，但集合中的元素是唯一的，将两个相同的值写入，第二次的写入将会被忽略</p>
+</blockquote>
+<p><img src="../img/redis6.png" alt="Alt text"></p>
+<h2 id="gt-以上便是Redis基础知识！"><a href="#gt-以上便是Redis基础知识！" class="headerlink" title="&gt; 以上便是Redis基础知识！"></a>&gt; 以上便是Redis基础知识！</h2><h4 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h4><blockquote>
+<ul>
+<li>一个程序中可使用多种存储机制，比如一个内容管理系统，可能会用文件存储Web程序的配置选项，用MongoDB存储文章，用Redis存储用户给出的文章评级</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/09/24/Promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/24/Promise/" itemprop="url">
+                  Promise
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-24T21:49:09+08:00">
+                2017-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/09/19/mongoose/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1292,288 +1586,11 @@ yum install screen      安装screen
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/21/twelve/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/21/twelve/" itemprop="url">
-                  12th Day
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:08:49+08:00">
-                2017-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h1><blockquote>
-<ul>
-<li>将代码的路由都加上api，统一api,该api下都是处理数据的路由</li>
-<li>由GET发送的请求都会将该form的内容作为参数加到url中</li>
-<li>在数据库找到的结果都会以对象的形式返回到一个数组里，所以，对数据进行指定的搜索，想要输出就传入result[0].xxx</li>
-<li>由于在查询数据库的时候如果没有这个属性的名字，返回的是undefined，无法输入，所以这时候需要过滤掉，Object.keys(result).length === 0，统计result对象的个数，如果是0就是undefined</li>
-</ul>
-<hr>
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:3000/api/list"</span> <span class="attr">method</span>=<span class="string">"GET"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"page"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"page"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在page框中输入的页数会作为参数添加到<a href="http://localhost:3000/api/list中，如：http://localhost:3000/api/list？page=1" target="_blank" rel="external">http://localhost:3000/api/list中，如：http://localhost:3000/api/list？page=1</a></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/21/twelve/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/21/eleven/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/21/eleven/" itemprop="url">
-                  11th Day
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T09:15:22+08:00">
-                2017-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="异步的原理："><a href="#异步的原理：" class="headerlink" title="异步的原理："></a>异步的原理：</h1><blockquote>
-<ul>
-<li>在每次执行函数的时候，给该函数传入一个callback（回调函数），在这个函数执行完了之后会执行，但不知道具体的执行时间，这是不可测的。<ul>
-<li>异步是将回调函数加到队列里，按函数执行顺序加入，等编译器觉得时候合适了就调用，所以回调的执行是有顺序的，当前函数没执行完的时候是不会执行回调函数的</li>
-<li>同步的缺点是当前函数不执行完是不会执行下一个函数，如果设置了一个死循环，那这个网页就会卡死，接下来的所有操作都没有用</li>
-<li>不可以调用回调函数里返回的值，因为找不到这个值在哪，什么时候会形成</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><blockquote>
-<ul>
-<li>JSON是JS原生的，所以使用十分方便</li>
-<li>后台将数据访问接受后，通过res.json( {code:xxx, data:xxx, msg:xxx} )返回到前端页面，让前端处理</li>
-</ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">name</span>:<span class="string">"123"</span>,<span class="attr">age</span>:<span class="number">12</span>&#125;);</div><div class="line">=&gt; <span class="string">'&#123;"name":"123","age":12&#125;'</span></div><div class="line"><span class="comment">//将对象解析为字符串</span></div><div class="line"><span class="built_in">JSON</span>.parse(a);</div><div class="line">=&gt; <span class="built_in">Object</span> &#123;<span class="attr">name</span>: <span class="string">"123"</span>, <span class="attr">age</span>: <span class="number">12</span>&#125;</div><div class="line"><span class="comment">//将字符串转化为对象，把字符串在JSON.parse中调用必须严格按照转化程字符串的格式输入：JSON.parse('&#123;"name":"123","age":12&#125;')</span></div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>对后台而言，JSON中使用的是将数据返回给前端:res.json( { } )，将前端发来的数据解析：JSON.parse( )、JSON.stringify( )</li>
-</ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1618,7 +1635,7 @@ yum install screen      安装screen
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
