@@ -615,7 +615,7 @@
         
           <h1 id="事件驱动程序"><a href="#事件驱动程序" class="headerlink" title="事件驱动程序"></a>事件驱动程序</h1><blockquote>
 <p>Node.js使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="keyword">var</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line">eventEmitter.on(<span class="string">'xxx'</span>,xxx);</div><div class="line">eventEmitter.emit(<span class="string">'xxx'</span>);</div><div class="line">eventEmitter.removeListener(<span class="string">'xxx'</span>, xxx);</div></pre></td></tr></table></figure></p>
-<p>加载events模块，实例化EventEmitter类<br>用.on绑定事件，第一个参数是事件的名称，第二个参数是触发后执行的函数（监听器）,该函数可以是匿名函数<br>用.emit触发事件，参数是事件的名称(监听器)<br>用.removeListener来移除某个事件<br>
+<p>加载events模块，实例化EventEmitter类<br>用.on绑定事件，第一个参数是事件的名称，第二个参数是触发后执行的函数（监听器）,该函数可以是匿名函数<br>用.emit触发事件，参数是事件的名称(监听器)<br>用.removeListener来移除某个事件<br></p></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/18/nine/#more" rel="contents">
