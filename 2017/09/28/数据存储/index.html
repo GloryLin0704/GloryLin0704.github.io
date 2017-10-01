@@ -93,18 +93,18 @@
 <meta property="og:url" content="https://GloryLin0704.github.io/2017/09/28/数据存储/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/123.jpg">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/redis1.png">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img//redis2.png">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/redis3.png">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/redis4.png">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/redis5.png">
-<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/img/redis6.png">
-<meta property="og:updated_time" content="2017-10-01T09:46:58.847Z">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/123.jpg">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis1.png">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis2.png">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis3.png">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis4.png">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis5.png">
+<meta property="og:image" content="https://glorylin0704.github.io/2017/09/public/images/redis6.png">
+<meta property="og:updated_time" content="2017-10-01T10:25:47.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据存储">
 <meta name="twitter:description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同">
-<meta name="twitter:image" content="https://glorylin0704.github.io/2017/09/public/img/123.jpg">
+<meta name="twitter:image" content="https://glorylin0704.github.io/2017/09/public/images/123.jpg">
 
 
 
@@ -339,7 +339,7 @@
       
 
       
-        <p><img src="../../public/img/123.jpg" alt="Alt text"></p>
+        <p><img src="../../public/images/123.jpg" alt="Alt text"></p>
 <h2 id="Node中的数据存储主要有"><a href="#Node中的数据存储主要有" class="headerlink" title="Node中的数据存储主要有"></a>Node中的数据存储主要有</h2><blockquote>
 <ul>
 <li>内存和文件系统数据存储</li>
@@ -363,11 +363,11 @@
 <li>安装（Windows）</li>
 </ul>
 <p><a href="https://github.com/MicrosoftArchive/redis/releases" target="_blank" rel="external">https://github.com/MicrosoftArchive/redis/releases</a></p>
-<p><img src="../../public/img/redis1.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis1.png" alt="Alt text"></p>
 <blockquote>
 <p>解压 =&gt; 新建一个redis文件夹 =&gt; 将解压后的64bit文件内容全移至redis中 =&gt; 运行终端<br>=&gt; 将 redis-server.exe 拖至终端运行  (如下)</p>
 </blockquote>
-<p><img src="../../public/img//redis2.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis2.png" alt="Alt text"></p>
 <blockquote>
 <p>如此，Redis就已经在本地上运行起来了</p>
 </blockquote>
@@ -380,22 +380,22 @@
 <p>运行以上代码，就在本地6379端口连接Redis，并创建一个简单的键值对</p>
 <p>新开了一个终端，将redis中的 redis-cli.exe 拖进终端运行，可查看当前Redis中的数据;切记保持上一个终端，不可关闭！</p>
 </blockquote>
-<p><img src="../../public/img/redis3.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis3.png" alt="Alt text"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"> client.hmset(<span class="string">'camp'</span>, &#123;</div><div class="line">     <span class="string">'shelter'</span>: <span class="string">'2-person tent'</span>,</div><div class="line">     <span class="string">'cooking'</span>: <span class="string">'campstove'</span></div><div class="line"> &#125;, redis.print);</div><div class="line"></div><div class="line"> client.hget(<span class="string">'camp'</span>, <span class="string">'cooking'</span>, (err, value) =&gt; &#123;</div><div class="line">     <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">'Will be cooking with : '</span> + value);</div><div class="line"> &#125;);</div><div class="line"></div><div class="line"> client.hkeys(<span class="string">'camp'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, keys</span>)</span>&#123;</div><div class="line">     <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">     keys.forEach(<span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">         <span class="built_in">console</span>.log(<span class="string">' '</span> + key);</div><div class="line">     &#125;)</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>运行以上代码，创建一个哈希表，存入数据，hget 取的是对应键名的数据，hkeys 取的是当前Redis中该哈希表存在的键</p>
 </blockquote>
-<p><img src="../../public/img/redis4.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis4.png" alt="Alt text"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">client.lpush(<span class="string">'weather'</span>, <span class="string">'Today is sunny.'</span>, redis.print);</div><div class="line">client.lpush(<span class="string">'weather'</span>, <span class="string">'Tomorrow will be sunny too.'</span>, redis.print);</div><div class="line">client.lrange(<span class="string">'weather'</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err ,items</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">    items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">' '</span> + item);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>运行以上代码，会创建一个列表，列表按顺序将数据插入，查询列表的时候需要带参数，第一个参数为从哪条数据开始取，第二个元素是取到第几条数据（0代表从第一条数据开始，-1代表取到最后一个元素）</p>
 </blockquote>
-<p><img src="../../public/img/redis5.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis5.png" alt="Alt text"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</div><div class="line"><span class="keyword">var</span> client = redis.createClient(<span class="number">6379</span>, <span class="string">'localhost'</span>);</div><div class="line"></div><div class="line">client.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Error'</span> + err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'red'</span>, redis.print);</div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'blue'</span>, redis.print);</div><div class="line">client.sadd(<span class="string">'color'</span>, <span class="string">'red'</span>, redis.print);</div><div class="line">client.smembers(<span class="string">'color'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, members</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">    <span class="built_in">console</span>.log(members);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>运行以上代码，会创建一个集合，并将数据写入集合里，但集合中的元素是唯一的，将两个相同的值写入，第二次的写入将会被忽略</p>
 </blockquote>
-<p><img src="../../public/img/redis6.png" alt="Alt text"></p>
+<p><img src="../../public/images/redis6.png" alt="Alt text"></p>
 <h2 id="以上便是Redis基础知识！"><a href="#以上便是Redis基础知识！" class="headerlink" title=" 以上便是Redis基础知识！"></a> 以上便是Redis基础知识！</h2><h4 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h4><blockquote>
 <ul>
 <li>一个程序中可使用多种存储机制，比如一个内容管理系统，可能会用文件存储Web程序的配置选项，用MongoDB存储文章，用Redis存储用户给出的文章评级</li>
