@@ -87,12 +87,12 @@
 
 
 
-<meta name="description" content="title: 数据存储date: 2017-09-28 20:20:21 tags: Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文">
+<meta name="description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据存储">
 <meta property="og:url" content="https://GloryLin0704.github.io/2017/10/01/数据存储/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="title: 数据存储date: 2017-09-28 20:20:21 tags: Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文">
+<meta property="og:description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/123.jpg">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/redis1.png">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/redis2.png">
@@ -100,10 +100,10 @@
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/redis4.png">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/redis5.png">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/redis6.png">
-<meta property="og:updated_time" content="2017-10-01T10:46:30.639Z">
+<meta property="og:updated_time" content="2017-10-01T10:48:52.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据存储">
-<meta name="twitter:description" content="title: 数据存储date: 2017-09-28 20:20:21 tags: Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文">
+<meta name="twitter:description" content="Node中的数据存储主要有  内存和文件系统数据存储 传统的关系型数据库存储 非关系型数据库存储    此次主要写的是非关系型数据库存储中的Redis，其余数据存储方式略谈   内存存储 内存存储的理想用途是存放少量经常使用的数据，这种数据的读取和写入都很快，但服务器和程序重启后数据就丢了； 基于文件的存储用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同">
 <meta name="twitter:image" content="https://glorylin0704.github.io/2017/10/01/数据存储/123.jpg">
 
 
@@ -339,9 +339,7 @@
       
 
       
-        <hr>
-<p>title: 数据存储<br>date: 2017-09-28 20:20:21</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p><img src="/2017/10/01/数据存储/123.jpg" alt="数据存储"></p>
+        <p><img src="/2017/10/01/数据存储/123.jpg" alt="数据存储"></p>
 <h2 id="Node中的数据存储主要有"><a href="#Node中的数据存储主要有" class="headerlink" title="Node中的数据存储主要有"></a>Node中的数据存储主要有</h2><blockquote>
 <ul>
 <li>内存和文件系统数据存储</li>
@@ -558,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node中的数据存储主要有"><span class="nav-number">2.</span> <span class="nav-text">Node中的数据存储主要有</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存存储"><span class="nav-number">2.1.</span> <span class="nav-text">内存存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于文件的存储"><span class="nav-number">2.2.</span> <span class="nav-text">基于文件的存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"><span class="nav-number">3.</span> <span class="nav-text">用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系型数据库"><span class="nav-number">3.1.</span> <span class="nav-text">关系型数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"><span class="nav-number">4.</span> <span class="nav-text">关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">4.1.</span> <span class="nav-text">非关系型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现在重点来说Redis"><span class="nav-number">4.1.1.</span> <span class="nav-text">* 现在重点来说Redis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上便是Redis基础知识！"><span class="nav-number">5.</span> <span class="nav-text"> 以上便是Redis基础知识！</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后话"><span class="nav-number">5.0.1.</span> <span class="nav-text">后话</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node中的数据存储主要有"><span class="nav-number">1.</span> <span class="nav-text">Node中的数据存储主要有</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存存储"><span class="nav-number">1.1.</span> <span class="nav-text">内存存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于文件的存储"><span class="nav-number">1.2.</span> <span class="nav-text">基于文件的存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用文件系统-fs-存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；"><span class="nav-number">2.</span> <span class="nav-text">用文件系统 fs 存放数据，存储在本地或服务器上，重启后数据还在；问题是：如果有两个用户同时修改了同一份文件，保存一个版本会覆盖另一个版本，导致其中一个用户数据丢失，所以对于多用户程序而言，不推荐使用基于文件的存储；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系型数据库"><span class="nav-number">2.1.</span> <span class="nav-text">关系型数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；"><span class="nav-number">3.</span> <span class="nav-text">关系型数据库管理系统（RDBMS）可以存储复杂的信息，并且查询起来很容易，历来被用在相对高端复杂的程序上，主要用的是MySQL，MySQL设置简单，且有很大的用户群；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">3.1.</span> <span class="nav-text">非关系型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现在重点来说Redis"><span class="nav-number">3.1.1.</span> <span class="nav-text">* 现在重点来说Redis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上便是Redis基础知识！"><span class="nav-number">4.</span> <span class="nav-text"> 以上便是Redis基础知识！</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后话"><span class="nav-number">4.0.1.</span> <span class="nav-text">后话</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
