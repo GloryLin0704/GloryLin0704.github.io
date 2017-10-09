@@ -260,6 +260,139 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/Mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/10/Mysql/" itemprop="url">
+                  Mysql
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T20:09:45+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/10/Mysql/" class="leancloud_visitors" data-flag-title="Mysql">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>数据的遍历</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">private static void listBook2() throws Exception &#123;</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        System.out.println(&quot;图书编号：&quot; + id + &quot; 图书名称：&quot; + bookName + &quot; 图书价格：&quot;</div><div class="line">                + price + &quot; 图书作者：&quot; + author + &quot; 图书类别id：&quot; + bookTypeId);</div><div class="line">        System.out</div><div class="line">                .println(&quot;=============================================================&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;//第一种方法</div><div class="line"></div><div class="line">private static List&lt;Book&gt; listBook3()throws Exception&#123;//List是一个泛型，返回一个对象</div><div class="line">    List&lt;Book&gt; bookList=new ArrayList&lt;Book&gt;(); //相当于建立了一个数组</div><div class="line">    Connection con = dbUtil.getCon(); // 获取连接</div><div class="line">    String sql = &quot;select * from t_book&quot;;</div><div class="line">    PreparedStatement pstmt = con.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery(); // 返回结果集ResultSet</div><div class="line">    while (rs.next()) &#123;</div><div class="line">        int id = rs.getInt(&quot;id&quot;); // 获取第一个列的值 编号id</div><div class="line">        String bookName = rs.getString(&quot;bookName&quot;); // 获取第二个列的值 图书名称 bookName</div><div class="line">        float price = rs.getFloat(&quot;price&quot;); // 获取第三列的值 图书价格 price</div><div class="line">        String author = rs.getString(&quot;author&quot;); // 获取第四列的值 图书作者 author</div><div class="line">        int bookTypeId = rs.getInt(&quot;bookTypeId&quot;); // 获取第五列的值 图书类别id</div><div class="line">        Book book=new Book(id, bookName, price, author, bookTypeId);//创建一组数据</div><div class="line">        bookList.add(book);//相当于往数组里传值</div><div class="line">    &#125;</div><div class="line">    return bookList;</div><div class="line">&#125;//第二种方法</div><div class="line"></div><div class="line">public static void main(String[] args) throws Exception &#123;</div><div class="line">    listBook2();//第一种方法的调用</div><div class="line">    List&lt;Book&gt; bookList=listBook3();</div><div class="line">    for (Book book : bookList) &#123;</div><div class="line">        System.out.println(book);//此处需要在Book类中重写toString方法，因为传入输出的是对象</div><div class="line">    &#125;//第二种方法的调用</div><div class="line">&#125;</div><div class="line"></div><div class="line">public String toString() &#123;</div><div class="line">    return &quot;[&quot;+this.id+&quot;,&quot;+this.bookName+&quot;,&quot;+this.price+&quot;,&quot;+this.author+&quot;,&quot;+this.bookTypeId+&quot;]&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -572,7 +705,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -580,6 +713,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
           
 
         </nav>

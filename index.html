@@ -260,6 +260,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/10/09/七牛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/09/七牛/" itemprop="url">
+                  七牛——文件上传与网络资源抓取
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T23:05:10+08:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/09/七牛/" class="leancloud_visitors" data-flag-title="七牛——文件上传与网络资源抓取">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="七牛"><a href="#七牛" class="headerlink" title="七牛"></a>七牛</h2><blockquote>
+<p>七牛是一个很神奇的东西，每个月10G的流量，方便快捷的上传、获取资源，不论在什么情景下，处理用户上传的较小的文件，七牛不好缓解了服务器的压力，更方便快捷地完成这些操作！</p>
+</blockquote>
+<ul>
+<li><a href="https://developer.qiniu.com/" target="_blank" rel="external">https://developer.qiniu.com/</a></li>
+</ul>
+<blockquote>
+<p>七牛开发者中心有更完整详细的文档介绍，接下来写的是在Web上处理客户端的文件上传和讲网络资源抓取到七牛空间</p>
+</blockquote>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><blockquote>
+<p>上传机制：客户端对文件进行上传，先向服务器发送请求，服务器返回凭证给客户端，客户端用凭证找到对应的七牛空间并把文件存在既定的位置，然后七牛返回处理结果给客户端。</p>
+</blockquote>
+<p><img src="/2017/10/09/七牛/123.jpg" alt="七牛"></p>
+<blockquote>
+<p>所以在文件上传中最重要的 <code>accessKey</code> 和 <code>secretKey</code> ,它们是生成上传token的关键，七牛的每个用户都会有唯一的 <code>accessKey</code> 和 <code>secretKey</code>。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// token.js</span></div><div class="line"><span class="keyword">const</span> qiniu = <span class="built_in">require</span>(<span class="string">'qiniu'</span>)</div><div class="line">    , ak = <span class="string">' '</span></div><div class="line">    , sk = <span class="string">' '</span>    </div><div class="line">    , mac = <span class="keyword">new</span> qiniu.auth.digest.Mac(ak, sk);</div><div class="line"></div><div class="line"><span class="keyword">let</span> token = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> options = &#123;</div><div class="line">        <span class="attr">scope</span>: <span class="string">'bucket'</span>,</div><div class="line">       <span class="comment">// expires: </span></div><div class="line">    &#125;   </div><div class="line"></div><div class="line">    <span class="keyword">let</span> putPoily = <span class="keyword">new</span> qiniu.rs.PutPolicy(options);</div><div class="line">    <span class="keyword">let</span> token = putPoily.uploadToken(mac);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> token;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = token;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>token.js</code> 封装了凭证的获取，<code>bucket</code> 是七牛中存储的库，<code>expires</code> 是设置<code>token</code>的过期时间，默认为3600ms（一小时）。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// upload.js</span></div><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line">    , router = express.Router()</div><div class="line">    , qiniu = <span class="built_in">require</span>(<span class="string">'qiniu'</span>)</div><div class="line">    , token = <span class="built_in">require</span>(<span class="string">'./token'</span>)</div><div class="line">    , uuid = <span class="built_in">require</span>(<span class="string">'uuid/v4'</span>)</div><div class="line"></div><div class="line">router.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</div><div class="line"></div><div class="line">    <span class="keyword">let</span> file_key = <span class="string">'xxx'</span> + uuid(); </div><div class="line"></div><div class="line">    res.render(<span class="string">'index'</span>, &#123;</div><div class="line">        <span class="attr">token</span>: token(),</div><div class="line">        <span class="attr">key</span>: file_key </div><div class="line">    &#125;)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">'/token'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.json(&#123;</div><div class="line">        <span class="attr">code</span>: <span class="number">200</span>, </div><div class="line">        <span class="attr">msg</span>: <span class="string">'success'</span></div><div class="line">    &#125;); </div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"form-style"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"http://up-z2.qiniu.com"</span>  <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"key"</span> <span class="attr">value</span>=<span class="string">"&lt;%= key %&gt;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"token"</span> <span class="attr">value</span>=<span class="string">"&lt;%= token %&gt;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">type</span>=<span class="string">"file"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>upload.js</code> 中的 <code>key</code> 是指在 <code>bucket</code> 中文件的命名，并用了 <code>Experss</code> 框架将数据渲染给 <code>ejs</code> 中的表单，表单中的 <code>key</code>、<code>token</code>、<code>file</code>是必需的元素，这是最简单地构成上传的表单，其余更多的元素在开发者文档中慢慢摸索，如此即可将文件上传到七牛指定的 <code>bucket</code> 中以既定的 <code>key</code> 存储。</p>
+</blockquote>
+<h2 id="网络资源抓取"><a href="#网络资源抓取" class="headerlink" title="网络资源抓取"></a>网络资源抓取</h2><blockquote>
+<p>七牛自身提供了途径去换取网络资源并将网络资源存储在七牛空间，这样就可以当资源下载慢的时候，交给七牛去下载并存储，缓解服务器压力。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line">    , router = express.Router()</div><div class="line">    , uuid = <span class="built_in">require</span>(<span class="string">'uuid/v4'</span>)</div><div class="line">    , qiniu = <span class="built_in">require</span>(<span class="string">'qiniu'</span>)</div><div class="line">    , ak = <span class="string">' '</span></div><div class="line">    , sk = <span class="string">' '</span></div><div class="line">    , mac = <span class="keyword">new</span> qiniu.auth.digest.Mac(ak, sk)</div><div class="line">    , config = <span class="keyword">new</span> qiniu.conf.Config();</div><div class="line"></div><div class="line">config.zone = qiniu.zone.Zone_z2;</div><div class="line"></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.render(<span class="string">'manager'</span>);    </div><div class="line">&#125;)</div><div class="line"></div><div class="line">router.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> bucket = <span class="string">'xxx'</span></div><div class="line">    ,   key = <span class="string">'xxx/'</span> + uuid()</div><div class="line">    ,   resUrl = req.body.url;</div><div class="line"></div><div class="line">    <span class="keyword">let</span> bucketManager = <span class="keyword">new</span> qiniu.rs.BucketManager(mac, config)</div><div class="line">   </div><div class="line">    bucketManager.fetch(resUrl, bucket, key, (err, respBody, respInfo) =&gt; &#123;</div><div class="line">        <span class="keyword">if</span>(err)&#123;</div><div class="line">            <span class="built_in">console</span>.log(err);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span>(respInfo.statusCode === <span class="number">200</span>)&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'key: '</span> + respBody.key);</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'hash: '</span> + respBody.hash);</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'fsize: '</span> + respBody.fsize);</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'mimeType: '</span> + respBody.mimeType);</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">"网络资源抓取完成！"</span>);</div><div class="line"></div><div class="line">                res.render(<span class="string">'suc'</span>, &#123;</div><div class="line">                    <span class="attr">respBody</span>: respBody</div><div class="line">                &#125;);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">console</span>.log(respInfo.statusCode);</div><div class="line">                <span class="built_in">console</span>.log(resBody);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>此处还是用到了 <code>Express</code> 框架，主要是获取资源的 <code>Url</code> 和渲染结果；对网络资源的抓取是不需要生成 <code>token</code>，但也是需要 <code>accessKey</code> 和 <code>secretKey</code>， 接着是存储的库 <code>bucket</code> 和命名 <code>key</code>，需要的东西都已经封装好了，直接调用就可以抓取网络资源。</p>
+</blockquote>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+<p>七牛自身提供了很多接口，所以开发者利用七牛进行对象存储的时候很方便，以上写的文件上传和抓取网络资源是比较常见也是比较简单的例子；七牛是个神奇的东西！</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/10/01/数据存储/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1526,151 +1692,6 @@ yum install screen      安装screen
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/24/fifteenth/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/24/fifteenth/" itemprop="url">
-                  15th Day
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T21:32:12+08:00">
-                2017-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/24/fifteenth/" class="leancloud_visitors" data-flag-title="15th Day">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><h2 id="传统的认证系统"><a href="#传统的认证系统" class="headerlink" title="传统的认证系统"></a>传统的认证系统</h2><blockquote>
-<p>1.用户在登录域输入 用户名 和 密码 ，然后点击 登录 ；</p>
-<p>2.请求发送之后，通过在后端查询数据库验证用户的合法性。如果请求有效，使用在数据库得到的信息创建一个 session，然后在响应头信息中返回这个 session 的信息，目的是把这个 session ID 存储到浏览器中；</p>
-<p>3.在访问应用中受限制的后端服务器时提供这个 session 信息；</p>
-<p>4.如果 session 信息有效，允许用户访问受限制的后端服务器，并且把渲染好的 HTML 内容返回。</p>
-</blockquote>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><blockquote>
-<p>在移动应用上 session 和 cookie 行不通。你无法与移动终端共享服务器创建的 session 和 cookie。</p>
-<p>在这个应用中，渲染好的 HTML 被返回。但在移动端，你需要包含一些类似 JSON 或者 XML 的东西包含在响应中。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/24/fifteenth/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1720,7 +1741,7 @@ yum install screen      安装screen
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1728,6 +1749,15 @@ yum install screen      安装screen
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
           
 
         </nav>
