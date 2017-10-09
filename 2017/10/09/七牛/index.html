@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="七牛 七牛是一个很神奇的东西，每个月10G的流量，方便快捷的上传、获取资源，不论在什么情景下，处理用户上传的较小的文件，七牛不好缓解了服务器的压力，更方便快捷地完成这些操作！   https://developer.qiniu.com/   七牛开发者中心有更完整详细的文档介绍，接下来写的是在Web上处理客户端的文件上传和讲网络资源抓取到七牛空间  文件上传 上传机制：客户端对文件进行上传，先向服">
 <meta property="og:image" content="https://glorylin0704.github.io/2017/10/09/七牛/123.jpg">
-<meta property="og:updated_time" content="2017-10-09T16:41:16.226Z">
+<meta property="og:updated_time" content="2017-10-09T16:43:34.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="七牛——文件上传与网络资源抓取">
 <meta name="twitter:description" content="七牛 七牛是一个很神奇的东西，每个月10G的流量，方便快捷的上传、获取资源，不论在什么情景下，处理用户上传的较小的文件，七牛不好缓解了服务器的压力，更方便快捷地完成这些操作！   https://developer.qiniu.com/   七牛开发者中心有更完整详细的文档介绍，接下来写的是在Web上处理客户端的文件上传和讲网络资源抓取到七牛空间  文件上传 上传机制：客户端对文件进行上传，先向服">
@@ -362,6 +362,7 @@
 <p>所以在文件上传中最重要的 <code>accessKey</code> 和 <code>secretKey</code> ,它们是生成上传token的关键，七牛的每个用户都会有唯一的 <code>accessKey</code> 和 <code>secretKey</code>。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// token.js</span></div><div class="line"><span class="keyword">const</span> qiniu = <span class="built_in">require</span>(<span class="string">'qiniu'</span>)</div><div class="line">    , ak = <span class="string">' '</span></div><div class="line">    , sk = <span class="string">' '</span>    </div><div class="line">    , mac = <span class="keyword">new</span> qiniu.auth.digest.Mac(ak, sk);</div><div class="line"></div><div class="line"><span class="keyword">let</span> token = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> options = &#123;</div><div class="line">        <span class="attr">scope</span>: <span class="string">'bucket'</span>,</div><div class="line">       <span class="comment">// expires: </span></div><div class="line">    &#125;   </div><div class="line"></div><div class="line">    <span class="keyword">let</span> putPoily = <span class="keyword">new</span> qiniu.rs.PutPolicy(options);</div><div class="line">    <span class="keyword">let</span> token = putPoily.uploadToken(mac);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> token;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = token;</div></pre></td></tr></table></figure>
+<a id="more"></a>  
 <blockquote>
 <p><code>token.js</code> 封装了凭证的获取，<code>bucket</code> 是七牛中存储的库，<code>expires</code> 是设置<code>token</code>的过期时间，默认为3600ms（一小时）。</p>
 </blockquote>
