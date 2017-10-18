@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Reading notes," />
 
 
 
@@ -87,16 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
+<meta name="keywords" content="Reading notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/10/hello-world/index.html">
+<meta property="og:title" content="图解HTTP chapter 1">
+<meta property="og:url" content="https://GloryLin0704.github.io/2017/10/18/图解HTTP/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-07-10T11:08:57.173Z">
+<meta property="og:description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
+<meta property="og:updated_time" content="2017-10-18T16:41:55.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="图解HTTP chapter 1">
+<meta name="twitter:description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/10/hello-world/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2017/10/18/图解HTTP/"/>
 
 
 
 
 
-  <title> Hello World | GloryLin </title>
+  <title> 图解HTTP chapter 1 | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -259,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/10/18/图解HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -280,7 +281,7 @@
             
             
               
-                Hello World
+                图解HTTP chapter 1
               
             
           </h1>
@@ -295,8 +296,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T19:08:57+08:00">
-                2017-07-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-18T23:19:24+08:00">
+                2017-10-18
               </time>
             
 
@@ -313,7 +314,7 @@
 
           
           
-             <span id="/2017/07/10/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/10/18/图解HTTP/" class="leancloud_visitors" data-flag-title="图解HTTP chapter 1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,15 +343,37 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><blockquote>
+<p>计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。</p>
+</blockquote>
+<h2 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h2><blockquote>
+<p>TCP/IP中被关注得最多的是分层问题，按层次可分为：<code>应用层</code>、<code>传输层</code>、<code>网络层</code>和<code>数据链路层</code>；分层的好处是某个地方需要更改只要改对应的层次即可，不需全改，节省时间。</p>
+</blockquote>
+<ul>
+<li><p><code>应用层</code>：决定了向用户提供应用服务时通信的活动，预存了各类通用的应用服务，如FTP和DNS，HTTP协议就是在应用层。</p>
+</li>
+<li><p><code>传输层</code>：对应用层提供处于网络连接中的两台计算机之间的数据传输，将请求分割为数据包，传向下一层，这层用到了TCP协议。</p>
+</li>
+<li><p><code>网络层</code>： 处理在网络上流动的数据包，数据包是最小的数据传输单位，该层规定了通过怎样的路线到达对方计算机，并把数据包传给对方。</p>
+</li>
+<li><p><code>链路层</code>：处理连接网络的硬件部分。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="TCP、IP、DNS与HTTP的关系"><a href="#TCP、IP、DNS与HTTP的关系" class="headerlink" title="TCP、IP、DNS与HTTP的关系"></a>TCP、IP、DNS与HTTP的关系</h2><ul>
+<li><p><code>TCP</code>：TCP位于传输层，提供可靠得字节流服务，为了方便传输，将大块数据分割为了以报文段为单位得数据包进行管理和传输，而为了准确无误将数据传到目标，TCP协议采用了<code>三次握手</code>策略：客户端发送一个带SYN标志的数据包给对方，服务端接收后，回传一个带有SYN/ACK标志的数据包表示收到信息，最后客户端再回传一个带ACK标志的数据包，代表<code>握手</code>结束，若中途失败，TCP会再次以相同顺序发送相同的数据包。</p>
+</li>
+<li><p><code>IP</code>：IP协议位于网络层，其作用是把各种数据包传送给对方，其中两个重要的条件<code>IP地址</code>和<code>MAC地址</code>。<code>IP地址</code>：节点被分配到的地址，可变。<code>MAC地址</code>：网卡所属的固定地址，不可变。与<code>MAC地址</code>紧密相连的是<code>ARP协议</code>，该协议可与解析通信方的<code>IP地址</code>就可以反查出对应的<code>MAC地址</code>。在到达通信目标的中转过程中，计算机和路由器等网络设备只能获悉大概的传输路线，就是说客户端发出的IP请求不能被直接解析到对应的服务器，需要经过不断的中转，不断的ARP解析，最后到达目标服务器。</p>
+</li>
+<li><p><code>DNS</code>：DNS是老伙计了，它的诞生是为了能把域名解析成复杂的IP地址，客户就不用记住复杂的一串数字，也能通过IP地址反查域名。</p>
+</li>
+</ul>
+<h2 id="一次完整的请求"><a href="#一次完整的请求" class="headerlink" title="一次完整的请求"></a>一次完整的请求</h2><ul>
+<li><code>客户端发送请求</code> -&gt; <code>DNS解析域名返回IP地址</code> -&gt; <code>生成请求，在应用层HTTTP生成报文</code> -&gt; <code>在传输层TCP对数据分割成文段，带序号</code> -&gt; <code>在网络层，IP通过ARP解析IP地址边中转边传送</code> -&gt; <code>链路层传到服务端</code> -&gt; <code>网络层接收数据包</code> -&gt; <code>传输层重组报文</code> -&gt; <code>应用层处理HTTP请求</code> -&gt; <code>服务器</code> -&gt; <code>将处理结果按原路返回</code></li>
+</ul>
+<h2 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h2><blockquote>
+<p><code>URI</code>是统一资源标识符，<code>URL</code>是统一资源定位符，<code>URI</code>用字符串标识某一互联网资源，而<code>URL</code>表示资源的在互联网上所处的位置，<code>URL</code>是<code>URI</code>的子集。</p>
+</blockquote>
 
       
     </div>
@@ -378,6 +401,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Reading-notes/" rel="tag"># Reading notes</a>
+          
+        </div>
+      
 
       
         
@@ -387,15 +416,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/10/09/七牛/" rel="next" title="七牛——文件上传与网络资源抓取">
+                <i class="fa fa-chevron-left"></i> 七牛——文件上传与网络资源抓取
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/10/blog/" rel="prev" title="blog">
-                blog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP的分层管理"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP的分层管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP、IP、DNS与HTTP的关系"><span class="nav-number">3.</span> <span class="nav-text">TCP、IP、DNS与HTTP的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一次完整的请求"><span class="nav-number">4.</span> <span class="nav-text">一次完整的请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URI和URL"><span class="nav-number">5.</span> <span class="nav-text">URI和URL</span></a></li></ol></div>
             
 
           </div>
