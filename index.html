@@ -260,6 +260,148 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/11/27/（转）AJAX原理与CORS跨域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/./source/img/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/27/（转）AJAX原理与CORS跨域/" itemprop="url">
+                  （转）AJAX原理与CORS跨域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T00:02:02+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/27/（转）AJAX原理与CORS跨域/" class="leancloud_visitors" data-flag-title="（转）AJAX原理与CORS跨域">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>来源：segmentfault.com</p>
+<p>ajax作为前端开发必需的基础能力之一，你可能会使用它，但并不一定懂得其原理，以及更深入的服务器通信相关的知识。在最近两天的整理过程中，看了大量的文章，发现自己的后端能力已经限制自己在网络通信相关的知识领域的探索，还是应该尽快补齐短板。</p>
+<p>下面我们来聊一聊ajax相关的东西，包括<code>xhr/xdr/ajax/cors/http</code>的一部分内容，其中会抛弃一些被弃用的历史包袱，如IE6/7等。</p>
+<h3 id="Ajax的出现"><a href="#Ajax的出现" class="headerlink" title="Ajax的出现"></a>Ajax的出现</h3><p>2005年，Jesse James Garrett提出了Ajax的技术，其全称为<code>Asynchronous Javascript and XML</code>，<code>Ajax</code>的核心是<code>XMLHttpRequest</code>对象，简称XHR，它用于使浏览器向服务器请求额外的数据而不卸载页面，极大的提高了用户体验。在此之前，其实这种技术已经存在并被一些人实现，但并没有流行也没有被浏览器支持。不过在此之后，IE5第一次引入XHR对象，并支持ajax技术，后续被所有浏览器支持。</p>
+<h3 id="XMLHttpRequest对象和请求"><a href="#XMLHttpRequest对象和请求" class="headerlink" title="XMLHttpRequest对象和请求"></a>XMLHttpRequest对象和请求</h3><p>XHR是一个API，为客户端提供服务端和客户端之间通信的功能，并且不会刷新页面。它并不仅仅能取回XML类型的数据，而能取回所有类型的数据，除了http协议，还支持file和ftp协议。我们可以通过其构造函数来创建一个新的XHR对象，这个操作需要在其它所有操作之前完成:</p>
+<p><code>var xhr = new XMLHttpRequest();</code></p>
+<p>通过控制台我们可以很方便看到XHR的原型链：<code>Object -&gt; EventTarget -&gt; XMLHttpRequestEventTarget -&gt; XMLHttpRequest</code>。它拥有原型链上和本身的方法和属性，现在看下我们常用的方法：<br><img src="/2017/11/27/（转）AJAX原理与CORS跨域/1.png" alt="（转）AJAX原理与CORS跨域"><br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/27/（转）AJAX原理与CORS跨域/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/11/08/Promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1539,149 +1681,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/26/seventeenth/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/./source/img/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/26/seventeenth/" itemprop="url">
-                  17th Day
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T14:33:57+08:00">
-                2017-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/26/seventeenth/" class="leancloud_visitors" data-flag-title="17th Day">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><p>可以将域名与IP绑定，使访问该域名就可以解析为绑定IP（也可以绑定localhost的某个端口）</p>
-<p>域名是唯一的，所以不存在多个域名指向同一个ip地址</p>
-<p>在/usr/local/nginx/conf/vhost下，有xxx.conf文件，可以设置反向代理，vim打开一个conf编辑，添加：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">location /daily-css&#123;</div><div class="line">        proxy_pass http://localhost:8888;</div><div class="line">        <span class="comment">#proxt_pass http://google.com;</span></div><div class="line">        proxy_http_version 1.1;</div><div class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</div><div class="line">        proxy_set_header Host <span class="variable">$host</span>;</div><div class="line">        proxy_cache_bypass <span class="variable">$http_upgrade</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上代码最有用的是proxy_pass xxxxxx(代理到的域名)</p>
-<p>设置成功后需要重启lnmp nginx restart</p>
-<p>当再次请求：原域名/daily-css，会跳到：代理域名/daily-css</p>
-<h1 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h1><blockquote>
-<p>服务器给定一个域名，相当于本地(localhost、127.0.0.1)，在/home/wwwroot 下可以看见与服务器ip绑定的域名，访问这些域名都会被DNS解析到绑定的ip去</p>
-<p> 在这些域名里可以放页面，访问时xxx/a.html就可访问xxx域名下的a.html页面</p>
-<p>通过 lnmp vhost add 可以添加新的域名到wwwroot中，但这些域名需要提前设定被解析到这个服务器的ip地址</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1731,7 +1730,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1744,7 +1743,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
