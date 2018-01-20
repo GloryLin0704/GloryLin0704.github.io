@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Web常用1234567891011121314151617181920212223242526req.body.xxx        //获取页面body里的参数res.render(&apos;xx&apos;)    //将页面渲染到xx里req.query.xxx;      //获取页面URL中带的参数res.render(&apos;detail&apos;,&amp;#123;        blogs: result[0]">
+<meta name="description" content="Vue路由 Vue的路由对于单页面的应用非常有效的，传统的页面应用，是用一些超链接来实现页面的切换和跳转，但是在VueRouter的单页面应用中，则是通过路由之间的切换，既组件之间的切换来实现，方便、简洁、速度快  路由的定义及实现VueRouter的定义分为四步：  当然最开始要把 Vue 和 Vue-router 引进来  1、定义组件123456789101112131415let Home">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Blog Summary">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/07/17/blog summary/index.html">
+<meta property="og:title" content="Vue路由">
+<meta property="og:url" content="https://GloryLin0704.github.io/2018/01/20/Vue路由/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="Web常用1234567891011121314151617181920212223242526req.body.xxx        //获取页面body里的参数res.render(&apos;xx&apos;)    //将页面渲染到xx里req.query.xxx;      //获取页面URL中带的参数res.render(&apos;detail&apos;,&amp;#123;        blogs: result[0]">
-<meta property="og:updated_time" content="2017-08-12T15:41:41.429Z">
+<meta property="og:description" content="Vue路由 Vue的路由对于单页面的应用非常有效的，传统的页面应用，是用一些超链接来实现页面的切换和跳转，但是在VueRouter的单页面应用中，则是通过路由之间的切换，既组件之间的切换来实现，方便、简洁、速度快  路由的定义及实现VueRouter的定义分为四步：  当然最开始要把 Vue 和 Vue-router 引进来  1、定义组件123456789101112131415let Home">
+<meta property="og:updated_time" content="2018-01-20T11:59:25.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog Summary">
-<meta name="twitter:description" content="Web常用1234567891011121314151617181920212223242526req.body.xxx        //获取页面body里的参数res.render(&apos;xx&apos;)    //将页面渲染到xx里req.query.xxx;      //获取页面URL中带的参数res.render(&apos;detail&apos;,&amp;#123;        blogs: result[0]">
+<meta name="twitter:title" content="Vue路由">
+<meta name="twitter:description" content="Vue路由 Vue的路由对于单页面的应用非常有效的，传统的页面应用，是用一些超链接来实现页面的切换和跳转，但是在VueRouter的单页面应用中，则是通过路由之间的切换，既组件之间的切换来实现，方便、简洁、速度快  路由的定义及实现VueRouter的定义分为四步：  当然最开始要把 Vue 和 Vue-router 引进来  1、定义组件123456789101112131415let Home">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/07/17/blog summary/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2018/01/20/Vue路由/"/>
 
 
 
 
 
-  <title> Blog Summary | GloryLin </title>
+  <title> Vue路由 | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -259,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/07/17/blog summary/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/20/Vue路由/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -280,7 +280,7 @@
             
             
               
-                Blog Summary
+                Vue路由
               
             
           </h1>
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T22:11:22+08:00">
-                2017-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T16:59:32+08:00">
+                2018-01-20
               </time>
             
 
@@ -313,7 +313,7 @@
 
           
           
-             <span id="/2017/07/17/blog summary/" class="leancloud_visitors" data-flag-title="Blog Summary">
+             <span id="/2018/01/20/Vue路由/" class="leancloud_visitors" data-flag-title="Vue路由">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,21 +342,45 @@
       
 
       
-        <h1 id="Web常用"><a href="#Web常用" class="headerlink" title="Web常用"></a>Web常用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">req.body.xxx        <span class="comment">//获取页面body里的参数</span></div><div class="line">res.render(<span class="string">'xx'</span>)    <span class="comment">//将页面渲染到xx里</span></div><div class="line">req.query.xxx;      <span class="comment">//获取页面URL中带的参数</span></div><div class="line"></div><div class="line">res.render(<span class="string">'detail'</span>,&#123;</div><div class="line">        <span class="attr">blogs</span>: result[<span class="number">0</span>]</div><div class="line">      &#125;);           <span class="comment">//渲染页面并传入参数,通过在数据库中查询得到的result是数组，不用result[0]传入，将显示Object对象</span></div><div class="line"></div><div class="line"> &lt;%= blog.content %&gt;    <span class="comment">//在ejs中接收数据</span></div><div class="line"></div><div class="line">&lt;% blogs.forEach(<span class="function"><span class="params">blog</span> =&gt;</span> &#123; %&gt;</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/detail?blog_id=&lt;%= blog.id %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">blog.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </div><div class="line">    &lt;% &#125;) %&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>           <span class="comment">//这种情况是将result直接传入，由于blogs是数组，所以用遍历forEach</span></div><div class="line">                    <span class="comment">//其中a标签中设置了带blog的id跳转</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">insertData</span>:insertData,</div><div class="line">    <span class="attr">selectData</span>:selectData,</div><div class="line">    <span class="attr">selectDataContent</span>:selectDataContent</div><div class="line">    &#125;;              <span class="comment">//同一个JS中暴露多个函数，</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> selectData = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectData;</div><div class="line"><span class="keyword">var</span> selectDataContent = <span class="built_in">require</span>(<span class="string">'../tools/db'</span>).selectDataContent;       <span class="comment">//调用暴露的多个函数</span></div></pre></td></tr></table></figure>
+        <h2 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h2><blockquote>
+<p>Vue的路由对于单页面的应用非常有效的，传统的页面应用，是用一些超链接来实现页面的切换和跳转，但是在VueRouter的单页面应用中，则是通过路由之间的切换，既组件之间的切换来实现，方便、简洁、速度快</p>
+</blockquote>
+<h2 id="路由的定义及实现"><a href="#路由的定义及实现" class="headerlink" title="路由的定义及实现"></a>路由的定义及实现</h2><p>VueRouter的定义分为四步：</p>
+<ul>
+<li>当然最开始要把 <code>Vue</code> 和 <code>Vue-router</code> 引进来</li>
+</ul>
+<p>1、定义组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> Home = &#123;</div><div class="line">    <span class="attr">template</span>: <span class="string">`</span></div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;p&gt;我是主页&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    `</div><div class="line">&#125;</div><div class="line"></div><div class="line">    <span class="keyword">let</span> News = &#123;</div><div class="line">    <span class="attr">template</span>: <span class="string">`</span></div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;p&gt;我是新闻&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    `</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="设置cookie"><a href="#设置cookie" class="headerlink" title="设置cookie"></a>设置cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</div><div class="line"><span class="keyword">var</span> md5 = crypto.createHash(<span class="string">'md5'</span>);</div><div class="line"></div><div class="line">exports.authorizations = [];</div><div class="line"></div><div class="line">exports.cookies = <span class="function"><span class="keyword">function</span>(<span class="params">req, res, username</span>)</span>&#123;</div><div class="line">	md5 = crypto.createHash(<span class="string">'md5'</span>);</div><div class="line">	md5.update(username + (<span class="keyword">new</span> <span class="built_in">Date</span>()).toString());</div><div class="line">	<span class="keyword">var</span> auth = md5.digest(<span class="string">'hex'</span>);</div><div class="line">	<span class="built_in">console</span>.log(auth);</div><div class="line">	exports.authorizations.push(&#123;<span class="attr">username</span>: username, <span class="attr">auth</span>: auth&#125;);</div><div class="line">	res.cookie(<span class="string">'username'</span>, username, &#123;<span class="attr">maxAge</span>: <span class="number">1</span> * <span class="number">30</span> * <span class="number">1000</span>&#125;);</div><div class="line">	res.cookie(<span class="string">'auth'</span>, auth, &#123;<span class="attr">maxAge</span>: <span class="number">1</span> * <span class="number">30</span> * <span class="number">1000</span>&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2、配置路由<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">    &#123;<span class="attr">path</span>:<span class="string">'/home'</span>, <span class="attr">component</span>: Home&#125;,</div><div class="line">    &#123;<span class="attr">path</span>:<span class="string">'/news'</span>, <span class="attr">component</span>: News&#125;,</div><div class="line">    &#123;<span class="attr">path</span>:<span class="string">'*'</span>, <span class="attr">redirect</span>:<span class="string">'/home'</span>&#125;    <span class="comment">//路由匹配失败或无匹配状态，全部重定向到主页 </span></div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>3、生成路由实例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">    routes            <span class="comment">// 相当于 routes: routes </span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>4、挂在Vue实例上<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">        router, <span class="comment">//将路由挂在当前的Vue实例中</span></div><div class="line">        el: <span class="string">''</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<blockquote>
+<p>至此，基本的路由已经定义完了，接下来是路由的实现</p>
+</blockquote>
+<p><code>router-link</code> 用来绑定跳转， <code>router-view</code> 用来展示路由</p>
+<p>1、跳转</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/home"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/news"</span>&gt;</span>新闻<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>2、显示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>定义跳转的路由，和超链接的意思有点像，例如点击了 <code>主页</code> 就切换到了 <code>/home</code> 路由，而该路由是由组件 <code>Home</code> 去实现，知道了该路由和哪个组件相关，然后就将该组件映射到 <code>router-view</code> 中</p>
+<hr>
+<blockquote>
+<p>至此，基本的路由已经完成</p>
+</blockquote>
+<h2 id="在路由中定义路由"><a href="#在路由中定义路由" class="headerlink" title="在路由中定义路由"></a>在路由中定义路由</h2><p>如果想在某个路由里再定义路由，在上面定义的基本路由上进行修改</p>
+<p>1、定义组件（同上）</p>
+<p>2、配置子路由<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> routes = [</div><div class="line">    &#123;<span class="attr">path</span>:<span class="string">'/home'</span>, <span class="attr">component</span>: Home&#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">path</span>:<span class="string">'/news'</span>, </div><div class="line">        <span class="attr">component</span>: News,</div><div class="line">        <span class="attr">children</span>: [</div><div class="line">            &#123;<span class="attr">path</span>:<span class="string">'/one'</span>, <span class="attr">component</span>: One&#125;.</div><div class="line">            &#123;<span class="attr">path</span>:<span class="string">'/two'</span>, <span class="attr">component</span>: Two&#125;.</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
 <ul>
-<li>调用md5.digest生成一组特殊的数值</li>
-<li>exports.authorizations.push将页面传来的username加入到数组里</li>
-<li>res.cookie设置username和特殊值存在的时间</li>
+<li>注意，是在需要设置子路由的路由里加 <code>children</code> 属性，其实相当于是给这个路由再添加了一个 <code>routes</code> ，写法和 <code>routes</code> 的一样</li>
 </ul>
-<h2 id="将username存入cookie"><a href="#将username存入cookie" class="headerlink" title="将username存入cookie"></a>将username存入cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> username = req.body.username;</div><div class="line">  <span class="built_in">console</span>.log(username);</div><div class="line">  <span class="keyword">if</span>(username === <span class="string">""</span>)&#123;</div><div class="line">    res.render(<span class="string">'loginFail'</span>);</div><div class="line">    &#125;</div><div class="line">  auth.cookies(req, res, username);</div><div class="line">  res.render(<span class="string">'new'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="设置路由"><a href="#设置路由" class="headerlink" title="设置路由"></a>设置路由</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> auth = <span class="built_in">require</span>(<span class="string">'../tools/cookie'</span>);</div><div class="line"></div><div class="line">router.get(<span class="string">'/new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>((auth.authorizations.some(<span class="function"><span class="params">e</span> =&gt;</span> e.username === req.cookies.username)) &amp;&amp; (auth.authorizations.some(<span class="function"><span class="params">e</span> =&gt;</span> e.auth === req.cookies.auth)))&#123;</div><div class="line">		<span class="built_in">console</span>.log(auth.authorizations);</div><div class="line">		res.render(<span class="string">'new'</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		res.render(<span class="string">"login"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<ul>
-<li>当客户端发送new请求,进入这个路由</li>
-<li>检查req.cookies.username和cookie里存的值是否相同</li>
-</ul>
-
+<p>3、配置路由（同上）</p>
+<p>4、生成路由实例（同上）</p>
+<p>5、组件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"_news"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>我是新闻页面<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/one"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/two"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这时候，子路由就已经配置完成，将显示在路由的 <code>router-view</code> 里</p>
+</blockquote>
+<h2 id="常用的两个方法"><a href="#常用的两个方法" class="headerlink" title="常用的两个方法"></a>常用的两个方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">router.push(&#123;<span class="attr">path</span>:<span class="string">'home'</span>&#125;);</div><div class="line"><span class="comment">//跳转到主页，一次新的操作，相当于入栈一个新页面，并跳转</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">router.replace(&#123;<span class="attr">path</span>:<span class="string">'news'</span>&#125;);</div><div class="line"><span class="comment">//直接替换当前页面，相当于当前的页面出栈，替换的页面入栈并显示</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -392,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/17/eight/" rel="next" title="Eight Day">
-                <i class="fa fa-chevron-left"></i> Eight Day
+              <a href="/2018/01/19/Vue/" rel="next" title="LearningVue">
+                <i class="fa fa-chevron-left"></i> LearningVue
               </a>
             
           </div>
@@ -401,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/18/nine/" rel="prev" title="Ninth Day">
-                Ninth Day <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web常用"><span class="nav-number">1.</span> <span class="nav-text">Web常用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookie"><span class="nav-number">2.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置cookie"><span class="nav-number">2.1.</span> <span class="nav-text">设置cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将username存入cookie"><span class="nav-number">2.2.</span> <span class="nav-text">将username存入cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置路由"><span class="nav-number">2.3.</span> <span class="nav-text">设置路由</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue路由"><span class="nav-number">1.</span> <span class="nav-text">Vue路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由的定义及实现"><span class="nav-number">2.</span> <span class="nav-text">路由的定义及实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在路由中定义路由"><span class="nav-number">3.</span> <span class="nav-text">在路由中定义路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的两个方法"><span class="nav-number">4.</span> <span class="nav-text">常用的两个方法</span></a></li></ol></div>
             
 
           </div>
