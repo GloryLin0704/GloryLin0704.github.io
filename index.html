@@ -260,6 +260,144 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/22/Vue自定义组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/22/Vue自定义组件/" itemprop="url">
+                  Vue自定义组件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T20:39:19+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/22/Vue自定义组件/" class="leancloud_visitors" data-flag-title="Vue自定义组件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="定义组件结构"><a href="#定义组件结构" class="headerlink" title="定义组件结构"></a>定义组件结构</h2><p>创建一个 <code>Loading</code> 组件的文件，文件的结构如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| - loading/</div><div class="line">    | - index.js        <span class="comment">//导出组件，并且 `install`</span></div><div class="line">    | - Loading.vue     <span class="comment">//Loading组件</span></div></pre></td></tr></table></figure></p>
+<h2 id="定义组件"><a href="#定义组件" class="headerlink" title="定义组件"></a>定义组件</h2><p>Loading.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt; &lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt; &lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style scoped&gt; &lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p><code>.vue</code> 文件定义风格不变</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/22/Vue自定义组件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/21/Vue动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -347,22 +485,16 @@
 
       
         
-          
-            <h2 id="Vue动画组件-transition"><a href="#Vue动画组件-transition" class="headerlink" title="Vue动画组件 transition"></a>Vue动画组件 transition</h2><p>Vue的动画是由标签 <code>transition</code> 组成，一个基本的 <code>transition</code> 组件</p>
+          <h2 id="Vue动画组件-transition"><a href="#Vue动画组件-transition" class="headerlink" title="Vue动画组件 transition"></a>Vue动画组件 transition</h2><p>Vue的动画是由标签 <code>transition</code> 组成，一个基本的 <code>transition</code> 组件</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></div><div class="line">    运动的东西（元素、属性、路由）</div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 标签中定义动画的名称，用来规划动画的状态 --&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="class的定义"><a href="#class的定义" class="headerlink" title="class的定义"></a>class的定义</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.fade-enter</span>&#123; &#125;          初始状态</div><div class="line"><span class="selector-class">.fade-enter-active</span>&#123; &#125;   变化成什么样    <span class="selector-tag">-</span>&gt;   当元素出来(显示)</div><div class="line"><span class="selector-class">.fade-leave</span>&#123; &#125;          消失前状态</div><div class="line"><span class="selector-class">.fade-leave-active</span>&#123; &#125;   最后变成什么样  <span class="selector-tag">-</span>&gt;   当元素离开（消失）</div></pre></td></tr></table></figure>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击显示隐藏"</span> @<span class="attr">click</span>=<span class="string">"show=!show"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>:<span class="string">'#box'</span>,</div><div class="line">        <span class="attr">data</span>:&#123;</div><div class="line">            <span class="attr">show</span>:<span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">background</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.fade-enter</span>&#123;</div><div class="line">    <span class="attribute">opacity</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.fade-enter-active</span>&#123;</div><div class="line">    <span class="attribute">opacity</span>:<span class="number">1</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.fade-leave-active</span>&#123;</div><div class="line">    <span class="attribute">opacity</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span>&#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">1s</span> all ease;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>关于动画的四种状态，最重要的是 <code>enter</code> + <code>enter-active</code> + <code>leave-active</code>，它们已经可以决定好动画的开始和结束</p>
-<p><code>enter</code>：决定动画开始那一瞬间的状态</p>
-<p><code>enter-active</code>：决定动画过渡的效果，以及过渡到什么程度，过渡最后程度最好是和预设的程度一致，不然就会出现很怪异的效果，就比如 <code>fade-enter-active</code> 和 <code>p</code> 的长度宽度一致，因为在动画过渡完了之后就显示 <code>p</code> 真正的样式</p>
-<p><code>leave-active</code>：决定动画消失的效果</p>
-<h2 id="配合-animate-css-使用"><a href="#配合-animate-css-使用" class="headerlink" title="配合 animate.css 使用"></a>配合 <code>animate.css</code> 使用</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">enter-active-class</span>=<span class="string">"animated zoomInLeft"</span> <span class="attr">leave-active-class</span>=<span class="string">"animated zoomOutRight"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="多个元素运动"><a href="#多个元素运动" class="headerlink" title="多个元素运动"></a>多个元素运动</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">enter-active-class</span>=<span class="string">""</span> <span class="attr">leave-active-class</span>=<span class="string">""</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">:key</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">:key</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在 <code>:key</code> 中加唯一标识即可</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/21/Vue动画/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1549,153 +1681,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/09/19/mongoose/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/19/mongoose/" itemprop="url">
-                  Mongoose才是正确答案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T21:25:36+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/19/mongoose/" class="leancloud_visitors" data-flag-title="Mongoose才是正确答案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>mongoose是mongo衍生而来，比mongo更方便，我认为主要是体现在可以将表的信息封装起来</p>
-</blockquote>
-<p><a href="http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro" target="_blank" rel="external">http://www.cnblogs.com/zhongweiv/p/mongoose.html#node_intro</a></p>
-<ul>
-<li>这是比较通俗易懂的教程，但被红莲鄙视了！所以此处写的是从红莲博客中关于mongoose代码领悟到一些皮毛</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongoose --save</div></pre></td></tr></table></figure>
-<p>在当前文件夹中安装依赖</p>
-<ul>
-<li>由于是用到了封装，所以需要创建一个文件夹，db，这个文件夹的作用是将和数据库有关的操作都封装好，在以后的程序中就可以直接调用了。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/19/mongoose/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1745,7 +1730,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

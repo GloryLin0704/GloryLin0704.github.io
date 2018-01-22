@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="努力活成你喜欢的样子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GloryLin">
-<meta property="og:url" content="https://GloryLin0704.github.io/archives/2017/07/page/2/index.html">
+<meta name="description" content="定义组件结构创建一个 Loading 组件的文件，文件的结构如下123| - loading/    | - index.js        //导出组件，并且 `install`    | - Loading.vue     //Loading组件 定义组件Loading.vue12345&amp;lt;template&amp;gt; &amp;lt;/template&amp;gt;&amp;lt;script&amp;gt; &amp;lt;/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue自定义组件">
+<meta property="og:url" content="https://GloryLin0704.github.io/2018/01/22/Vue自定义组件/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="努力活成你喜欢的样子">
+<meta property="og:description" content="定义组件结构创建一个 Loading 组件的文件，文件的结构如下123| - loading/    | - index.js        //导出组件，并且 `install`    | - Loading.vue     //Loading组件 定义组件Loading.vue12345&amp;lt;template&amp;gt; &amp;lt;/template&amp;gt;&amp;lt;script&amp;gt; &amp;lt;/">
+<meta property="og:updated_time" content="2018-01-22T13:04:25.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GloryLin">
-<meta name="twitter:description" content="努力活成你喜欢的样子">
+<meta name="twitter:title" content="Vue自定义组件">
+<meta name="twitter:description" content="定义组件结构创建一个 Loading 组件的文件，文件的结构如下123| - loading/    | - index.js        //导出组件，并且 `install`    | - Loading.vue     //Loading组件 定义组件Loading.vue12345&amp;lt;template&amp;gt; &amp;lt;/template&amp;gt;&amp;lt;script&amp;gt; &amp;lt;/">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/archives/2017/07/page/2/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2018/01/22/Vue自定义组件/"/>
 
 
 
 
 
-  <title> 归档 | GloryLin </title>
+  <title> Vue自定义组件 | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -154,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,292 +249,173 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 30 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/22/Vue自定义组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue自定义组件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T20:39:19+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/22/Vue自定义组件/" class="leancloud_visitors" data-flag-title="Vue自定义组件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
+
+      
+        <h2 id="定义组件结构"><a href="#定义组件结构" class="headerlink" title="定义组件结构"></a>定义组件结构</h2><p>创建一个 <code>Loading</code> 组件的文件，文件的结构如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| - loading/</div><div class="line">    | - index.js        <span class="comment">//导出组件，并且 `install`</span></div><div class="line">    | - Loading.vue     <span class="comment">//Loading组件</span></div></pre></td></tr></table></figure></p>
+<h2 id="定义组件"><a href="#定义组件" class="headerlink" title="定义组件"></a>定义组件</h2><p>Loading.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt; &lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt; &lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style scoped&gt; &lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p><code>.vue</code> 文件定义风格不变</p>
+<a id="more"></a>
+<p>index.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> LoadingComponent <span class="keyword">from</span> <span class="string">'./Loading.vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> Loading = &#123;</div><div class="line">	<span class="attr">install</span>: <span class="function"><span class="keyword">function</span>(<span class="params">Vue</span>) </span>&#123;</div><div class="line">		Vue.component(<span class="string">'Loading'</span>, LoadingComponent)</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Loading</div></pre></td></tr></table></figure></p>
+<p>首先将 <code>.vue</code> 文件 <code>import</code> 引进来</p>
+<p>然后加入 <code>Vue</code> 组件，并加入 <code>install</code> 属性，不加在其他文件引不进</p>
+<p>最后将 <code>Loading</code> 对象导出</p>
+<h2 id="引用自定义组件"><a href="#引用自定义组件" class="headerlink" title="引用自定义组件"></a>引用自定义组件</h2><p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Loading <span class="keyword">from</span> <span class="string">'./components/loading'</span></div><div class="line"></div><div class="line">Vue.use(Loading)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">	<span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>在 <code>main.js</code> 中把自定义的组件引进来，<code>Vue.use</code> 使用，其他不变，然后在其他文件中就可以调用了</p>
+<p>如在 <code>App.vue</code> 中使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>welcome vue-loading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Loading</span>&gt;</span><span class="tag">&lt;/<span class="name">Loading</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>直接调用即可</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
       
 
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/21/Vue动画/" rel="next" title="Vue动画">
+                <i class="fa fa-chevron-left"></i> Vue动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
       
-      
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/13/four/" itemprop="url">
-              
-                <span itemprop="name">Four Day</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-13T09:42:19+08:00"
-              content="2017-07-13" >
-          07-13
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/12/third/" itemprop="url">
-              
-                <span itemprop="name">Thrid Day</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-12T19:24:04+08:00"
-              content="2017-07-12" >
-          07-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/12/Second/" itemprop="url">
-              
-                <span itemprop="name">Second Day</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-12T19:02:58+08:00"
-              content="2017-07-12" >
-          07-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/11/first/" itemprop="url">
-              
-                <span itemprop="name">First day</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-11T09:11:32+08:00"
-              content="2017-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/10/Mysql/" itemprop="url">
-              
-                <span itemprop="name">Mysql</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-10T20:09:45+08:00"
-              content="2017-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/10/blog/" itemprop="url">
-              
-                <span itemprop="name">blog</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-10T19:43:02+08:00"
-              content="2017-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/10/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-10T19:08:57+08:00"
-              content="2017-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/07/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/07/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -541,6 +423,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -560,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ots4cfy06.bkt.clouddn.com/avatar.png"
@@ -625,6 +520,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义组件结构"><span class="nav-number">1.</span> <span class="nav-text">定义组件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义组件"><span class="nav-number">2.</span> <span class="nav-text">定义组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用自定义组件"><span class="nav-number">3.</span> <span class="nav-text">引用自定义组件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -732,11 +643,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
