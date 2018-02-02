@@ -270,6 +270,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/02/Jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/02/Jquery/" itemprop="url">
+                  Jquery基础(一)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T23:39:53+08:00">
+                2018-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/02/Jquery/" class="leancloud_visitors" data-flag-title="Jquery基础(一)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//两种开始方式</span></div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//Jquery 代码</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// Jquery 代码</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>Jquery 是为事件处理特别设计的</p>
+<p>鼠标事件：    </p>
+<pre><code>click dblclick：点击事件，单击和双击
+
+mouseenter mouseleave mousedown mouseup：鼠标移上去、移开、点下去、点击松开
+
+hover(function, function) 第一个函数是 `mouseenter` 第二个函数是 `mouseleave` 
+
+focus blur：焦点，获取焦点和失去焦点
+</code></pre><p>键盘事件：</p>
+<pre><code>keypress keydown keyup
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$().keydown(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="comment">//通过 event.which 可以知道按下的是哪个键</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
+<li>效果一般都是在事件触发之后表现出来</li>
+</ul>
+<h3 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h3><p><code>hide( )</code>        显示</p>
+<p><code>show( )</code>        隐藏</p>
+<p><code>toggle( )</code>    用来切换 <code>hide</code> 和 <code>show</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><p><code>fadeIn( )</code>    淡入</p>
+<p><code>fadeOut( )</code>    淡出</p>
+<p><code>fadeToggle( )</code>    切换 <code>fadeIn</code> 和 <code>fadeOut</code></p>
+<p><code>fadeTo( )</code>    渐变给不透明度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//fadeTo</span></div><div class="line">$(selector).fadeTo(speed, opacity, callback)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="滑入滑出"><a href="#滑入滑出" class="headerlink" title="滑入滑出"></a>滑入滑出</h3><p><code>slideDown( )</code>    滑入</p>
+<p><code>slideUp( )</code>        滑出        </p>
+<p><code>slideToggle( )</code>    切换 <code>slideDown</code> 和 <code>slideUp</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p><code>animate( )</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	params</div><div class="line">	&#125;, speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//params 参数定义形成动画的 CSS 属性，在json中，CSS的属性要用驼峰命名法 padding-left =&gt; paddingleft</span></div></pre></td></tr></table></figure>
+<p>也可以用相对值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	<span class="attr">left</span>: <span class="string">'250px'</span>,</div><div class="line">	<span class="attr">height</span>: <span class="string">'+=150px'</span>,</div><div class="line">	<span class="attr">width</span>: <span class="string">'+=100px'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>使用队列功能，添加几个动画，使动画依次进行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'button'</span>).click(</div><div class="line">	<span class="keyword">let</span> div = $(<span class="string">'div'</span>)</div><div class="line">	div.animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">width</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow)</div><div class="line">)</div><div class="line"><span class="comment">//四个动画依次进行，链式调用</span></div></pre></td></tr></table></figure></p>
+<p><code>stop( )</code>     停止动画</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).stop(stopAll, goToEnd)</div><div class="line"></div><div class="line"><span class="comment">//stopAll 清除动画队列，默认 false</span></div><div class="line"></div><div class="line"><span class="comment">//goToEnd 立即完成当前动画，默认是 false</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/30/Vue小项目总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1519,157 +1688,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/10/18/图解HTTP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/18/图解HTTP/" itemprop="url">
-                  图解HTTP chapter 1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T23:19:24+08:00">
-                2017-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/18/图解HTTP/" class="leancloud_visitors" data-flag-title="图解HTTP chapter 1">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><blockquote>
-<p>计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。</p>
-</blockquote>
-<h2 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h2><blockquote>
-<p>TCP/IP中被关注得最多的是分层问题，按层次可分为：<code>应用层</code>、<code>传输层</code>、<code>网络层</code>和<code>数据链路层</code>；分层的好处是某个地方需要更改只要改对应的层次即可，不需全改，节省时间。</p>
-</blockquote>
-<ul>
-<li><p><code>应用层</code>：决定了向用户提供应用服务时通信的活动，预存了各类通用的应用服务，如FTP和DNS，HTTP协议就是在应用层。</p>
-</li>
-<li><p><code>传输层</code>：对应用层提供处于网络连接中的两台计算机之间的数据传输，将请求分割为数据包，传向下一层，这层用到了TCP协议。</p>
-</li>
-<li><p><code>网络层</code>： 处理在网络上流动的数据包，数据包是最小的数据传输单位，该层规定了通过怎样的路线到达对方计算机，并把数据包传给对方。</p>
-</li>
-<li><p><code>链路层</code>：处理连接网络的硬件部分。</p>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/18/图解HTTP/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1719,7 +1737,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1732,7 +1750,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -94,7 +94,7 @@
 <meta property="og:url" content="https://GloryLin0704.github.io/2018/01/30/Vue小项目总结/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="前几天，跟着教程写了一个 Vue 的仿新闻端的小项目。  项目结构用 vue init webpack-simple xxx 构建项目，内部的主要结构 123456789101112————根目录    —— src                  //主要的代码        —— assets           //静态文件，css,js,img        —— components">
-<meta property="og:updated_time" content="2018-01-30T12:29:37.181Z">
+<meta property="og:updated_time" content="2018-02-02T15:41:18.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue小项目总结">
 <meta name="twitter:description" content="前几天，跟着教程写了一个 Vue 的仿新闻端的小项目。  项目结构用 vue init webpack-simple xxx 构建项目，内部的主要结构 123456789101112————根目录    —— src                  //主要的代码        —— assets           //静态文件，css,js,img        —— components">
@@ -363,7 +363,7 @@
 <p>由于 <code>axios</code> 中没有 <code>install</code> 方法，所以不能直接用 <code>Vue.use()</code> ，以为不在每一个需要发送请求的组件中都引用一次 <code>axios</code> ，可以将它写进 <code>Vue</code> 的原型链中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.prototype.$http = axios;</div></pre></td></tr></table></figure>
 <p>这样子，在 <code>Vue</code> 实例的组件中，需要进行交互的时候，就可以这样用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$htttp.xxx( )</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.xxx( )</div></pre></td></tr></table></figure>
 <p><code>axios</code> 提供了接口允许在发送请求前和接收响应前进行操作</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">axios.interceptors.request.use(<span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">//……        请求发送前可以在这里进行一些操作</span></div><div class="line">    <span class="keyword">return</span> config; </div><div class="line">&#125;, err =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err); </div><div class="line">&#125;)</div><div class="line"></div><div class="line">axions.interceptors.response.use(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">//……        响应接收前可以在这里进行一些操作 </span></div><div class="line">    <span class="keyword">return</span> response</div><div class="line">&#125;, ,err =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err); </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><p>关于某些组件中状态，用 <code>Vuex</code> 来管理是最合理的，它有 <code>install</code> 方法，可以使用 <code>Vue.use(Vuex)</code> </p>
@@ -433,6 +433,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/Jquery/" rel="prev" title="Jquery基础(一)">
+                Jquery基础(一) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -504,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -517,7 +521,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
