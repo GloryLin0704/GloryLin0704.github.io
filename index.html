@@ -270,6 +270,185 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/03/jQuery-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/03/jQuery-0/" itemprop="url">
+                  jQuery基础(二)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T22:00:32+08:00">
+                2018-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/03/jQuery-0/" class="leancloud_visitors" data-flag-title="jQuery基础(二)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery-操作-DOM"><a href="#jQuery-操作-DOM" class="headerlink" title="jQuery 操作 DOM"></a>jQuery 操作 DOM</h2><h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><p><code>text( )</code>   返回文本内容</p>
+<p><code>html( )</code>   返回元素内容（包括html标记）</p>
+<p><code>val( )</code>    返回字段的值</p>
+<p><code>attr( )</code>   获取属性值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).attr(<span class="string">"href"</span>)</div></pre></td></tr></table></figure>
+<p>同时以上方法均可以为元素赋新值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(selector).text(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).html(<span class="string">"&lt;b&gt;This is new Value&lt;/b&gt;"</span>)</div><div class="line">$(selector).val(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="string">"https://glorylin0704.github.io"</span>)</div><div class="line"><span class="comment">// attr 可以设置多个属性</span></div><div class="line">$(selector).attr(&#123;</div><div class="line">    <span class="string">"href"</span>: <span class="string">"https://glorylin0704.github.io/"</span>,</div><div class="line">    <span class="string">"title"</span>: <span class="string">"博客"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>同时以上方法均有回调函数，两个参数，第一个是当前元素的下标，第二个是原始的值，函数返回值作为新值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue    </div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="控制元素"><a href="#控制元素" class="headerlink" title="控制元素"></a>控制元素</h3><p><code>append( )</code>     在被选元素的结尾插入内容</p>
+<p><code>prepend( )</code>    在被选元素的开头插入内容</p>
+<p><code>after( )</code>      在被选元素之后插入内容</p>
+<p><code>before( )</code>     在被选元素之前插入内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">" "</span>)</div></pre></td></tr></table></figure>
+<p><code>append</code> / <code>prepend</code> 是在选择元素内部嵌入<br><code>after</code> / <code>before</code> 是在元素外面追加</p>
+<hr>
+<p><code>remove( )</code> 删除被选元素及其子元素</p>
+<p><code>empty( )</code>  从被选元素中删除子元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div><div class="line"></div><div class="line"><span class="comment">//过滤被删除的元素</span></div><div class="line">$(selector).remove(<span class="string">".who"</span>)</div></pre></td></tr></table></figure>
+<h3 id="控制-CSS"><a href="#控制-CSS" class="headerlink" title="控制 CSS"></a>控制 CSS</h3><p><code>addClass( )</code>   向被选元素添加一个或多个类</p>
+<p><code>removeClass( )</code>    从被选元素删除一个或多个类</p>
+<p><code>toggleClass( )</code>    对被选元素进行添加/删除类的切换操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<p><code>css( )</code>    获取或设置被选元素的css</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(selector).css(<span class="string">"background-color"</span>)</div><div class="line"><span class="comment">//返回元素的背景色</span></div><div class="line"></div><div class="line">$(selector).css(&#123;</div><div class="line">    <span class="string">"background-color"</span>: <span class="string">"red"</span>,</div><div class="line">    <span class="string">"font-size"</span>: <span class="string">"20px"</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">//设置元素的css值</span></div></pre></td></tr></table></figure>
+<h3 id="获取尺寸"><a href="#获取尺寸" class="headerlink" title="获取尺寸"></a>获取尺寸</h3><p><code>width( )</code>  <code>height( )</code></p>
+<blockquote>
+<p><code>content</code> 的宽高</p>
+</blockquote>
+<p><code>innerWidth( )</code>  <code>innerHeight( )</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> 的宽高</p>
+</blockquote>
+<p><code>outerWidth( )</code>  <code>outerHeight( )</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> + <code>border</code> 的宽高</p>
+</blockquote>
+<p><code>outerWidth(true)</code> + <code>outerHeight(true)</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> + <code>border</code> + <code>margin</code> 的宽高</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div></pre></td></tr></table></figure>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p><code>get( )</code>    从指定的资源请求数据</p>
+<p><code>post( )</code>   向指定的资源提交处理的数据</p>
+<blockquote>
+<p>现在的 <code>Ajax</code> 可以使用 <code>Promise</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// get(URL. callback);</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.get(<span class="string">"/somewhere"</span>).catch(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//post(URL, data, callback)</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.post(<span class="string">"/somewhere"</span>,&#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"Glory"</span>,</div><div class="line">        <span class="attr">age</span>: <span class="string">"22"</span></div><div class="line">    &#125;).then(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/02/Jquery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,7 +472,7 @@
               
                 
                 <a class="post-title-link" href="/2018/02/02/Jquery/" itemprop="url">
-                  Jquery基础(一)
+                  jQuery基础(一)
                 </a>
               
             
@@ -327,7 +506,7 @@
 
           
           
-             <span id="/2018/02/02/Jquery/" class="leancloud_visitors" data-flag-title="Jquery基础(一)">
+             <span id="/2018/02/02/Jquery/" class="leancloud_visitors" data-flag-title="jQuery基础(一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1550,144 +1729,6 @@ focus blur：焦点，获取焦点和失去焦点
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/11/08/Promise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/08/Promise/" itemprop="url">
-                  ES6-Promise
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T21:12:28+08:00">
-                2017-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/08/Promise/" class="leancloud_visitors" data-flag-title="ES6-Promise">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>ES6已经出了好几年，最近才逐渐开始学ES6甚是愧疚；提起ES6，相信大部分人第一时间想起的是Promise，Promise一出场就是牛逼之气充斥天地，如狼似虎放荡不羁，在前端技术高速更新的这年代不学Promise还真不好意思在别人面前说会异步；刚开始学Promise的时候真是一头雾水，完全不懂为什么社区要提出这种异步解决方案，直至前前后后读了五六次阮一峰老师写的ES6入门中的Promise章节才有点明白为什么Promise会是Promise，<code>书读百遍，其义自见</code>，每次看Promise都会有不同的收获，沉淀了一个月，我觉得自己对Promise也有了一定的了解，是时候写篇博客了。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/08/Promise/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1737,7 +1778,7 @@ focus blur：焦点，获取焦点和失去焦点
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

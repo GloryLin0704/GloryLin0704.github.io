@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="开始123456789//两种开始方式$(function()&amp;#123;	//Jquery 代码&amp;#125;)$(document).ready(function()&amp;#123;	// Jquery 代码&amp;#125;) 事件Jquery 是为事件处理特别设计的 鼠标事件：     click dblclick：点击事件，单击和双击  mouseenter mouseleave mousedown">
+<meta name="description" content="jQuery 操作 DOM捕获text( )   返回文本内容 html( )   返回元素内容（包括html标记） val( )    返回字段的值 attr( )   获取属性值 1$(selector).attr(&quot;href&quot;) 同时以上方法均可以为元素赋新值 123456789$(selector).text(&quot;This is new Value&quot;)$(selector).html(&quot;&amp;l">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery基础(一)">
-<meta property="og:url" content="https://GloryLin0704.github.io/2018/02/02/Jquery/index.html">
+<meta property="og:title" content="jQuery基础(二)">
+<meta property="og:url" content="https://GloryLin0704.github.io/2018/02/03/jQuery-0/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="开始123456789//两种开始方式$(function()&amp;#123;	//Jquery 代码&amp;#125;)$(document).ready(function()&amp;#123;	// Jquery 代码&amp;#125;) 事件Jquery 是为事件处理特别设计的 鼠标事件：     click dblclick：点击事件，单击和双击  mouseenter mouseleave mousedown">
-<meta property="og:updated_time" content="2018-02-03T14:01:48.692Z">
+<meta property="og:description" content="jQuery 操作 DOM捕获text( )   返回文本内容 html( )   返回元素内容（包括html标记） val( )    返回字段的值 attr( )   获取属性值 1$(selector).attr(&quot;href&quot;) 同时以上方法均可以为元素赋新值 123456789$(selector).text(&quot;This is new Value&quot;)$(selector).html(&quot;&amp;l">
+<meta property="og:updated_time" content="2018-02-03T14:03:22.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery基础(一)">
-<meta name="twitter:description" content="开始123456789//两种开始方式$(function()&amp;#123;	//Jquery 代码&amp;#125;)$(document).ready(function()&amp;#123;	// Jquery 代码&amp;#125;) 事件Jquery 是为事件处理特别设计的 鼠标事件：     click dblclick：点击事件，单击和双击  mouseenter mouseleave mousedown">
+<meta name="twitter:title" content="jQuery基础(二)">
+<meta name="twitter:description" content="jQuery 操作 DOM捕获text( )   返回文本内容 html( )   返回元素内容（包括html标记） val( )    返回字段的值 attr( )   获取属性值 1$(selector).attr(&quot;href&quot;) 同时以上方法均可以为元素赋新值 123456789$(selector).text(&quot;This is new Value&quot;)$(selector).html(&quot;&amp;l">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2018/02/02/Jquery/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2018/02/03/jQuery-0/"/>
 
 
 
 
 
-  <title> jQuery基础(一) | GloryLin </title>
+  <title> jQuery基础(二) | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/02/Jquery/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/03/jQuery-0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -291,7 +291,7 @@
             
             
               
-                jQuery基础(一)
+                jQuery基础(二)
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T23:39:53+08:00">
-                2018-02-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T22:00:32+08:00">
+                2018-02-03
               </time>
             
 
@@ -324,7 +324,7 @@
 
           
           
-             <span id="/2018/02/02/Jquery/" class="leancloud_visitors" data-flag-title="jQuery基础(一)">
+             <span id="/2018/02/03/jQuery-0/" class="leancloud_visitors" data-flag-title="jQuery基础(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,44 +353,54 @@
       
 
       
-        <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//两种开始方式</span></div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//Jquery 代码</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// Jquery 代码</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>Jquery 是为事件处理特别设计的</p>
-<p>鼠标事件：    </p>
-<pre><code>click dblclick：点击事件，单击和双击
-
-mouseenter mouseleave mousedown mouseup：鼠标移上去、移开、点下去、点击松开
-
-hover(function, function) 第一个函数是 `mouseenter` 第二个函数是 `mouseleave` 
-
-focus blur：焦点，获取焦点和失去焦点
-</code></pre><p>键盘事件：</p>
-<pre><code>keypress keydown keyup
-</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$().keydown(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="comment">//通过 event.which 可以知道按下的是哪个键</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
-<li>效果一般都是在事件触发之后表现出来</li>
-</ul>
-<h3 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h3><p><code>hide( )</code>        显示</p>
-<p><code>show( )</code>        隐藏</p>
-<p><code>toggle( )</code>    用来切换 <code>hide</code> 和 <code>show</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
+        <h2 id="jQuery-操作-DOM"><a href="#jQuery-操作-DOM" class="headerlink" title="jQuery 操作 DOM"></a>jQuery 操作 DOM</h2><h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><p><code>text( )</code>   返回文本内容</p>
+<p><code>html( )</code>   返回元素内容（包括html标记）</p>
+<p><code>val( )</code>    返回字段的值</p>
+<p><code>attr( )</code>   获取属性值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).attr(<span class="string">"href"</span>)</div></pre></td></tr></table></figure>
+<p>同时以上方法均可以为元素赋新值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(selector).text(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).html(<span class="string">"&lt;b&gt;This is new Value&lt;/b&gt;"</span>)</div><div class="line">$(selector).val(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="string">"https://glorylin0704.github.io"</span>)</div><div class="line"><span class="comment">// attr 可以设置多个属性</span></div><div class="line">$(selector).attr(&#123;</div><div class="line">    <span class="string">"href"</span>: <span class="string">"https://glorylin0704.github.io/"</span>,</div><div class="line">    <span class="string">"title"</span>: <span class="string">"博客"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>同时以上方法均有回调函数，两个参数，第一个是当前元素的下标，第二个是原始的值，函数返回值作为新值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue    </div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="控制元素"><a href="#控制元素" class="headerlink" title="控制元素"></a>控制元素</h3><p><code>append( )</code>     在被选元素的结尾插入内容</p>
+<p><code>prepend( )</code>    在被选元素的开头插入内容</p>
+<p><code>after( )</code>      在被选元素之后插入内容</p>
+<p><code>before( )</code>     在被选元素之前插入内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">" "</span>)</div></pre></td></tr></table></figure>
+<p><code>append</code> / <code>prepend</code> 是在选择元素内部嵌入<br><code>after</code> / <code>before</code> 是在元素外面追加</p>
 <hr>
-<h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><p><code>fadeIn( )</code>    淡入</p>
-<p><code>fadeOut( )</code>    淡出</p>
-<p><code>fadeToggle( )</code>    切换 <code>fadeIn</code> 和 <code>fadeOut</code></p>
-<p><code>fadeTo( )</code>    渐变给不透明度</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//fadeTo</span></div><div class="line">$(selector).fadeTo(speed, opacity, callback)</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="滑入滑出"><a href="#滑入滑出" class="headerlink" title="滑入滑出"></a>滑入滑出</h3><p><code>slideDown( )</code>    滑入</p>
-<p><code>slideUp( )</code>        滑出        </p>
-<p><code>slideToggle( )</code>    切换 <code>slideDown</code> 和 <code>slideUp</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
-<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p><code>animate( )</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	params</div><div class="line">	&#125;, speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//params 参数定义形成动画的 CSS 属性，在json中，CSS的属性要用驼峰命名法 padding-left =&gt; paddingleft</span></div></pre></td></tr></table></figure>
-<p>也可以用相对值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	<span class="attr">left</span>: <span class="string">'250px'</span>,</div><div class="line">	<span class="attr">height</span>: <span class="string">'+=150px'</span>,</div><div class="line">	<span class="attr">width</span>: <span class="string">'+=100px'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>使用队列功能，添加几个动画，使动画依次进行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'button'</span>).click(</div><div class="line">	<span class="keyword">let</span> div = $(<span class="string">'div'</span>)</div><div class="line">	div.animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">width</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow)</div><div class="line">)</div><div class="line"><span class="comment">//四个动画依次进行，链式调用</span></div></pre></td></tr></table></figure></p>
-<p><code>stop( )</code>     停止动画</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).stop(stopAll, goToEnd)</div><div class="line"></div><div class="line"><span class="comment">//stopAll 清除动画队列，默认 false</span></div><div class="line"></div><div class="line"><span class="comment">//goToEnd 立即完成当前动画，默认是 false</span></div></pre></td></tr></table></figure>
+<p><code>remove( )</code> 删除被选元素及其子元素</p>
+<p><code>empty( )</code>  从被选元素中删除子元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div><div class="line"></div><div class="line"><span class="comment">//过滤被删除的元素</span></div><div class="line">$(selector).remove(<span class="string">".who"</span>)</div></pre></td></tr></table></figure>
+<h3 id="控制-CSS"><a href="#控制-CSS" class="headerlink" title="控制 CSS"></a>控制 CSS</h3><p><code>addClass( )</code>   向被选元素添加一个或多个类</p>
+<p><code>removeClass( )</code>    从被选元素删除一个或多个类</p>
+<p><code>toggleClass( )</code>    对被选元素进行添加/删除类的切换操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<p><code>css( )</code>    获取或设置被选元素的css</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(selector).css(<span class="string">"background-color"</span>)</div><div class="line"><span class="comment">//返回元素的背景色</span></div><div class="line"></div><div class="line">$(selector).css(&#123;</div><div class="line">    <span class="string">"background-color"</span>: <span class="string">"red"</span>,</div><div class="line">    <span class="string">"font-size"</span>: <span class="string">"20px"</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">//设置元素的css值</span></div></pre></td></tr></table></figure>
+<h3 id="获取尺寸"><a href="#获取尺寸" class="headerlink" title="获取尺寸"></a>获取尺寸</h3><p><code>width( )</code>  <code>height( )</code></p>
+<blockquote>
+<p><code>content</code> 的宽高</p>
+</blockquote>
+<p><code>innerWidth( )</code>  <code>innerHeight( )</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> 的宽高</p>
+</blockquote>
+<p><code>outerWidth( )</code>  <code>outerHeight( )</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> + <code>border</code> 的宽高</p>
+</blockquote>
+<p><code>outerWidth(true)</code> + <code>outerHeight(true)</code></p>
+<blockquote>
+<p><code>content</code> + <code>padding</code> + <code>border</code> + <code>margin</code> 的宽高</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div></pre></td></tr></table></figure>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p><code>get( )</code>    从指定的资源请求数据</p>
+<p><code>post( )</code>   向指定的资源提交处理的数据</p>
+<blockquote>
+<p>现在的 <code>Ajax</code> 可以使用 <code>Promise</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// get(URL. callback);</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.get(<span class="string">"/somewhere"</span>).catch(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//post(URL, data, callback)</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.post(<span class="string">"/somewhere"</span>,&#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"Glory"</span>,</div><div class="line">        <span class="attr">age</span>: <span class="string">"22"</span></div><div class="line">    &#125;).then(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -433,8 +443,8 @@ focus blur：焦点，获取焦点和失去焦点
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/30/Vue小项目总结/" rel="next" title="Vue小项目总结">
-                <i class="fa fa-chevron-left"></i> Vue小项目总结
+              <a href="/2018/02/02/Jquery/" rel="next" title="jQuery基础(一)">
+                <i class="fa fa-chevron-left"></i> jQuery基础(一)
               </a>
             
           </div>
@@ -442,10 +452,6 @@ focus blur：焦点，获取焦点和失去焦点
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/03/jQuery-0/" rel="prev" title="jQuery基础(二)">
-                jQuery基础(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -576,7 +582,7 @@ focus blur：焦点，获取焦点和失去焦点
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">2.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">3.</span> <span class="nav-text">效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#显示和隐藏"><span class="nav-number">3.1.</span> <span class="nav-text">显示和隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#淡入淡出"><span class="nav-number">3.2.</span> <span class="nav-text">淡入淡出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑入滑出"><span class="nav-number">3.3.</span> <span class="nav-text">滑入滑出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画"><span class="nav-number">3.4.</span> <span class="nav-text">动画</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-操作-DOM"><span class="nav-number">1.</span> <span class="nav-text">jQuery 操作 DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#捕获"><span class="nav-number">1.1.</span> <span class="nav-text">捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制元素"><span class="nav-number">1.2.</span> <span class="nav-text">控制元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制-CSS"><span class="nav-number">1.3.</span> <span class="nav-text">控制 CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取尺寸"><span class="nav-number">1.4.</span> <span class="nav-text">获取尺寸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">2.</span> <span class="nav-text">Ajax</span></a></li></ol></div>
             
 
           </div>
