@@ -270,6 +270,147 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/09/缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/09/缓存/" itemprop="url">
+                  缓存详解（转）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T10:11:17+08:00">
+                2018-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/09/缓存/" class="leancloud_visitors" data-flag-title="缓存详解（转）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
+</blockquote>
+<p>说实话，我起始真的不知道怎么去介绍缓存，所以引用了上面相对官方的定义。我想几乎每个开发者都碰到过缓存的问题吧，甚至有很多情况下我们会说这个问题已经修复了,你清理下缓存就好了。这篇文章我们就细细的来挖掘下缓存的种种轶事。</p>
+<h2 id="🦋缓存的种类"><a href="#🦋缓存的种类" class="headerlink" title="🦋缓存的种类"></a>🦋缓存的种类</h2><p>很多开发者习惯把cookie、webStorage以及IndexedDB存储的数据也称之为缓存，理由是都是保存在客户端的数据，没有什么区别。其实这是不严谨的，cookie的存在更多的是为了让服务端区别用户，webStorage和IndexedDB则更多用在保存具体的数据和在客户端存储大量结构化数据(文件/blobs)上面。</p>
+<p>实际上所谓的缓存只有一种——它是请求资源的副本。试想一下，如果每一个资源我们客户端都会保存一份副本，这会怎么样？客户端会炸掉，开发者会疯掉！所以我们需要一份协议来处理缓存，可以让开发者控制缓存的建立和删除。谁呢？还能有谁，HTTP呗。HTTP协议里定义了很多关于缓存的请求和响应字段，这也是接下来我们重点要逼逼叨的对象，研究下究竟是哪些字段怎么影响缓存的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/09/缓存/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/02/03/jQuery-0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -357,8 +498,7 @@
 
       
         
-          
-            <h2 id="jQuery-操作-DOM"><a href="#jQuery-操作-DOM" class="headerlink" title="jQuery 操作 DOM"></a>jQuery 操作 DOM</h2><h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><p><code>text( )</code>   返回文本内容</p>
+          <h2 id="jQuery-操作-DOM"><a href="#jQuery-操作-DOM" class="headerlink" title="jQuery 操作 DOM"></a>jQuery 操作 DOM</h2><h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><p><code>text( )</code>   返回文本内容</p>
 <p><code>html( )</code>   返回元素内容（包括html标记）</p>
 <p><code>val( )</code>    返回字段的值</p>
 <p><code>attr( )</code>   获取属性值</p>
@@ -367,47 +507,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(selector).text(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).html(<span class="string">"&lt;b&gt;This is new Value&lt;/b&gt;"</span>)</div><div class="line">$(selector).val(<span class="string">"This is new Value"</span>)</div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="string">"https://glorylin0704.github.io"</span>)</div><div class="line"><span class="comment">// attr 可以设置多个属性</span></div><div class="line">$(selector).attr(&#123;</div><div class="line">    <span class="string">"href"</span>: <span class="string">"https://glorylin0704.github.io/"</span>,</div><div class="line">    <span class="string">"title"</span>: <span class="string">"博客"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>同时以上方法均有回调函数，两个参数，第一个是当前元素的下标，第二个是原始的值，函数返回值作为新值</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue    </div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(selector).attr(<span class="string">"href"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">i, oldText</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> newValue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="控制元素"><a href="#控制元素" class="headerlink" title="控制元素"></a>控制元素</h3><p><code>append( )</code>     在被选元素的结尾插入内容</p>
-<p><code>prepend( )</code>    在被选元素的开头插入内容</p>
-<p><code>after( )</code>      在被选元素之后插入内容</p>
-<p><code>before( )</code>     在被选元素之前插入内容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">" "</span>)</div></pre></td></tr></table></figure>
-<p><code>append</code> / <code>prepend</code> 是在选择元素内部嵌入<br><code>after</code> / <code>before</code> 是在元素外面追加</p>
-<hr>
-<p><code>remove( )</code> 删除被选元素及其子元素</p>
-<p><code>empty( )</code>  从被选元素中删除子元素</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div><div class="line"></div><div class="line"><span class="comment">//过滤被删除的元素</span></div><div class="line">$(selector).remove(<span class="string">".who"</span>)</div></pre></td></tr></table></figure>
-<h3 id="控制-CSS"><a href="#控制-CSS" class="headerlink" title="控制 CSS"></a>控制 CSS</h3><p><code>addClass( )</code>   向被选元素添加一个或多个类</p>
-<p><code>removeClass( )</code>    从被选元素删除一个或多个类</p>
-<p><code>toggleClass( )</code>    对被选元素进行添加/删除类的切换操作</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(<span class="string">""</span>)</div></pre></td></tr></table></figure>
-<p><code>css( )</code>    获取或设置被选元素的css</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(selector).css(<span class="string">"background-color"</span>)</div><div class="line"><span class="comment">//返回元素的背景色</span></div><div class="line"></div><div class="line">$(selector).css(&#123;</div><div class="line">    <span class="string">"background-color"</span>: <span class="string">"red"</span>,</div><div class="line">    <span class="string">"font-size"</span>: <span class="string">"20px"</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">//设置元素的css值</span></div></pre></td></tr></table></figure>
-<h3 id="获取尺寸"><a href="#获取尺寸" class="headerlink" title="获取尺寸"></a>获取尺寸</h3><p><code>width( )</code>  <code>height( )</code></p>
-<blockquote>
-<p><code>content</code> 的宽高</p>
-</blockquote>
-<p><code>innerWidth( )</code>  <code>innerHeight( )</code></p>
-<blockquote>
-<p><code>content</code> + <code>padding</code> 的宽高</p>
-</blockquote>
-<p><code>outerWidth( )</code>  <code>outerHeight( )</code></p>
-<blockquote>
-<p><code>content</code> + <code>padding</code> + <code>border</code> 的宽高</p>
-</blockquote>
-<p><code>outerWidth(true)</code> + <code>outerHeight(true)</code></p>
-<blockquote>
-<p><code>content</code> + <code>padding</code> + <code>border</code> + <code>margin</code> 的宽高</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx()</div></pre></td></tr></table></figure>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p><code>get( )</code>    从指定的资源请求数据</p>
-<p><code>post( )</code>   向指定的资源提交处理的数据</p>
-<blockquote>
-<p>现在的 <code>Ajax</code> 可以使用 <code>Promise</code></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// get(URL. callback);</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.get(<span class="string">"/somewhere"</span>).catch(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//post(URL, data, callback)</span></div><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $.post(<span class="string">"/somewhere"</span>,&#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"Glory"</span>,</div><div class="line">        <span class="attr">age</span>: <span class="string">"22"</span></div><div class="line">    &#125;).then(<span class="function"><span class="params">suc</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//succeed</span></div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">//failed</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/jQuery-0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -536,8 +642,7 @@
 
       
         
-          
-            <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//两种开始方式</span></div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//Jquery 代码</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// Jquery 代码</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+          <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//两种开始方式</span></div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//Jquery 代码</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// Jquery 代码</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>Jquery 是为事件处理特别设计的</p>
 <p>鼠标事件：    </p>
 <pre><code>click dblclick：点击事件，单击和双击
@@ -549,34 +654,14 @@ hover(function, function) 第一个函数是 `mouseenter` 第二个函数是 `mo
 focus blur：焦点，获取焦点和失去焦点
 </code></pre><p>键盘事件：</p>
 <pre><code>keypress keydown keyup
-</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$().keydown(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="comment">//通过 event.which 可以知道按下的是哪个键</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
-<li>效果一般都是在事件触发之后表现出来</li>
-</ul>
-<h3 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h3><p><code>hide( )</code>        显示</p>
-<p><code>show( )</code>        隐藏</p>
-<p><code>toggle( )</code>    用来切换 <code>hide</code> 和 <code>show</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><p><code>fadeIn( )</code>    淡入</p>
-<p><code>fadeOut( )</code>    淡出</p>
-<p><code>fadeToggle( )</code>    切换 <code>fadeIn</code> 和 <code>fadeOut</code></p>
-<p><code>fadeTo( )</code>    渐变给不透明度</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//fadeTo</span></div><div class="line">$(selector).fadeTo(speed, opacity, callback)</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="滑入滑出"><a href="#滑入滑出" class="headerlink" title="滑入滑出"></a>滑入滑出</h3><p><code>slideDown( )</code>    滑入</p>
-<p><code>slideUp( )</code>        滑出        </p>
-<p><code>slideToggle( )</code>    切换 <code>slideDown</code> 和 <code>slideUp</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).xxx(speed, callback)</div></pre></td></tr></table></figure>
-<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p><code>animate( )</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	params</div><div class="line">	&#125;, speed, callback)</div><div class="line"></div><div class="line"><span class="comment">//params 参数定义形成动画的 CSS 属性，在json中，CSS的属性要用驼峰命名法 padding-left =&gt; paddingleft</span></div></pre></td></tr></table></figure>
-<p>也可以用相对值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;</div><div class="line">	<span class="attr">left</span>: <span class="string">'250px'</span>,</div><div class="line">	<span class="attr">height</span>: <span class="string">'+=150px'</span>,</div><div class="line">	<span class="attr">width</span>: <span class="string">'+=100px'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>使用队列功能，添加几个动画，使动画依次进行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'button'</span>).click(</div><div class="line">	<span class="keyword">let</span> div = $(<span class="string">'div'</span>)</div><div class="line">	div.animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">width</span>:<span class="string">'300px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.4'</span></div><div class="line">	&#125;, slow).animate(&#123;</div><div class="line">		<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">		<span class="attr">opacity</span>: <span class="string">'0.8'</span></div><div class="line">	&#125;, slow)</div><div class="line">)</div><div class="line"><span class="comment">//四个动画依次进行，链式调用</span></div></pre></td></tr></table></figure></p>
-<p><code>stop( )</code>     停止动画</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(selector).stop(stopAll, goToEnd)</div><div class="line"></div><div class="line"><span class="comment">//stopAll 清除动画队列，默认 false</span></div><div class="line"></div><div class="line"><span class="comment">//goToEnd 立即完成当前动画，默认是 false</span></div></pre></td></tr></table></figure>
-
-          
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/02/Jquery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1587,148 +1672,6 @@ focus blur：焦点，获取焦点和失去焦点
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/11/27/（转）AJAX原理与CORS跨域/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/27/（转）AJAX原理与CORS跨域/" itemprop="url">
-                  （转）AJAX原理与CORS跨域
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T00:02:02+08:00">
-                2017-11-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/27/（转）AJAX原理与CORS跨域/" class="leancloud_visitors" data-flag-title="（转）AJAX原理与CORS跨域">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>来源：segmentfault.com</p>
-<p>ajax作为前端开发必需的基础能力之一，你可能会使用它，但并不一定懂得其原理，以及更深入的服务器通信相关的知识。在最近两天的整理过程中，看了大量的文章，发现自己的后端能力已经限制自己在网络通信相关的知识领域的探索，还是应该尽快补齐短板。</p>
-<p>下面我们来聊一聊ajax相关的东西，包括<code>xhr/xdr/ajax/cors/http</code>的一部分内容，其中会抛弃一些被弃用的历史包袱，如IE6/7等。</p>
-<h3 id="Ajax的出现"><a href="#Ajax的出现" class="headerlink" title="Ajax的出现"></a>Ajax的出现</h3><p>2005年，Jesse James Garrett提出了Ajax的技术，其全称为<code>Asynchronous Javascript and XML</code>，<code>Ajax</code>的核心是<code>XMLHttpRequest</code>对象，简称XHR，它用于使浏览器向服务器请求额外的数据而不卸载页面，极大的提高了用户体验。在此之前，其实这种技术已经存在并被一些人实现，但并没有流行也没有被浏览器支持。不过在此之后，IE5第一次引入XHR对象，并支持ajax技术，后续被所有浏览器支持。</p>
-<h3 id="XMLHttpRequest对象和请求"><a href="#XMLHttpRequest对象和请求" class="headerlink" title="XMLHttpRequest对象和请求"></a>XMLHttpRequest对象和请求</h3><p>XHR是一个API，为客户端提供服务端和客户端之间通信的功能，并且不会刷新页面。它并不仅仅能取回XML类型的数据，而能取回所有类型的数据，除了http协议，还支持file和ftp协议。我们可以通过其构造函数来创建一个新的XHR对象，这个操作需要在其它所有操作之前完成:</p>
-<p><code>var xhr = new XMLHttpRequest();</code></p>
-<p>通过控制台我们可以很方便看到XHR的原型链：<code>Object -&gt; EventTarget -&gt; XMLHttpRequestEventTarget -&gt; XMLHttpRequest</code>。它拥有原型链上和本身的方法和属性，现在看下我们常用的方法：<br><img src="/2017/11/27/（转）AJAX原理与CORS跨域/1.png" alt="（转）AJAX原理与CORS跨域"><br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/27/（转）AJAX原理与CORS跨域/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1778,7 +1721,7 @@ focus blur：焦点，获取焦点和失去焦点
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
