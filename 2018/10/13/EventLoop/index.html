@@ -95,7 +95,7 @@
 <meta property="og:description" content="开头总是不知道写些什么东西……  为什么要有事件循环JavaScript 被设计的初愿是执行在浏览器上可以动态加载的脚本，以便进行 DOM 节点的操作，所以，如果它是像 Java 一样的多线程语言，那么对 DOM 的操作就是未知且不可预测的了。 所以：  JavaScript 是一门单线程语言。  单线程就意味着有丶事情做起来没那么理想化，比如读取一个文件的事件，你以为它读完了文件内容而进行下一">
 <meta property="og:image" content="https://glorylin0704.github.io/2018/10/13/EventLoop/web.jpg">
 <meta property="og:image" content="https://glorylin0704.github.io/2018/10/13/EventLoop/node.jpg">
-<meta property="og:updated_time" content="2018-10-14T17:41:17.690Z">
+<meta property="og:updated_time" content="2018-10-14T17:57:53.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Event Loop，浏览器环境和 Node 环境下的不同">
 <meta name="twitter:description" content="开头总是不知道写些什么东西……  为什么要有事件循环JavaScript 被设计的初愿是执行在浏览器上可以动态加载的脚本，以便进行 DOM 节点的操作，所以，如果它是像 Java 一样的多线程语言，那么对 DOM 的操作就是未知且不可预测的了。 所以：  JavaScript 是一门单线程语言。  单线程就意味着有丶事情做起来没那么理想化，比如读取一个文件的事件，你以为它读完了文件内容而进行下一">
@@ -361,26 +361,26 @@
 <p>有段时间，我认为 <code>异步</code> 和 <code>非阻塞</code> 就是同一样事。其实不然。。</p>
 </blockquote>
 <ul>
-<li>同步，代码从上之下依次执行，后续的代码必须等待前面的代码执行完毕</li>
-<li>异步，代码从上至下依次执行，后续 代码的执行需要等待前面代码执行完毕</li>
-<li>阻塞，由同步引起的等待前面代码执行完毕，后续代码再执行</li>
-<li>非阻塞，执行异步操作，通过轮询监听异步操作是否执行完毕，无需一直等待</li>
+<li>阻塞，代码从上之下依次执行，后续的代码必须等待前面的代码执行完毕</li>
+<li>非阻塞，代码从上至下依次执行，后续代码的执行不需要等待前面代码执行完毕</li>
+<li>同步，主动等待前面代码执行完毕</li>
+<li>异步，通过轮询监听异步操作是否执行完毕</li>
 </ul>
 <p>也就是说：</p>
 <ul>
-<li>同步和异步指的是被调用者是如何通知的，关注的是消息通知机制</li>
 <li>阻塞和非阻塞指的是调用者的状态，关注的是程序在等待调用结果时的状态</li>
+<li>同步和异步指的是被调用者是如何通知的，关注的是消息通知机制</li>
 </ul>
 <blockquote>
-<p>通俗点讲，同步和异步是指代码执行的顺序，阻塞和非阻塞是指在等待时被调用的形式</p>
+<p>通俗点讲，阻塞和非阻塞是指代码执行的顺序，同步和异步是指在等待消息的形式</p>
 </blockquote>
 <p>好吧，举个粗鄙点的例子解释一下：</p>
 <p>我和室友明天要交作业了，但我俩都没做，然后借了份已经做了的作业回来抄。秉着友好相处的理念，我让室友先抄，然后这时候就出现了 <code>同步</code> 和 <code>异步</code> ， <code>阻塞</code> 和 <code>非阻塞</code> 的问题了</p>
 <ul>
-<li>室友在抄作业，我在一旁看着他抄，等他抄完我再抄，这是 <code>同步</code></li>
-<li>室友在抄作业，我在我桌上看剧，一段时间看一次他抄完没，这是 <code>异步</code>，<code>阻塞</code></li>
-<li>室友在抄作业，我在他桌上看剧，一段时间看一次他抄完没，这是 <code>同步</code>，<code>阻塞</code></li>
-<li>室友在抄作业，我在我桌上看剧，他说抄完了会告诉我，这是 <code>异步</code>，<code>非阻塞</code></li>
+<li>室友在抄作业，我在他桌上啥也不干，看着他抄完我再抄，这是 <code>阻塞</code>，<code>同步</code></li>
+<li>室友在抄作业，我在他桌上啥也不干，他抄完了会告诉我，这是 <code>阻塞</code>，<code>异步</code></li>
+<li>室友在抄作业，我在我桌上看剧，一段时间看一次他抄完没，这是 <code>非阻塞</code>，<code>同步</code></li>
+<li>室友在抄作业，我在我桌上看剧，他抄完了会告诉我，这是 <code>非阻塞</code>，<code>异步</code></li>
 </ul>
 <h2 id="浏览器下的-Event-Loop-的顺序"><a href="#浏览器下的-Event-Loop-的顺序" class="headerlink" title="浏览器下的 Event Loop 的顺序"></a>浏览器下的 Event Loop 的顺序</h2><p>借图：<br><img src="/2018/10/13/EventLoop/web.jpg" alt="web"></p>
 <p>首先讲一下异步任务有分宏任务(macro-task)和微任务(micro-task)：<br>macro-task包括： setTimeout, setInterval, setImmediate, I/O, UI rendering。<br>micro-task包括：process.nextTick, Promise, Object.observe, MutationObserver。</p>
