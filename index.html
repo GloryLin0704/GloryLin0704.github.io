@@ -270,6 +270,203 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/10/13/EventLoop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RY Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GloryLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/10/13/EventLoop/" itemprop="url">
+                  Event Loop，浏览器环境和 Node 环境下的不同
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-13T21:35:48+08:00">
+                2018-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>开头总是不知道写些什么东西……</p>
+</blockquote>
+<h2 id="为什么要有事件循环"><a href="#为什么要有事件循环" class="headerlink" title="为什么要有事件循环"></a>为什么要有事件循环</h2><p><code>JavaScript</code> 被设计的初愿是执行在浏览器上可以动态加载的脚本，以便进行 <code>DOM</code> 节点的操作，所以，如果它是像 <code>Java</code> 一样的多线程语言，那么对 <code>DOM</code> 的操作就是未知且不可预测的了。</p>
+<p>所以：</p>
+<blockquote>
+<p><code>JavaScript</code> 是一门单线程语言。</p>
+</blockquote>
+<p>单线程就意味着有丶事情做起来没那么理想化，比如读取一个文件的事件，你以为它读完了文件内容而进行下一步的操作，然而运行的时候却发现，并没有这个结果存在，最后才发现，oh！！原来这个操作是异步的。。对，没错，单线程由此引出了 <code>同步</code> 和 <code>异步</code> 的问题。只有将某些操作(如读取文件)，作为异步执行，才能避免 <code>阻塞</code> ，使脚本执行时间更迅速，用户体验更好。</p>
+<blockquote>
+<p>所谓的事件循环，就是 <code>JavaScript</code> 执行异步操作的过程</p>
+</blockquote>
+<h2 id="同步与异步，阻塞与非阻塞"><a href="#同步与异步，阻塞与非阻塞" class="headerlink" title="同步与异步，阻塞与非阻塞"></a>同步与异步，阻塞与非阻塞</h2><blockquote>
+<p>有段时间，我认为 <code>异步</code> 和 <code>非阻塞</code> 就是同一样事。其实不然。。</p>
+</blockquote>
+<ul>
+<li>同步，代码从上之下依次执行，后续的代码必须等待前面的代码执行完毕</li>
+<li>异步，代码从上至下依次执行，后续 代码的执行需要等待前面代码执行完毕</li>
+<li>阻塞，由同步引起的等待前面代码执行完毕，后续代码再执行</li>
+<li>非阻塞，执行异步操作，通过轮询监听异步操作是否执行完毕，无需一直等待</li>
+</ul>
+<p>也就是说：</p>
+<ul>
+<li>同步和异步指的是被调用者是如何通知的，关注的是消息通知机制</li>
+<li>阻塞和非阻塞指的是调用者的状态，关注的是程序在等待调用结果时的状态</li>
+</ul>
+<blockquote>
+<p>通俗点讲，同步和异步是指代码执行的顺序，阻塞和非阻塞是指在等待时被调用的形式</p>
+</blockquote>
+<p>好吧，举个粗鄙点的例子解释一下：</p>
+<p>我和室友明天要交作业了，但我俩都没做，然后借了份已经做了的作业回来抄。秉着友好相处的理念，我让室友先抄，然后这时候就出现了 <code>同步</code> 和 <code>异步</code> ， <code>阻塞</code> 和 <code>非阻塞</code> 的问题了</p>
+<ul>
+<li>室友在抄作业，我在一旁看着他抄，等他抄完我再抄，这是 <code>同步</code></li>
+<li>室友在抄作业，我在我桌上看剧，一段时间看一次他抄完没，这是 <code>异步</code>，<code>阻塞</code></li>
+<li>室友在抄作业，我在他桌上看剧，一段时间看一次他抄完没，这是 <code>同步</code>，<code>阻塞</code></li>
+<li>室友在抄作业，我在我桌上看剧，他说抄完了会告诉我，这是 <code>异步</code>，<code>非阻塞</code></li>
+</ul>
+<h2 id="浏览器下的-Event-Loop-的顺序"><a href="#浏览器下的-Event-Loop-的顺序" class="headerlink" title="浏览器下的 Event Loop 的顺序"></a>浏览器下的 Event Loop 的顺序</h2><p>借图：<br><img src="/2018/10/13/EventLoop/web.jpg" alt="web"></p>
+<p>首先讲一下异步任务有分宏任务(macro-task)和微任务(micro-task)：<br>macro-task包括： setTimeout, setInterval, setImmediate, I/O, UI rendering。<br>micro-task包括：process.nextTick, Promise, Object.observe, MutationObserver。</p>
+<blockquote>
+<p>process.nextTick 的执行优先级大于 Promise</p>
+</blockquote>
+<p>在 <code>JavaScript</code> 执行的时候，会产生一个执行栈，其次，还会有一个任务队列，这个队列就是用来存放等待执行的异步操作的回调。。</p>
+<p>emmm，有点绕，是这样的，当执行栈中发现有异步操作，会交给 Web APIs 去执行，并将执行结果放在队列中，当执行栈中主线程也就是同步代码执行完毕，就先将此时的 <code>micro-task</code> 执行，然后会把任务队列中的一个 <code>macro-task</code> 入栈出栈，并把存在的 <code>micro-task</code> 都执行，执行完之后，再将下一个 <code>macro-task</code> 入栈出栈，执行此时的 <code>micro-task</code> ，如此反复………………便是 <code>Event loop</code></p>
+<p>官方点的说法就是：</p>
+<ul>
+<li>执行完主执行线程中的任务。</li>
+<li>取出micro-task中任务执行直到清空。</li>
+<li>取出macro-task中一个任务执行。</li>
+<li>取出micro-task中任务执行直到清空。</li>
+<li>重复3和4。</li>
+</ul>
+<h2 id="Node-下的-Event-Loop-的顺序"><a href="#Node-下的-Event-Loop-的顺序" class="headerlink" title="Node 下的 Event Loop 的顺序"></a>Node 下的 Event Loop 的顺序</h2><p><img src="/2018/10/13/EventLoop/node.jpg" alt="node"></p>
+<p>这是 Node 官方文档中给出的 Node 事件循环的流程。可以一眼看出的是，microTasks 操作在每个阶段都执行一遍。先解释一下几个关键的环节：</p>
+<ul>
+<li>timers：这个环节里面执行的是和定时器相关的函数，如 <code>setTimeout</code></li>
+<li>I/O callbacks：这个环节里面执行的是和 <code>IO</code> 读写相关的操作，如 <code>fs.readFile</code></li>
+<li>poll：检查上面两步是否已经完成</li>
+<li>check：执行 Node 特有的 <code>setImmediate</code> </li>
+</ul>
+<p>所以是：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">microTasks =&gt; <span class="function"><span class="params">timer</span> =&gt;</span> microTasks =&gt; I/<span class="function"><span class="params">O</span> =&gt;</span> microTasks =&gt; check </div><div class="line"></div><div class="line">process.nextTick/<span class="function"><span class="params">Promise</span> =&gt;</span> setTimeout =&gt; process.nextTick/<span class="function"><span class="params">Promise</span> =&gt;</span></div><div class="line">fs.readFile =&gt; process.nextTick/<span class="function"><span class="params">Promise</span> =&gt;</span> setImmediate</div></pre></td></tr></table></figure></p>
+<p>在每个阶段开始前，会清空一次 <code>microTasks</code> 中的任务，注意！</p>
+<blockquote>
+<p>是在每个阶段进行前，会清空一次 <code>microTasks</code> 中的任务</p>
+</blockquote>
+<ul>
+<li>这就是浏览器和 Node 事件循环的不同</li>
+</ul>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>看一段代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> sleep = <span class="function">(<span class="params">time</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">let</span> startTime = <span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line">  <span class="keyword">while</span> (<span class="keyword">new</span> <span class="built_in">Date</span>() - startTime &lt; time) &#123; &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'1s over'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout - 1'</span>)</div><div class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout - 1 - 1'</span>)</div><div class="line">    sleep(<span class="number">1000</span>)</div><div class="line">  &#125;)</div><div class="line">   <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> resolve()).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout - 1 - then'</span>)</div><div class="line">     <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> resolve()).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'setTimeout - 1 - then - then'</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">  sleep(<span class="number">1000</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout - 2'</span>)</div><div class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout - 2 - 1'</span>)</div><div class="line">    sleep(<span class="number">1000</span>)</div><div class="line">  &#125;)</div><div class="line">   <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> resolve()).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout - 2 - then'</span>)</div><div class="line">     <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> resolve()).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'setTimeout - 2 - then - then'</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">  sleep(<span class="number">1000</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>浏览器下执行结果:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">setTimeout - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">1</span> - then</div><div class="line">setTimeout - <span class="number">1</span> - then - then</div><div class="line">setTimeout - <span class="number">2</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">2</span> - then</div><div class="line">setTimeout - <span class="number">2</span> - then - then</div><div class="line">setTimeout - <span class="number">1</span> - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">2</span> - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div></pre></td></tr></table></figure></p>
+<p>Node 下执行结果:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">setTimeout - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">2</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">1</span> - then</div><div class="line">setTimeout - <span class="number">2</span> - then</div><div class="line">setTimeout - <span class="number">1</span> - then - then</div><div class="line">setTimeout - <span class="number">2</span> - then - then</div><div class="line">setTimeout - <span class="number">1</span> - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div><div class="line">setTimeout - <span class="number">2</span> - <span class="number">1</span></div><div class="line"><span class="number">1</span>s over</div></pre></td></tr></table></figure></p>
+<p>仔细对比一下有什么不同</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>在浏览器中，每执行一个 <code>macro-task</code>，就会将当前的 <code>micro-task</code> 清空</li>
+<li>在 Node 中，每一个阶段开始前，就会将当前的 <code>micro-task</code> 清空，这个阶段可能不止一个 <code>macro-task</code></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/08/31/summer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1432,134 +1629,6 @@ focus blur：焦点，获取焦点和失去焦点
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/01/19/Vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RY Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ots4cfy06.bkt.clouddn.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GloryLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/01/19/Vue/" itemprop="url">
-                  LearningVue
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T21:06:46+08:00">
-                2018-01-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>不知从何说起，那就随性所始</p>
-</blockquote>
-<h2 id="组件的定义"><a href="#组件的定义" class="headerlink" title="组件的定义"></a>组件的定义</h2><p>1.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> com = &#123;</div><div class="line">    data()&#123;</div><div class="line">        <span class="keyword">return</span>&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;&#125;,</div><div class="line">    <span class="attr">template</span>:<span class="string">`</span></div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h1&gt;xxx&lt;/h1&gt;</div><div class="line">        &lt;h2&gt;xxx&lt;/h2&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    `</div><div class="line">&#125;, <span class="comment">//直接定义完整的组件</span></div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/19/Vue/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1609,7 +1678,7 @@ focus blur：焦点，获取焦点和失去焦点
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
