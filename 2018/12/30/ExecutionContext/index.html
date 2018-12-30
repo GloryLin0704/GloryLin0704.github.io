@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
+<meta name="description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西写写，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
 <meta name="keywords" content="daily">
 <meta property="og:type" content="article">
 <meta property="og:title" content="执行上下文">
 <meta property="og:url" content="https://GloryLin0704.github.io/2018/12/30/ExecutionContext/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
-<meta property="og:updated_time" content="2018-12-30T14:41:35.060Z">
+<meta property="og:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西写写，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
+<meta property="og:updated_time" content="2018-12-30T14:48:55.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执行上下文">
-<meta name="twitter:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
+<meta name="twitter:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西写写，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
 
 
 
@@ -343,7 +343,7 @@
 
       
         <blockquote>
-<p>大半个月前，去重温了一下 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="external">冴羽</a> 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。</p>
+<p>大半个月前，去重温了一下 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="external">冴羽</a> 的博客。就想着把执行上下文的东西写写，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。</p>
 </blockquote>
 <h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><p>当 <code>JavaScript</code> 顺序执行下来的时候，会遇到三种可执行代码，<code>全局代码</code>，<code>函数代码</code>，<code>eval代码</code></p>
 <p>当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，<code>执行上下文</code>，与此同时，会将这个环境压入一个名为<code>执行上下文栈</code>的环境去管理不同的执行上下文。</p>
