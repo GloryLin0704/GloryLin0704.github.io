@@ -293,7 +293,7 @@
               
                 
                 <a class="post-title-link" href="/2018/12/30/ExecutionContext/" itemprop="url">
-                  ExecutionContext
+                  执行上下文
                 </a>
               
             
@@ -346,8 +346,7 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>大半个月前，去重温了一下 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="external">冴羽</a> 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。</li>
 </ul>
 <h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><p>当 <code>JavaScript</code> 顺序执行下来的时候，会遇到三种可执行代码，<code>全局代码</code>，<code>函数代码</code>，<code>eval代码</code></p>
@@ -357,65 +356,13 @@
 <p>形象点可以模拟成一个数组 ECStack = [];</p>
 <p>在 Javascript 开始解释代码的时候，最先遇到的是全局代码，所以全局代码的执行上下文最先入栈，globalContext.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> ECStack = [];</div><div class="line"></div><div class="line">ECStack.push(globalContext);</div><div class="line"></div><div class="line">ECStack = [globalContext];</div></pre></td></tr></table></figure>
-<p>当遇到需要执行一个函数时，生成执行上下文，会将其压入 ECStack 栈的栈底，当函数执行完毕的时候，将其弹出执行上下文栈</p>
-<p>全局代码的执行上下文贯穿整份代码前后，所以不管怎样，只要 js 代码还没运行完，ECStack 中始终会有 globalContext.</p>
-<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>每个执行上下文都有三个重要的属性</p>
-<ul>
-<li>变量对象 / 活动对象(variable object / activation object, VO / AO)</li>
-<li>作用域链(scope chain)</li>
-<li>this</li>
-</ul>
-<h4 id="变量对象-Variable-object-VO"><a href="#变量对象-Variable-object-VO" class="headerlink" title="变量对象 (Variable object VO)"></a>变量对象 (Variable object VO)</h4><p>变量对象是与执行上下文相关的数据作用域，存储了上下文种定义的变量和函数声明</p>
-<p>也就是说，变量对象其实是存了该环境下的变量和函数。</p>
-<ul>
-<li><p>全局上下文的变量对象就是全局对象</p>
-</li>
-<li><p>函数上下文中用活动对象 (activation object, AO) 表示变量对象</p>
-</li>
-</ul>
-<p>变量对象是在进入执行上下文时创建的，所以变量对象在一开始执行代码的时候就被创建了，因为此时全局代码的执行上下文被创建了；但是活动对象，是在函数被调用时通过函数的 arguments 属性初始化，然后生成对应的执行上下文，随函数执行完毕而销毁，除了闭包这种情况。</p>
-<p>函数的执行过程：分析和执行，可分为 <code>进入执行上下文</code> <code>代码执行</code></p>
-<h5 id="进入执行上下文"><a href="#进入执行上下文" class="headerlink" title="进入执行上下文"></a>进入执行上下文</h5><p>这时候是初始化 arguement，函数声明，变量声明</p>
-<p>这个阶段中，函数声明优先变量声明，如果变量名称和函数名称相同，则被忽略，不处理名称相同的变量名称。</p>
-<ul>
-<li>如果函数体中没有用 var 去声明变量，这个变量不会进入函数执行上下文中</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function foo(a)&#123;</div><div class="line">    var b = 2;</div><div class="line">    function c()&#123;</div><div class="line">        console.log(&apos;hello&apos;)</div><div class="line">    &#125;;</div><div class="line">    var d = function()&#123;</div><div class="line">        console.log(&apos;world&apos;)</div><div class="line">    &#125;;</div><div class="line">    e = 5;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>1、调用这段代码时，先通过 arguements 初始化</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">    <span class="attr">arguments</span>: &#123;</div><div class="line">        <span class="number">0</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">length</span>: <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>2、进入执行上下文，添加形参、函数声明、变量声明，函数在此阶段会优先得到声明</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">    <span class="attr">arguments</span>: &#123;</div><div class="line">        <span class="number">0</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">length</span>: <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="literal">undefined</span>,</div><div class="line">    <span class="attr">c</span>: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">    <span class="attr">d</span>: <span class="literal">undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="代码执行"><a href="#代码执行" class="headerlink" title="代码执行"></a>代码执行</h5><p>3、顺序执行，改变 AO 中变量对象的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">    <span class="attr">arguments</span>: &#123;</div><div class="line">        <span class="number">0</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">length</span>: <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">c</span>: reference to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">    <span class="attr">d</span>: reference to FunctionExpression <span class="string">"d"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="作用域链-Scope-chain"><a href="#作用域链-Scope-chain" class="headerlink" title="作用域链(Scope chain)"></a>作用域链(Scope chain)</h4><p>查找变量的时候，现在当前上下文的变量对象中查找，如果没有，就往上一级找，最终一直找到全局上下文的变量对象，这就构成了作用域链</p>
-<p>以函数的创建和激活两个时期来讲解作用域链是如何创建和变化的</p>
-<h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><p>在函数创建时，会将所有父级的变量对象保存到函数的属性中，<code>[[scope]]</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.[[scope]] = [</div><div class="line">    globalContext.VO</div><div class="line">]</div><div class="line"></div><div class="line">bar.[[scope]] = [</div><div class="line">    fooContext.AO,</div><div class="line">    globalContext.VO</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>如上创建函数的作用域链</p>
-<h5 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h5><p>当函数激活时，创建完活动对象时，会将当前活动对象加入作用域链的顶端</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> scope2 = <span class="string">"local scope"</span>;</div><div class="line">    <span class="keyword">return</span> scope2;</div><div class="line">&#125;</div><div class="line">checkscope();</div></pre></td></tr></table></figure>
-<p>1、创建时，生成函数的<code>[[scope]]</code>属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">checkscope.[[scope]] = [</div><div class="line">    globalContext.VO</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>2、开始执行的时候，函数入执行上下文栈</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ECStack = [checkscopeContext, globalContext];</div></pre></td></tr></table></figure>
-<p>3、准备开始之前，会将函数的<code>[[scope]]</code>复制创建函数执行上下文的作用域链</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">checkscopeContext = &#123;</div><div class="line">    <span class="attr">Scope</span>:checkscope.[[scope]]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>4、执行函数第一步，分析函数，进入执行上下文，生成活动对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkscopeContext = &#123;</div><div class="line">    <span class="attr">AO</span>:&#123;</div><div class="line">        <span class="attr">arguments</span>:&#123;&#125;,</div><div class="line">        <span class="attr">scope2</span>:<span class="literal">undefined</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">Scope</span>:checkscope.[[scope]]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>5、执行函数第二步，将活动对象压入 Scope 顶端</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkscopeContext = &#123;</div><div class="line">    <span class="attr">AO</span>: &#123;</div><div class="line">        <span class="attr">arguments</span>: &#123;&#125;,</div><div class="line">        <span class="attr">scope2</span>: <span class="literal">undefined</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">Scope</span>: [AO, [[Scope]]]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>6、执行函数第三步，代码执行，按代码顺序执行，改变 AO 中变量对象的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkscopeContext = &#123;</div><div class="line">    <span class="attr">AO</span>: &#123;</div><div class="line">        <span class="attr">arguments</span>: &#123;&#125;,</div><div class="line">        <span class="attr">scope2</span>: <span class="string">"local scope"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">Scope</span>: [AO, [[Scope]]]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>7、顺序执行完函数代码，函数上下文从执行上下文栈中弹出</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ECStack = [globalContext];</div></pre></td></tr></table></figure>
-<blockquote>
-<p>至此，函数执行上下文的变量对象和作用域链已经创建完成，至于 <code>this</code> 嘛，有点麻烦，加之天色已经不早了，那就明年再写了吧。</p>
-</blockquote>
-<ul>
-<li>情不知所起，一往而深</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/30/ExecutionContext/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

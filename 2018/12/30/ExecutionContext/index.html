@@ -90,13 +90,13 @@
 <meta name="description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
 <meta name="keywords" content="daily">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ExecutionContext">
+<meta property="og:title" content="执行上下文">
 <meta property="og:url" content="https://GloryLin0704.github.io/2018/12/30/ExecutionContext/index.html">
 <meta property="og:site_name" content="GloryLin">
 <meta property="og:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
-<meta property="og:updated_time" content="2018-12-30T14:38:17.949Z">
+<meta property="og:updated_time" content="2018-12-30T14:40:39.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ExecutionContext">
+<meta name="twitter:title" content="执行上下文">
 <meta name="twitter:description" content="大半个月前，去重温了一下 冴羽 的博客。就想着把执行上下文的东西谢谢，但是因为考试，一直没有写出来，现在有空，刚好就把它给写完，作为 2018 年最后一篇技术文。  执行上下文栈当 JavaScript 顺序执行下来的时候，会遇到三种可执行代码，全局代码，函数代码，eval代码 当 JavaScript 遇到执行到这些代码的时候，会创建一个环境，执行上下文，与此同时，会将这个环境压入一个名为执行">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title> ExecutionContext | GloryLin </title>
+  <title> 执行上下文 | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -291,7 +291,7 @@
             
             
               
-                ExecutionContext
+                执行上下文
               
             
           </h1>
@@ -352,6 +352,7 @@
 <p>形象点可以模拟成一个数组 ECStack = [];</p>
 <p>在 Javascript 开始解释代码的时候，最先遇到的是全局代码，所以全局代码的执行上下文最先入栈，globalContext.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> ECStack = [];</div><div class="line"></div><div class="line">ECStack.push(globalContext);</div><div class="line"></div><div class="line">ECStack = [globalContext];</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>当遇到需要执行一个函数时，生成执行上下文，会将其压入 ECStack 栈的栈底，当函数执行完毕的时候，将其弹出执行上下文栈</p>
 <p>全局代码的执行上下文贯穿整份代码前后，所以不管怎样，只要 js 代码还没运行完，ECStack 中始终会有 globalContext.</p>
 <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>每个执行上下文都有三个重要的属性</p>
