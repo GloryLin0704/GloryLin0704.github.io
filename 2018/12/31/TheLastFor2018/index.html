@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="serve," />
+  <meta name="keywords" content="生活那些事," />
 
 
 
@@ -87,17 +87,20 @@
 
 
 
-<meta name="description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
-<meta name="keywords" content="serve">
+<meta name="description" content="前言 2018 年，很累的一年。所幸已是最后一天。    曾经梦想仗剑走天涯 现实柴米油盐酱醋茶">
+<meta name="keywords" content="生活那些事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图解HTTP chapter 1">
-<meta property="og:url" content="https://GloryLin0704.github.io/2017/10/18/图解HTTP/index.html">
+<meta property="og:title" content="The Last For 2018">
+<meta property="og:url" content="https://GloryLin0704.github.io/2018/12/31/TheLastFor2018/index.html">
 <meta property="og:site_name" content="GloryLin">
-<meta property="og:description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
-<meta property="og:updated_time" content="2018-01-24T15:37:05.547Z">
+<meta property="og:description" content="前言 2018 年，很累的一年。所幸已是最后一天。    曾经梦想仗剑走天涯 现实柴米油盐酱醋茶">
+<meta property="og:image" content="https://glorylin0704.github.io/2018/12/31/TheLastFor2018/1.jpg">
+<meta property="og:image" content="https://glorylin0704.github.io/2018/12/31/TheLastFor2018/3.jpg">
+<meta property="og:updated_time" content="2018-12-31T08:49:33.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图解HTTP chapter 1">
-<meta name="twitter:description" content="TCP/IP协议族 计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。  TCP/IP的分层管理 TCP/IP中被关注得最多的是分层问题，按层次可分为：应用层、传输层、网络层和数据链路层；分层的好处是某个地方需要更改只要改对应的层次即">
+<meta name="twitter:title" content="The Last For 2018">
+<meta name="twitter:description" content="前言 2018 年，很累的一年。所幸已是最后一天。    曾经梦想仗剑走天涯 现实柴米油盐酱醋茶">
+<meta name="twitter:image" content="https://glorylin0704.github.io/2018/12/31/TheLastFor2018/1.jpg">
 
 
 
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://GloryLin0704.github.io/2017/10/18/图解HTTP/"/>
+  <link rel="canonical" href="https://GloryLin0704.github.io/2018/12/31/TheLastFor2018/"/>
 
 
 
 
 
-  <title> 图解HTTP chapter 1 | GloryLin </title>
+  <title> The Last For 2018 | GloryLin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -270,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2017/10/18/图解HTTP/">
+    <link itemprop="mainEntityOfPage" href="https://GloryLin0704.github.io/2018/12/31/TheLastFor2018/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RY Lin">
@@ -291,7 +294,7 @@
             
             
               
-                图解HTTP chapter 1
+                The Last For 2018
               
             
           </h1>
@@ -306,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T23:19:24+08:00">
-                2017-10-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T13:23:33+08:00">
+                2018-12-31
               </time>
             
 
@@ -342,37 +345,79 @@
       
 
       
-        <h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><blockquote>
-<p>计算机与网络进行相互通信，双方就必须基于相同的方法，如怎样探测到通信目标、由哪方发起通信、使用哪种语言通信，不同的硬件、操作系统之间的通信，都需要一种规则，这就称之为协议。HTTP协议就是TCP/IP协议族中的一种。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>2018 年，很累的一年。所幸已是最后一天。</p>
 </blockquote>
-<h2 id="TCP-IP的分层管理"><a href="#TCP-IP的分层管理" class="headerlink" title="TCP/IP的分层管理"></a>TCP/IP的分层管理</h2><blockquote>
-<p>TCP/IP中被关注得最多的是分层问题，按层次可分为：<code>应用层</code>、<code>传输层</code>、<code>网络层</code>和<code>数据链路层</code>；分层的好处是某个地方需要更改只要改对应的层次即可，不需全改，节省时间。</p>
+<p><img src="/2018/12/31/TheLastFor2018/1.jpg" alt="TheLastFor2018"></p>
+<blockquote>
+<center>曾经梦想仗剑走天涯 现实柴米油盐酱醋茶</center>
+
 </blockquote>
-<ul>
-<li><p><code>应用层</code>：决定了向用户提供应用服务时通信的活动，预存了各类通用的应用服务，如FTP和DNS，HTTP协议就是在应用层。</p>
-</li>
-<li><p><code>传输层</code>：对应用层提供处于网络连接中的两台计算机之间的数据传输，将请求分割为数据包，传向下一层，这层用到了TCP协议。</p>
-</li>
-<li><p><code>网络层</code>： 处理在网络上流动的数据包，数据包是最小的数据传输单位，该层规定了通过怎样的路线到达对方计算机，并把数据包传给对方。</p>
-</li>
-<li><p><code>链路层</code>：处理连接网络的硬件部分。</p>
-</li>
-</ul>
 <a id="more"></a>
-<h2 id="TCP、IP、DNS与HTTP的关系"><a href="#TCP、IP、DNS与HTTP的关系" class="headerlink" title="TCP、IP、DNS与HTTP的关系"></a>TCP、IP、DNS与HTTP的关系</h2><ul>
-<li><p><code>TCP</code>：TCP位于传输层，提供可靠得字节流服务，为了方便传输，将大块数据分割为了以报文段为单位得数据包进行管理和传输，而为了准确无误将数据传到目标，TCP协议采用了<code>三次握手</code>策略：客户端发送一个带SYN标志的数据包给对方，服务端接收后，回传一个带有SYN/ACK标志的数据包表示收到信息，最后客户端再回传一个带ACK标志的数据包，代表<code>握手</code>结束，若中途失败，TCP会再次以相同顺序发送相同的数据包。</p>
-</li>
-<li><p><code>IP</code>：IP协议位于网络层，其作用是把各种数据包传送给对方，其中两个重要的条件<code>IP地址</code>和<code>MAC地址</code>。<code>IP地址</code>：节点被分配到的地址，可变。<code>MAC地址</code>：网卡所属的固定地址，不可变。与<code>MAC地址</code>紧密相连的是<code>ARP协议</code>，该协议可与解析通信方的<code>IP地址</code>就可以反查出对应的<code>MAC地址</code>。在到达通信目标的中转过程中，计算机和路由器等网络设备只能获悉大概的传输路线，就是说客户端发出的IP请求不能被直接解析到对应的服务器，需要经过不断的中转，不断的ARP解析，最后到达目标服务器。</p>
-</li>
-<li><p><code>DNS</code>：DNS是老伙计了，它的诞生是为了能把域名解析成复杂的IP地址，客户就不用记住复杂的一串数字，也能通过IP地址反查域名。</p>
-</li>
-</ul>
-<h2 id="一次完整的请求"><a href="#一次完整的请求" class="headerlink" title="一次完整的请求"></a>一次完整的请求</h2><ul>
-<li><code>客户端发送请求</code> -&gt; <code>DNS解析域名返回IP地址</code> -&gt; <code>生成请求，在应用层HTTTP生成报文</code> -&gt; <code>在传输层TCP对数据分割成文段，带序号</code> -&gt; <code>在网络层，IP通过ARP解析IP地址边中转边传送</code> -&gt; <code>链路层传到服务端</code> -&gt; <code>网络层接收数据包</code> -&gt; <code>传输层重组报文</code> -&gt; <code>应用层处理HTTP请求</code> -&gt; <code>服务器</code> -&gt; <code>将处理结果按原路返回</code></li>
-</ul>
-<h2 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h2><blockquote>
-<p><code>URI</code>是统一资源标识符，<code>URL</code>是统一资源定位符，<code>URI</code>用字符串标识某一互联网资源，而<code>URL</code>表示资源的在互联网上所处的位置，<code>URL</code>是<code>URI</code>的子集。</p>
+<h2 id="学业"><a href="#学业" class="headerlink" title="学业"></a>学业</h2><p>上半年，有惊无险度过，没想到大二还能混个奖学金，是有点小意外。</p>
+<p>然而，这学期开始上专业课了，不过都好无聊，软件开发工具、软件项目管理，还有下学期的软件测试，毫无兴趣，幸好这些课都是交报告。</p>
+<p>说到感兴趣的课呀，那我很快就想到了数据库老师和蔼的面容，哈哈。这一年里最喜欢的课，就是数据库，遇到你，花光四年的课程。</p>
+<p>悄悄地，即将走完大三上了，时间如流水，不经意间就快毕业了。回想起刚入学，和现在的自己对比，似乎，并没有什么不同。</p>
+<blockquote>
+<center>果然很是讨厌读书，幸好并没有考研的打算</center>
+
 </blockquote>
+<hr>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>这一年，做了很多乱七八糟的事情。</p>
+<p>3 月份机缘巧合，接触过一下 <code>React</code>，因为要用 <code>飞冰</code> 做点东西，那时候的飞冰只有 <code>React</code> 框架，所以一脸懵逼去弄了弄，心里暗想，为什么要那么沙雕把 <code>DOM</code> 也写在一起，变量修改还要用 <code>setState</code>。后来才知道，原来这是 <code>JSX</code> ，原来我才是沙雕。</p>
+<p>之后，再因为机缘巧合，接触了 <code>SEO</code>，果然是个大杀器，愣是研究了很久都不懂。问了很多师兄，查了很多资料，大概大概懂了点，百度蜘蛛收录的时候，并不会执行脚本，所以用 <code>vue</code> 写出来的 <code>SEO</code> 效果非常差。于是乎，在 webpack 中配了 <code>prerender-spa-plugin</code>，去预渲染首页，稍微缓解了一下。好吧，除了服务端渲染，我想不到其他办法去解决了。</p>
+<p>后面，用 <code>koa2</code> 去写了许愿墙的后台，发现和 <code>express</code> 写法上是有一点点区别，koa2 中基本都使用了 ES6 的语法，不过本质上我觉得还是一样，洋葱模型。</p>
+<p>然后，就是终于学会了 <code>接入公众号网页开发</code>，2 月份的时候，研究了很久都没看懂微信如何授权，如何获取用户信息，直至 10 月份，公众号网页开发这块算是 ok 了。当时还想着写篇博客记录一下怎样接入，现在才忽然想起来忘了这事。。。</p>
+<blockquote>
+<center>玄不改命，氪不救非</center>
+
+</blockquote>
+<hr>
+<p>做了很多东西之后，回头看看，发现这一年，编程水平并没有很显著提升，只是搬砖的速度越来越快，今年得到提升的大概是解决问题的能力吧，总是能遇到很多灵异问题，也是服气。</p>
+<p>从 11 月开始，除了必要的项目跟进，基本没有再继续写代码了，回头看看 js 的原理，过上中年油腻生活，时常上一些论坛看看文章，开拓一下知识面，或者是去实现一些常用的东西。感觉有很多东西不会，但又不知道从哪里开始。</p>
+<ul>
+<li>函数式编程，没掌握</li>
+<li>SSR，了解一点点 Nuxt.js ，没实践过</li>
+<li>Koa2，尚且入门</li>
+<li>计算机网络，七七八八</li>
+</ul>
+<p>开始关注实习，身边有些优秀的家伙，已经找到了寒假实习，似乎自己还没有这样的能力。寒假留下来继续补补。。</p>
+<blockquote>
+<center>表面看起来稳如老狗，实则慌得一批</center>
+
+</blockquote>
+<hr>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>这一年，并没有多么难忘，一整年都很平淡，恍惚间，我还以为是 2017 年，2017 的记忆比 2018 的更深。今年得到了很多，也失去了很多。事情并没有按预期那样发展，所以最后带来了很多麻烦。</p>
+<p>这一年，拿了奖学金；做了很多项目，政府级、企业级；也参加过比赛拿了第一名；至少可以有一份看得去的简历。</p>
+<p>但是太累，背负了太多东西，如果可以，我也希望出去玩，就算不是去约会，也可以去看看外面。说到底还是责任感在作祟吧，责任在肩上，不完成我会感到很愧疚。我很想放下这个担子，但到现在还没有能找到合适的人，说来真是可笑。</p>
+<blockquote>
+<center>对不起，我就是个废物。</center>
+
+</blockquote>
+<hr>
+<p>后面两个月，来到了创客，小日子过得还挺滋润的，宿舍 -&gt; 饭堂 -&gt; 创客，每天如此，日复一日。</p>
+<p>不管怎样，我也在慢慢成长，心境变化挺大的，毕竟也是大了一岁。</p>
+<blockquote>
+<center>跌宕起伏开了个头，平平淡淡收了个尾</center>
+
+</blockquote>
+<hr>
+<h2 id="情感"><a href="#情感" class="headerlink" title="情感"></a>情感</h2><p>Null</p>
+<blockquote>
+<center> 路，荆棘而漫长，愿我们一如既往地坚强</center>
+
+</blockquote>
+<hr>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>去年留下的问题，现在可以回答了。</p>
+<blockquote>
+<center>今年，果然是很重要、很忙的一年</center>
+
+</blockquote>
+<p><br></p>
+<p><strong>留给明年的问题，得到自己想要的东西了吗?</strong></p>
+<p><strong>就这样了吧，愿我们被世界温柔以待！Hello 2019！</strong></p>
+<hr>
+<p><img src="/2018/12/31/TheLastFor2018/3.jpg" alt="TheLastFor2018"><br>ps:郁设画了两年的画</p>
 
       
     </div>
@@ -402,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/serve/" rel="tag"># serve</a>
+            <a href="/tags/生活那些事/" rel="tag"># 生活那些事</a>
           
         </div>
       
@@ -415,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/09/七牛/" rel="next" title="七牛——文件上传与网络资源抓取">
-                <i class="fa fa-chevron-left"></i> 七牛——文件上传与网络资源抓取
+              <a href="/2018/12/30/ExecutionContext/" rel="next" title="执行上下文">
+                <i class="fa fa-chevron-left"></i> 执行上下文
               </a>
             
           </div>
@@ -424,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/08/Promise/" rel="prev" title="ES6-Promise">
-                ES6-Promise <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP的分层管理"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP的分层管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP、IP、DNS与HTTP的关系"><span class="nav-number">3.</span> <span class="nav-text">TCP、IP、DNS与HTTP的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一次完整的请求"><span class="nav-number">4.</span> <span class="nav-text">一次完整的请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URI和URL"><span class="nav-number">5.</span> <span class="nav-text">URI和URL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学业"><span class="nav-number">2.</span> <span class="nav-text">学业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程"><span class="nav-number">3.</span> <span class="nav-text">编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生活"><span class="nav-number">4.</span> <span class="nav-text">生活</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情感"><span class="nav-number">5.</span> <span class="nav-text">情感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">6.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
